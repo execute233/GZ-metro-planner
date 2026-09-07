@@ -23,3 +23,9 @@ add_executable(test_graph test_graph.c
     ../src/adt/station.c ../src/adt/line.c ../src/adt/edge.c ../src/algo/graph.c)
 target_include_directories(test_graph PRIVATE ../src)
 add_test(NAME graph COMMAND test_graph)
+
+add_executable(test_router test_router.c
+    ../src/adt/station.c ../src/adt/line.c ../src/adt/edge.c
+    ../src/algo/graph.c ../src/algo/router.c)
+target_include_directories(test_router PRIVATE ../src)
+add_test(NAME router COMMAND test_router)
