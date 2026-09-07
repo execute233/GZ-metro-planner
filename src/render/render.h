@@ -4,7 +4,13 @@
 #include "../metro.h"
 #include "../algo/router.h"
 
-/* render —— 终端渲染层：纯输出，不处理输入 */
+/*
+ * render —— 终端渲染层（接口定义）
+ *
+ * 纯输出层：只负责把数据"画"到终端，不读取任何用户输入（输入归 ui 层）。
+ * 输出样式：ANSI 彩色（线路色号）、换乘站加粗、UTF-8 显示宽度对齐。
+ * 实现见 render.c。
+ */
 
 /* 计算 UTF-8 字符串显示宽度（CJK 按 2 列），用于对齐 */
 int render_display_width(const char *s);

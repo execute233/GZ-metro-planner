@@ -1,5 +1,14 @@
 #include "edge.h"
 
+/*
+ * edge —— 区间边表 CRUD 实现
+ *
+ * 三个查找函数的共同约定：把匹配的"边 id"追加到调用方提供的 out 列表
+ * （只追加不清空，便于调用方复用同一个 out 做多次合并查询）；
+ * 返回追加条数，参数非法返回 -1。
+ * 图是无向的：edge_find_between 对 (a→b) 与 (b→a) 两种存储方向都命中。
+ */
+
 int edge_table_init(EdgeTable *t) {
     return al_edge_init(&t->rows);
 }

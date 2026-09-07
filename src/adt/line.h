@@ -3,6 +3,14 @@
 
 #include "arraylist.h"
 
+/*
+ * line —— 线路表（对应 data/lines.csv）
+ *
+ * 一条线路 = 线路元信息 + 有序站序 station_ids（外键 → stations.id）。
+ * station_ids 的"顺序"是该线的行驶方向，渲染按此输出、图的边按相邻对构建。
+ * 线路被删除时其区间边须级联删除（由 ui 层负责），否则图上残留幽灵区间。
+ */
+
 #define LINE_NAME_MAX 16
 #define LINE_EN_MAX   32
 

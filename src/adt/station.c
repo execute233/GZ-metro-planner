@@ -2,6 +2,14 @@
 
 #include <string.h>
 
+/*
+ * station —— 站点表 CRUD 实现
+ *
+ * 存储：ArrayList_Station 动态数组，id 显式存储在元素内（非数组下标），
+ *   删除元素不改变其他元素的 id，保证 lines/edges 中的外键引用稳定。
+ * 查找：线性扫描（站点规模 ~60，O(n) 足够）；名称按字节级 strcmp 比较。
+ */
+
 int station_table_init(StationTable *t) {
     return al_station_init(&t->rows);
 }

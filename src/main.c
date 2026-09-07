@@ -5,6 +5,16 @@
 #endif
 #include "ui/ui.h"
 
+/*
+ * main —— 程序入口与装配
+ *
+ * 1. Windows 控制台 UTF-8 化：
+ *    - SetConsoleOutputCP/SetConsoleCP(65001)：控制台输入输出的代码页；
+ *    - SetConsoleMode 开启 VT 转义解析，否则 ANSI 彩色会按字面显示；
+ *    - setlocale(".UTF-8")：C 运行库按 UTF-8 处理多字节字符。
+ * 2. 数据目录：默认 "data"，可传 argv[1] 指定（如测试用临时目录）。
+ * 3. 其余全部交给 ui_main_loop（内部完成载入、菜单循环与释放）。
+ */
 int main(int argc, char *argv[]) {
 #ifdef _WIN32
     SetConsoleOutputCP(65001);   /* 控制台输出 UTF-8 */

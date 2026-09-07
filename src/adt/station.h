@@ -3,6 +3,16 @@
 
 #include "arraylist.h"
 
+/*
+ * station —— 站点表（对应 data/stations.csv）
+ *
+ * 站点是地铁网络的最小节点。id 为全局主键：
+ *   - 跨文件稳定：被线路站序与边引用，删除后不重用（见 station_next_id）；
+ *   - 同名即换乘的判定依据：同一 id 出现在多条线路即换乘站。
+ * 查找采用线性扫描（站点规模 ~60，无需哈希表）。
+ * 注意：名称按 UTF-8 字节级 strcmp 比较，禁止按字符截断。
+ */
+
 #define STATION_NAME_MAX     33   /* UTF-8 中文站名，含 '\0' */
 #define STATION_PINYIN_MAX   65   /* 全拼 */
 #define STATION_EN_MAX       49   /* 英文名 */

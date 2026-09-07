@@ -4,6 +4,18 @@
 #include <stdlib.h>
 #include <string.h>
 
+/*
+ * metro_io —— CSV 持久化层实现
+ *
+ * 三个 CSV（stations / lines / edges）为系统的数据源，本模块负责：
+ *   载入（读文件 → 解析 → 校验）与保存（内存 → 写回文件）。
+ * 编码规范（UTF-8）：
+ *   - 文件一律 UTF-8 无 BOM；载入时剥 BOM，避免首行首列带 \xEF\xBB\xBF 前缀；
+ *   - 分隔符 , 与 ; 均为 ASCII，按字节解析安全；
+ *   - 行尾 \r\n、行首尾空白统一去除。
+ * 载入成功后数据已通过 metro_io_validate 一致性校验，可安全进入算法层。
+ */
+
 #define LINE_BUF_MAX 1024
 #define COL_MAX      64
 
@@ -165,6 +177,7 @@ static int read_edges(const char *path, EdgeTable *t) {
 
 /* ---- 校验 ---- */
 
+/* 三表主键 id 是否唯一（两两比较，规模小直接 O(n²)） */
 static int ids_unique(const StationTable *stations, const LineTable *lines,
                       const EdgeTable *edges) {
     for (size_t i = 0; i < stations->rows.size; i++)
@@ -182,6 +195,7 @@ static int ids_unique(const StationTable *stations, const LineTable *lines,
     return 1;
 }
 
+/* 相邻两站是否在指定线路的站序中相邻出现 */
 static int line_has_adjacent(const Line *ln, int a, int b) {
     for (size_t i = 0; i + 1 < ln->station_ids.size; i++) {
         if ((ln->station_ids.items[i] == a && ln->station_ids.items[i + 1] == b) ||
@@ -191,6 +205,14 @@ static int line_has_adjacent(const Line *ln, int a, int b) {
     return 0;
 }
 
+/*
+ * 一致性校验（载入后的守门员）：任一条不满足即返回 -1 并写明原因。
+ *   1. 三表主键 id 唯一，且 id 必须为正数（负数 id 会让 graph_build 数组越界写）；
+ *   2. 线路站序、边引用的站 id 必须存在；边的 line_id 必须存在；
+ *   3. 边两端必须是该线站序中的相邻站（边与站序双向一致）；
+ *   4. cost_meters > 0、cost_time_second >= 0；
+ *   5. 同一线路内不允许 from/to 互换的重复边。
+ */
 int metro_io_validate(const Metro *metro, char *errbuf, size_t errbuf_size) {
     const StationTable *stations = &metro->stations;
     const LineTable *lines = &metro->lines;

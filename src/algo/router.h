@@ -5,6 +5,16 @@
 #include "../metro.h"
 #include "graph.h"
 
+/*
+ * router —— 路径规划与换乘提取（接口定义）
+ *
+ * 输入：无向邻接表 + 三表；输出：Route（路径站点序列、每段边 id、
+ * 换乘站序列、三项统计）。算法实现见 router.c：
+ *   ROUTE_MIN_STATIONS —— BFS；ROUTE_MIN_DISTANCE / ROUTE_MIN_TIME —— Dijkstra。
+ * 调用约定：route 用前必须 route_init，用后必须 route_dispose；
+ *   router_find_route 返回 0 前会清空并重建 route 内容，可安全复用。
+ */
+
 /* 路径优化目标 */
 typedef enum {
     ROUTE_MIN_STATIONS = 0,  /* 最少站点：BFS（无权，每跳权重 1） */

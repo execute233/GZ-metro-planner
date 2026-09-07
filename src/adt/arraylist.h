@@ -5,8 +5,25 @@
 #include <stdlib.h>
 #include <string.h>
 
-/* 宏生成类型化动态数组：DEFINE_ARRAYLIST(int, Int, int) 生成类型 ArrayList_Int、
- * 函数前缀 al_int_*（PFX 为全小写函数前缀，NAME 为类型名后缀） */
+/*
+ * ArrayList —— 自研动态数组（宏生成类型化实现）
+ *
+ * C 语言没有原生泛型，本项目用"宏 + 粘贴"生成类型安全的动态数组：
+ *   每个实例是一组结构体 + static inline 函数，独立命名空间互不冲突。
+ *   扩容策略：初始容量 4，不足时倍增（realloc），均摊 O(1) 追加。
+ *
+ * 用法示例：
+ *   DEFINE_ARRAYLIST(int, Int, int)        —— 生成类型 ArrayList_Int、函数 al_int_*
+ *   ArrayList_Int list;  al_int_init(&list);
+ *   al_int_push(&list, 42);                —— 追加
+ *   int *p = al_int_get(&list, 0);         —— 取元素指针（越界返回 NULL）
+ *   al_int_dispose(&list);                 —— 释放，之后可再次 init 复用
+ *
+ * 参数约定：
+ *   TYPE —— 元素类型；NAME —— 类型名后缀（生成 ArrayList_##NAME）；
+ *   PFX  —— 小写函数前缀（生成 al_##PFX##_*）。
+ *   C 预处理器无法做大小写转换，故 NAME 与 PFX 需分别给出。
+ */
 #define DEFINE_ARRAYLIST(TYPE, NAME, PFX)                                   \
     typedef struct {                                                        \
         TYPE  *items;      /* 元素存储区，realloc 动态扩容 */               \

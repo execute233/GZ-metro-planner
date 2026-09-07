@@ -9,6 +9,17 @@
 #include "../algo/router.h"
 #include "../render/render.h"
 
+/*
+ * ui —— 菜单交互层实现
+ *
+ * 职责：读用户输入 → 校验 → 调用各模块 → 展示结果。不直接操作终端颜色
+ * （渲染归 render），不直接碰文件（读写归 metro_io）。
+ * 主流程（ui_main_loop）：载入数据 → 循环菜单（显示线路 / 规划路线 /
+ * 系统维护 / 退出）→ 退出前释放三表。
+ * 维护操作（增删站、增删线）完成后立即写回数据文件（g_data_dir），
+ * 删除前做引用校验，失败操作保证原子回滚，杜绝数据文件被毒化。
+ */
+
 /* 数据目录（由 ui_main_loop 设置，维护保存用） */
 static const char *g_data_dir = "data";
 
@@ -32,6 +43,7 @@ int ui_read_line(char *buf, size_t size) {
 }
 
 void ui_plan_route(Metro *metro) {
+    /* 流程：输入起终点中文名 → 校验存在 → 选优化目标 → 建图 → 寻路 → 渲染 */
     char buf[128];
     printf("起点站：");
     if (ui_read_line(buf, sizeof(buf)) != 0)
@@ -73,7 +85,7 @@ void ui_plan_route(Metro *metro) {
     graph_dispose(&g);
 }
 
-/* 站是否仍被线路或边引用 */
+/* 站是否仍被线路或边引用（删除前的引用校验） */
 static int station_referenced(const Metro *metro, int station_id) {
     for (size_t i = 0; i < metro->lines.rows.size; i++) {
         const ArrayList_Int *ids = &metro->lines.rows.items[i].station_ids;

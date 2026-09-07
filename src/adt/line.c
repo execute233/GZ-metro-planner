@@ -2,6 +2,14 @@
 
 #include <string.h>
 
+/*
+ * line —— 线路表 CRUD 实现
+ *
+ * 关键点：Line 内嵌 ArrayList_Int station_ids（动态分配），因此
+ *   - line_add 必须深拷贝站序，外部对原列表的修改不影响表内数据；
+ *   - line_remove / line_table_dispose 必须逐条释放 station_ids，防内存泄漏。
+ */
+
 int line_table_init(LineTable *t) {
     return al_line_init(&t->rows);
 }

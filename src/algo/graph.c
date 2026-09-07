@@ -3,6 +3,17 @@
 #include <stdlib.h>
 #include <string.h>
 
+/*
+ * graph —— 无向邻接表构建
+ *
+ * 地铁网络 = 稀疏无向图（站为节点、区间边为边）。
+ * 存储：adj[站id] = 该站相邻站 id 列表，站 id 直接作数组下标，
+ *   capacity = 最大站 id + 1。id 删除后留空洞，空洞节点为空列表，
+ *   graph_neighbors 对越界 id 返回 NULL（调用方需判空）。
+ * 每条边 from/to 双向挂载（无向），挂载前去重避免重复邻居。
+ */
+
+/* 列表中是否已含 id（防止同一条边重复挂载） */
 static int has_id(const ArrayList_Int *list, int id) {
     for (size_t i = 0; i < list->size; i++) {
         if (list->items[i] == id)
@@ -12,6 +23,7 @@ static int has_id(const ArrayList_Int *list, int id) {
 }
 
 int graph_build(Graph *g, const Metro *metro) {
+    /* 先求最大站 id，确定邻接表数组长度（含空洞） */
     int max_id = 0;
     for (size_t i = 0; i < metro->stations.rows.size; i++) {
         int id = metro->stations.rows.items[i].id;

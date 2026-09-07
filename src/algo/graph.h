@@ -4,7 +4,14 @@
 #include "../adt/arraylist.h"
 #include "../metro.h"
 
-/* graph —— 无向邻接表 */
+/*
+ * graph —— 无向邻接表（接口定义）
+ *
+ * 地铁网络抽象为稀疏无向图：站为节点，区间边为边。
+ * 邻接表 adj[站id] 直接以站 id 作数组下标（不使用哈希表）；
+ * 站 id 删除后留空洞，空洞节点为空列表。实现见 graph.c。
+ * 生命周期：graph_build 构建 → 多次查询 → graph_dispose 释放，之后可重建。
+ */
 
 typedef struct {
     ArrayList_Int *adj;   /* 邻接表：adj[站id] = 相邻站 id 列表，按 id 直接索引 */

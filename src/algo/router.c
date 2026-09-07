@@ -4,6 +4,23 @@
 
 #define INF 1000000000
 
+/*
+ * router —— 路径规划（BFS / Dijkstra）+ 换乘信息提取
+ *
+ * 按 RouteMetric 选择目标与算法：
+ *   ROUTE_MIN_STATIONS —— BFS（无权图，每跳权重 1），先到终点即最短；
+ *   ROUTE_MIN_DISTANCE —— Dijkstra，边权 = cost_meters（最短路程）；
+ *   ROUTE_MIN_TIME     —— Dijkstra，边权 = cost_time_second（最少时间）。
+ *
+ * 搜索记录两个数组（下标 = 站 id）：
+ *   prev[i]     —— i 的前驱站 id（回溯路径）；
+ *   prev_edge[i]—— 到达 i 所经边的 id（路径上每段的实际边，保证
+ *                  寻优所用边权与最终统计/换乘判定完全一致）。
+ * 共线段（同一对站间多条边、分属不同线路）：寻优时取最小权；
+ *   还原路径时优先延续上一段所在线路（避免无谓换乘）。
+ * 换乘判定：相邻两段边所属线路不同 → 中间站即为换乘站。
+ */
+
 int route_init(Route *route) {
     al_int_init(&route->stations);
     al_int_init(&route->edges_ids);
@@ -62,6 +79,8 @@ static const Edge *find_best_edge(const EdgeTable *edges, int a, int b,
 /* prev 记录前驱站；prev_edge 记录到达该站所经边的 id（与 prev 一一对应） */
 static int bfs(const Graph *g, const EdgeTable *edges, int from, int to,
                int *prev, int *prev_edge) {
+    /* 队列直接用 ArrayList_Int 的 items 数组 + head 指针实现：
+     * 元素只出队不弹，head 单调推进，避免频繁 memmove */
     ArrayList_Int queue;
     al_int_init(&queue);
     al_int_push(&queue, from);
@@ -103,6 +122,7 @@ static int dijkstra(const Graph *g, const EdgeTable *edges, int from, int to,
     dist[from] = 0;
 
     for (;;) {
+        /* 线性扫描未完成节点中 dist 最小者（~60 节点规模，无需优先队列） */
         int u = -1;
         int best = INF;
         for (int i = 0; i < n; i++) {
@@ -114,6 +134,7 @@ static int dijkstra(const Graph *g, const EdgeTable *edges, int from, int to,
         if (u == -1 || u == to)
             break;
         done[u] = 1;
+        /* 松弛：经 u 到 v 更优则更新 dist，并记录使 v 最优的那条边 */
         const ArrayList_Int *nb = graph_neighbors(g, u);
         for (size_t i = 0; i < nb->size; i++) {
             int v = nb->items[i];
@@ -140,6 +161,7 @@ static int dijkstra(const Graph *g, const EdgeTable *edges, int from, int to,
 /* 沿 prev_edge 还原路径并汇总统计 */
 static int build_route(Route *route, const EdgeTable *edges, int from, int to,
                        const int *prev, const int *prev_edge) {
+    /* 从终点沿 prev 回溯到起点，先压入 rev（逆序），再倒序弹出得到正序路径 */
     ArrayList_Int rev;
     al_int_init(&rev);
     int cur = to;
@@ -152,6 +174,7 @@ static int build_route(Route *route, const EdgeTable *edges, int from, int to,
         al_int_push(&route->stations, rev.items[i]);
     al_int_dispose(&rev);
 
+    /* 每段取搜索时记录的边，累加里程/时长（与寻优所用权值一致） */
     for (size_t i = 1; i < route->stations.size; i++) {
         int eid = prev_edge[route->stations.items[i]];
         const Edge *e = edge_find_by_id(edges, eid);
@@ -163,6 +186,7 @@ static int build_route(Route *route, const EdgeTable *edges, int from, int to,
     }
     route->total_stations = (int)route->stations.size;
 
+    /* 相邻两段边所属线路不同 → 中间站即换乘站 */
     for (size_t i = 0; i + 1 < route->edges_ids.size; i++) {
         const Edge *a = edge_find_by_id(edges, route->edges_ids.items[i]);
         const Edge *b = edge_find_by_id(edges, route->edges_ids.items[i + 1]);

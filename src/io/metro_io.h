@@ -4,7 +4,14 @@
 #include <stddef.h>
 #include "../metro.h"
 
-/* metro_io —— CSV 持久化层：三表文件读写 + 一致性校验 */
+/*
+ * metro_io —— CSV 持久化层（接口定义）
+ *
+ * 数据文件：data/ 下 stations.csv、lines.csv、edges.csv（UTF-8 无 BOM）。
+ * 载入（load）= 读文件 + 解析 + metro_io_validate 一致性校验，任一失败返回 -1；
+ * 保存（save）= 三表写回三个 CSV。
+ * 实现见 metro_io.c。
+ */
 
 /* 从 data_dir 读取三个 CSV 载入内存表，返回 0 成功 / -1 失败 */
 int metro_io_load(const char *data_dir, Metro *metro);

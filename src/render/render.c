@@ -2,6 +2,18 @@
 
 #include <stdio.h>
 
+/*
+ * render —— 终端渲染层实现
+ *
+ * 纯输出、不处理输入（交互归 ui 层）。输出用 ANSI 转义序列着色：
+ *   \033[%dm —— 前景色（31 红 / 32 绿 / 33 黄 / 34 蓝 ...，取自 Line.color）；
+ *   \033[1m —— 加粗（换乘站标记）；\033[0m —— 复位。
+ * Windows 下需由 main 开启 ENABLE_VIRTUAL_TERMINAL_PROCESSING 才能解析转义。
+ * 中文字符显示宽度为 2 列（CJK 双宽），对齐必须用 render_display_width
+ * 而不是 strlen 的字节数。
+ */
+
+/* UTF-8 字符串显示宽度：首字节 >= 0x80 视为 CJK（跳过后缀续字节，计 2 列） */
 int render_display_width(const char *s) {
     int w = 0;
     const unsigned char *p = (const unsigned char *)s;
