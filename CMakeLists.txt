@@ -4,6 +4,14 @@ project(GZ_metro_planner C)
 set(CMAKE_C_STANDARD 23)
 set(CMAKE_C_STANDARD_REQUIRED ON)
 
+include(cmake/PDCurses.cmake)
+add_library(gzmp_map STATIC
+    src/adt/map_layout.c src/render/utf8.c src/render/canvas.c
+    src/render/viewport.c src/render/map_renderer.c
+    src/io/map_io.c src/io/project_io.c
+    src/ui/tui_state.c src/ui/tui_maintain.c)
+target_compile_options(gzmp_map PRIVATE -Wall -Wextra -Wpedantic)
+
 add_executable(GZ_metro_planner
     src/main.c
     src/adt/station.c
@@ -14,7 +22,10 @@ add_executable(GZ_metro_planner
     src/algo/router.c
     src/render/render.c
     src/ui/ui.c
+    src/ui/tui_app.c
+    src/ui/tui_backend_pdcurses.c
 )
+target_link_libraries(GZ_metro_planner PRIVATE gzmp_map gzmp_pdcurses)
 
 enable_testing()
 add_subdirectory(tests)

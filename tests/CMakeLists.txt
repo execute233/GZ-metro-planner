@@ -41,3 +41,16 @@ add_executable(test_ui test_ui.c
     ../src/render/render.c ../src/ui/ui.c)
 target_include_directories(test_ui PRIVATE ../src)
 add_test(NAME ui COMMAND test_ui)
+target_sources(test_render PRIVATE ../src/render/utf8.c)
+target_sources(test_ui PRIVATE ../src/render/utf8.c)
+
+add_executable(test_tui test_tui.c
+    ../src/adt/station.c ../src/adt/line.c ../src/adt/edge.c
+    ../src/io/metro_io.c ../src/algo/graph.c ../src/algo/router.c
+    ../src/render/render.c ../src/ui/tui_app.c ../src/ui/tui_backend_pdcurses.c)
+target_link_libraries(test_tui PRIVATE gzmp_map gzmp_pdcurses)
+target_compile_definitions(test_tui PRIVATE GZMP_TEST_DATA="${PROJECT_SOURCE_DIR}/data")
+add_test(NAME tui COMMAND test_tui)
+add_executable(test_tui_backend test_tui_backend.c ../src/ui/tui_backend_pdcurses.c
+    ../src/render/canvas.c ../src/render/utf8.c)
+target_link_libraries(test_tui_backend PRIVATE gzmp_pdcurses)

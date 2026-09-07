@@ -351,13 +351,14 @@ int ui_main_loop(const char *data_dir) {
         switch (atoi(buf)) {
             case 1: render_all_lines(&metro); break;
             case 2: ui_plan_route(&metro);    break;
-            case 3: ui_maintain(&metro);      break;
-            case 4: return 0;
+            case 3: printf("站线维护已迁入地图界面，请不带 --text 启动程序。\n"); break;
+            case 4: goto done;
             default: printf("无效选择\n");    break;
         }
     }
 
-    /* 3. 退出：释放三表（维护路径已各自写盘，无需再保存） */
+done:
+    /* 3. 退出：释放三表。 */
     station_table_dispose(&metro.stations);
     line_table_dispose(&metro.lines);
     edge_table_dispose(&metro.edges);

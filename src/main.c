@@ -1,5 +1,7 @@
 #include <locale.h>
 #include <stdio.h>
+#include <string.h>
+#include "ui/tui_state.h"
 #ifdef _WIN32
 #include <windows.h>
 #endif
@@ -16,16 +18,25 @@
  * 3. 其余全部交给 ui_main_loop（内部完成载入、菜单循环与释放）。
  */
 int main(int argc, char *argv[]) {
+    const char *data_dir = "data";
+    int text = 0;
+    for (int i = 1; i < argc; i++) {
+        if (!strcmp(argv[i], "--text")) text = 1;
+        else data_dir = argv[i];
+    }
+    char error[256];
+    if (project_io_recover(data_dir, error, sizeof(error))) { fprintf(stderr, "%s\n", error); return 1; }
 #ifdef _WIN32
+    if (text) {
     SetConsoleOutputCP(65001);   /* 控制台输出 UTF-8 */
     SetConsoleCP(65001);         /* 控制台输入 UTF-8 */
     HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
     DWORD mode = 0;
     if (GetConsoleMode(hOut, &mode))
         SetConsoleMode(hOut, mode | ENABLE_VIRTUAL_TERMINAL_PROCESSING);
+    }
 #endif
     setlocale(LC_ALL, ".UTF-8");
 
-    const char *data_dir = (argc > 1) ? argv[1] : "data";
-    return ui_main_loop(data_dir) == 0 ? 0 : 1;
+    return (text ? ui_main_loop(data_dir) : tui_main_loop(data_dir)) == 0 ? 0 : 1;
 }

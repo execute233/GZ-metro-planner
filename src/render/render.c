@@ -1,4 +1,5 @@
 #include "render.h"
+#include "utf8.h"
 
 #include <stdio.h>
 
@@ -13,21 +14,10 @@
  * 而不是 strlen 的字节数。
  */
 
-/* UTF-8 字符串显示宽度：首字节 >= 0x80 视为 CJK（跳过后缀续字节，计 2 列） */
+/* Decode Unicode: CJK is wide; Braille and box drawing occupy one column. */
 int render_display_width(const char *s) {
     int w = 0;
-    const unsigned char *p = (const unsigned char *)s;
-    while (*p) {
-        if (*p >= 0x80) {
-            p++;                            /* 跳过 UTF-8 首字节 */
-            while (*p >= 0x80 && *p < 0xC0)
-                p++;                        /* 跳过续字节 */
-            w += 2;
-        } else {
-            w += 1;
-            p++;
-        }
-    }
+    while (*s) w += utf8_width(utf8_decode(&s));
     return w;
 }
 
