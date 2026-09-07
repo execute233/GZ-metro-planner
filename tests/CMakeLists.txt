@@ -9,3 +9,7 @@ add_test(NAME station COMMAND test_station)
 add_executable(test_line test_line.c ../src/adt/line.c)
 target_include_directories(test_line PRIVATE ../src/adt)
 add_test(NAME line COMMAND test_line)
+
+add_executable(test_edge test_edge.c ../src/adt/edge.c)
+target_include_directories(test_edge PRIVATE ../src/adt)
+add_test(NAME edge COMMAND test_edge)
