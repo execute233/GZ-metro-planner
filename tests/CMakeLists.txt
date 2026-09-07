@@ -34,3 +34,10 @@ add_executable(test_render test_render.c
     ../src/adt/station.c ../src/adt/line.c ../src/adt/edge.c ../src/render/render.c)
 target_include_directories(test_render PRIVATE ../src)
 add_test(NAME render COMMAND test_render)
+
+add_executable(test_ui test_ui.c
+    ../src/adt/station.c ../src/adt/line.c ../src/adt/edge.c
+    ../src/io/metro_io.c ../src/algo/graph.c ../src/algo/router.c
+    ../src/render/render.c ../src/ui/ui.c)
+target_include_directories(test_ui PRIVATE ../src)
+add_test(NAME ui COMMAND test_ui)
