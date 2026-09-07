@@ -29,3 +29,8 @@ add_executable(test_router test_router.c
     ../src/algo/graph.c ../src/algo/router.c)
 target_include_directories(test_router PRIVATE ../src)
 add_test(NAME router COMMAND test_router)
+
+add_executable(test_render test_render.c
+    ../src/adt/station.c ../src/adt/line.c ../src/adt/edge.c ../src/render/render.c)
+target_include_directories(test_render PRIVATE ../src)
+add_test(NAME render COMMAND test_render)
