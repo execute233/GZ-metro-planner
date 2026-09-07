@@ -23,10 +23,12 @@
 /* 数据目录（由 ui_main_loop 设置，维护保存用） */
 static const char *g_data_dir = "data";
 
+/* 设置数据目录（维护保存用，默认 "data"；测试可指向临时目录） */
 void ui_set_data_dir(const char *dir) {
     g_data_dir = dir;
 }
 
+/* 读取一行输入并去除首尾空白，返回 0 成功 / -1 EOF */
 int ui_read_line(char *buf, size_t size) {
     if (fgets(buf, (int)size, stdin) == NULL)
         return -1;
@@ -42,6 +44,7 @@ int ui_read_line(char *buf, size_t size) {
     return 0;
 }
 
+/* 交互式规划路线：输入起终点（中文名），选目标后展示 */
 void ui_plan_route(Metro *metro) {
     /* 流程：输入起终点中文名 → 校验存在 → 选优化目标 → 建图 → 寻路 → 渲染 */
     char buf[128];
@@ -58,6 +61,7 @@ void ui_plan_route(Metro *metro) {
         printf("起点或终点站不存在\n");
         return;
     }
+    /* 优化目标 → RouteMetric（1 最少站点 / 2 最短路程 / 3 最少时间） */
     printf("规划目标：1 最少站点  2 最短路程  3 最少时间\n请选择：");
     if (ui_read_line(buf, sizeof(buf)) != 0)
         return;
@@ -70,6 +74,7 @@ void ui_plan_route(Metro *metro) {
         default: printf("无效选择\n"); return;
     }
 
+    /* 建图 → 寻路 → 渲染；临时对象（图/路径）用后立即释放 */
     Graph g;
     if (graph_build(&g, metro) != 0) {
         printf("图构建失败\n");
@@ -102,6 +107,7 @@ static int station_referenced(const Metro *metro, int station_id) {
     return 0;
 }
 
+/* 添加站点：输入三项信息 → 查重 → 入表 → 写回文件 */
 static void ui_add_station(Metro *metro) {
     char buf[128];
     Station st;
@@ -132,6 +138,7 @@ static void ui_add_station(Metro *metro) {
     }
 }
 
+/* 删除站点：按名查找 → 引用校验（被引用则拒绝）→ 删表 → 写回 */
 static void ui_del_station(Metro *metro) {
     char buf[128];
     printf("要删除的站名：");
@@ -227,6 +234,8 @@ static void ui_add_line(Metro *metro) {
         return;
     }
     int added = 0;
+    /* 逐段输入区间数据并入库；任一段输入非法（EOF/格式/数值）则整条回滚：
+     * 级联删除已提交的边与线路，保证内存与后续写盘不残留脏数据 */
     for (size_t i = 0; i + 1 < ln.station_ids.size; i++) {
         Edge e;
         memset(&e, 0, sizeof(e));
@@ -275,6 +284,7 @@ static void ui_add_line(Metro *metro) {
     printf("已添加线路 %s（id=%d，%d 个区间）\n", ln.name, ln.id, added);
 }
 
+/* 删除线路：级联删除其全部区间边（防幽灵区间）→ 删线 → 写回 */
 static void ui_del_line(Metro *metro) {
     char buf[128];
     printf("要删除的线路名：");
@@ -292,6 +302,7 @@ static void ui_del_line(Metro *metro) {
     printf("已删除线路 %s 及其区间\n", buf);
 }
 
+/* 维护子菜单循环，直到用户选 5 返回 */
 void ui_maintain(Metro *metro) {
     char buf[16];
     for (;;) {
@@ -309,8 +320,11 @@ void ui_maintain(Metro *metro) {
     }
 }
 
+/* 主菜单循环（内部完成载入与释放），直到用户退出；data_dir 为数据目录，
+ * 返回 0 正常退出 / -1 载入失败 */
 int ui_main_loop(const char *data_dir) {
     g_data_dir = data_dir;
+    /* 1. 初始化三表并载入数据；失败时透出校验详情并释放已载入部分 */
     Metro metro;
     station_table_init(&metro.stations);
     line_table_init(&metro.lines);
@@ -328,6 +342,7 @@ int ui_main_loop(const char *data_dir) {
     }
 
     char buf[16];
+    /* 2. 主菜单循环：1 显示线路 / 2 规划 / 3 维护 / 4 退出；EOF 视为退出 */
     for (;;) {
         printf("\n广州地铁乘车路线规划系统\n");
         printf("1 显示全部线路\n2 规划路线\n3 系统维护\n4 退出\n请选择：");
@@ -342,6 +357,7 @@ int ui_main_loop(const char *data_dir) {
         }
     }
 
+    /* 3. 退出：释放三表（维护路径已各自写盘，无需再保存） */
     station_table_dispose(&metro.stations);
     line_table_dispose(&metro.lines);
     edge_table_dispose(&metro.edges);

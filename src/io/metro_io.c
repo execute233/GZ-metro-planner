@@ -41,6 +41,7 @@ static void strip_bom(char *line) {
 }
 
 /* 按分隔符切分，返回第 idx 个字段（0 起）的副本；不存在返回 0 */
+/* 按分隔符切分，返回第 idx 个字段（0 起）的副本；不存在返回 0 */
 static int split_field(const char *line, char sep, int idx, char *out, size_t out_size) {
     const char *start = line;
     int cur = 0;
@@ -63,6 +64,7 @@ static int split_field(const char *line, char sep, int idx, char *out, size_t ou
     }
 }
 
+/* 解析第 idx 个字段为 int；字段缺失返回 -1 */
 static int parse_int_field(const char *line, char sep, int idx, int *out) {
     char buf[COL_MAX];
     if (!split_field(line, sep, idx, buf, sizeof(buf)))
@@ -71,6 +73,7 @@ static int parse_int_field(const char *line, char sep, int idx, int *out) {
     return 0;
 }
 
+/* 读取 stations.csv（跳过表头；剥 BOM、去空白后逐行解析入表），返回 0 成功 / -1 打不开 */
 static int read_stations(const char *path, StationTable *t) {
     FILE *f = fopen(path, "rb");
     if (f == NULL)
@@ -99,6 +102,7 @@ static int read_stations(const char *path, StationTable *t) {
     return 0;
 }
 
+/* 读取 lines.csv；station_ids 列按 ; 拆分为有序站序，返回 0 成功 / -1 打不开 */
 static int read_lines(const char *path, LineTable *t) {
     FILE *f = fopen(path, "rb");
     if (f == NULL)
@@ -145,6 +149,7 @@ static int read_lines(const char *path, LineTable *t) {
     return 0;
 }
 
+/* 读取 edges.csv，返回 0 成功 / -1 打不开 */
 static int read_edges(const char *path, EdgeTable *t) {
     FILE *f = fopen(path, "rb");
     if (f == NULL)
@@ -293,6 +298,7 @@ int metro_io_validate(const Metro *metro, char *errbuf, size_t errbuf_size) {
 
 /* ---- 载入 ---- */
 
+/* 从 data_dir 读取三个 CSV 载入内存表，返回 0 成功 / -1 失败 */
 int metro_io_load(const char *data_dir, Metro *metro) {
     char path[512];
     snprintf(path, sizeof(path), "%s/stations.csv", data_dir);
@@ -313,6 +319,7 @@ int metro_io_load(const char *data_dir, Metro *metro) {
 
 /* ---- 保存 ---- */
 
+/* 写 stations.csv（含表头），返回 0 成功 / -1 打不开 */
 static int write_stations(const char *path, const StationTable *t) {
     FILE *f = fopen(path, "wb");
     if (f == NULL)
@@ -325,6 +332,7 @@ static int write_stations(const char *path, const StationTable *t) {
     return 0;
 }
 
+/* 写 lines.csv；station_ids 用 ; 拼接，返回 0 成功 / -1 打不开 */
 static int write_lines(const char *path, const LineTable *t) {
     FILE *f = fopen(path, "wb");
     if (f == NULL)
@@ -344,6 +352,7 @@ static int write_lines(const char *path, const LineTable *t) {
     return 0;
 }
 
+/* 写 edges.csv（含表头），返回 0 成功 / -1 打不开 */
 static int write_edges(const char *path, const EdgeTable *t) {
     FILE *f = fopen(path, "wb");
     if (f == NULL)
@@ -358,6 +367,7 @@ static int write_edges(const char *path, const EdgeTable *t) {
     return 0;
 }
 
+/* 把三表写回 data_dir 的三个 CSV，返回 0 成功 / -1 失败 */
 int metro_io_save(const char *data_dir, const Metro *metro) {
     char path[512];
     snprintf(path, sizeof(path), "%s/stations.csv", data_dir);

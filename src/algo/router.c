@@ -21,6 +21,7 @@
  * 换乘判定：相邻两段边所属线路不同 → 中间站即为换乘站。
  */
 
+/* 初始化路由结果，使用前必须先调用 */
 int route_init(Route *route) {
     al_int_init(&route->stations);
     al_int_init(&route->edges_ids);
@@ -31,6 +32,7 @@ int route_init(Route *route) {
     return 0;
 }
 
+/* 释放路由结果内部数组，之后可再次 init 复用 */
 void route_dispose(Route *route) {
     al_int_dispose(&route->stations);
     al_int_dispose(&route->edges_ids);
@@ -107,6 +109,7 @@ static int bfs(const Graph *g, const EdgeTable *edges, int from, int to,
     return 0;
 }
 
+/* Dijkstra 加权最短路：dist 记录最优权值，prev/prev_edge 记录路径 */
 static int dijkstra(const Graph *g, const EdgeTable *edges, int from, int to,
                     RouteMetric metric, int *prev, int *prev_edge) {
     int n = g->capacity;
@@ -117,6 +120,7 @@ static int dijkstra(const Graph *g, const EdgeTable *edges, int from, int to,
         free(done);
         return 0;
     }
+    /* 初始化：dist 全 INF，起点为 0 */
     for (int i = 0; i < n; i++)
         dist[i] = INF;
     dist[from] = 0;
@@ -158,7 +162,7 @@ static int dijkstra(const Graph *g, const EdgeTable *edges, int from, int to,
     return found;
 }
 
-/* 沿 prev_edge 还原路径并汇总统计 */
+/* 沿 prev_edge 还原路径并汇总统计：返回 0 成功 / -1 边缺失（数据异常） */
 static int build_route(Route *route, const EdgeTable *edges, int from, int to,
                        const int *prev, const int *prev_edge) {
     /* 从终点沿 prev 回溯到起点，先压入 rev（逆序），再倒序弹出得到正序路径 */
@@ -196,12 +200,16 @@ static int build_route(Route *route, const EdgeTable *edges, int from, int to,
     return 0;
 }
 
+/* 按 metric 计算 from_id 到 to_id 的最优路径，成功返回 0 并填充 route；
+ * 起终点不存在或不可达返回 -1 */
 int router_find_route(const Graph *g, const Metro *metro, int from_id, int to_id,
                       RouteMetric metric, Route *route) {
+    /* 起终点必须真实存在 */
     if (station_find_by_id(&metro->stations, from_id) == NULL ||
         station_find_by_id(&metro->stations, to_id) == NULL)
         return -1;
 
+    /* 清空并重建 route 内容，保证函数可安全复用（幂等） */
     route->total_stations = 0;
     route->total_meters = 0;
     route->total_seconds = 0;
@@ -230,6 +238,7 @@ int router_find_route(const Graph *g, const Metro *metro, int from_id, int to_id
         prev_edge[i] = -1;
     }
 
+    /* 按目标选算法：BFS（无权）或 Dijkstra（有权） */
     int found;
     if (metric == ROUTE_MIN_STATIONS)
         found = bfs(g, &metro->edges, from_id, to_id, prev, prev_edge);

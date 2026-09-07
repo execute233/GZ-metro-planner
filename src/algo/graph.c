@@ -22,6 +22,7 @@ static int has_id(const ArrayList_Int *list, int id) {
     return 0;
 }
 
+/* 由三表构建无向邻接表（每条边 from/to 双向挂载），返回 0 成功 / -1 失败 */
 int graph_build(Graph *g, const Metro *metro) {
     /* 先求最大站 id，确定邻接表数组长度（含空洞） */
     int max_id = 0;
@@ -37,6 +38,8 @@ int graph_build(Graph *g, const Metro *metro) {
     for (int i = 0; i < g->capacity; i++)
         al_int_init(&g->adj[i]);
 
+    /* 每条边双向挂载：from→to 与 to→from（图无向）；
+     * 挂载前查重，防止共线段/重复边产生重复邻居 */
     for (size_t i = 0; i < metro->edges.rows.size; i++) {
         const Edge *e = &metro->edges.rows.items[i];
         if (e->from_station_id >= g->capacity || e->to_station_id >= g->capacity)
@@ -49,6 +52,7 @@ int graph_build(Graph *g, const Metro *metro) {
     return 0;
 }
 
+/* 释放邻接表（含每个站的邻居列表），之后可再次 build 复用 */
 void graph_dispose(Graph *g) {
     if (g->adj == NULL)
         return;
@@ -59,7 +63,9 @@ void graph_dispose(Graph *g) {
     g->capacity = 0;
 }
 
+/* 取站 id 的邻居列表（指针，勿修改/释放），id 越界返回 NULL */
 const ArrayList_Int *graph_neighbors(const Graph *g, int station_id) {
+    /* 站 id 直接作下标；越界（含空洞外的负 id）返回 NULL 由调用方判空 */
     if (station_id < 0 || station_id >= g->capacity)
         return NULL;
     return &g->adj[station_id];

@@ -31,7 +31,7 @@ int render_display_width(const char *s) {
     return w;
 }
 
-/* 统计站 id 出现在几条线路中（>1 即换乘站） */
+/* 统计站 id 出现在几条线路中（>1 即换乘站，渲染时加粗标记） */
 static int station_line_count(const Metro *metro, int station_id) {
     int n = 0;
     for (size_t i = 0; i < metro->lines.rows.size; i++) {
@@ -46,11 +46,13 @@ static int station_line_count(const Metro *metro, int station_id) {
     return n;
 }
 
+/* 站 id → 站名（查表失败返回 "?"，正常数据不会发生） */
 static const char *station_name(const Metro *metro, int station_id) {
     Station *st = station_find_by_id(&metro->stations, station_id);
     return st != NULL ? st->name : "?";
 }
 
+/* 彩色输出单条线路：线名（线路色）+ 沿线站点，换乘站高亮 */
 void render_line(const Line *line, const Metro *metro) {
     printf("\033[%dm%s\033[0m", line->color, line->name);
     int w = render_display_width(line->name);
@@ -69,12 +71,15 @@ void render_line(const Line *line, const Metro *metro) {
     printf("\n");
 }
 
+/* 彩色输出全部线路 */
 void render_all_lines(const Metro *metro) {
     for (size_t i = 0; i < metro->lines.rows.size; i++)
         render_line(&metro->lines.rows.items[i], metro);
 }
 
+/* 输出路径结果：站点序列、换乘信息、三项统计（站点/里程/时长） */
 void render_route(const Route *route, const Metro *metro) {
+    /* 第一行：完整站点序列（→ 连接） */
     printf("路线：");
     for (size_t i = 0; i < route->stations.size; i++) {
         if (i > 0)
@@ -83,6 +88,7 @@ void render_route(const Route *route, const Metro *metro) {
     }
     printf("\n");
 
+    /* 逐段显示：每段区间 + 所属线路 */
     for (size_t i = 0; i < route->edges_ids.size; i++) {
         Edge *e = edge_find_by_id(&metro->edges, route->edges_ids.items[i]);
         Line *ln = line_find_by_id(&metro->lines, e->line_id);
@@ -92,11 +98,13 @@ void render_route(const Route *route, const Metro *metro) {
                ln != NULL ? ln->name : "?");
     }
 
+    /* 换乘站提示 */
     for (size_t i = 0; i < route->transfers.size; i++) {
         int sid = route->transfers.items[i];
         printf("  ⚠ 在 %s 站换乘\n", station_name(metro, sid));
     }
 
+    /* 三项统计（秒转分钟向上取整，米转公里保留 1 位小数） */
     printf("统计：%d 站 / %.1f 公里 / %d 分钟\n",
            route->total_stations,
            route->total_meters / 1000.0,
