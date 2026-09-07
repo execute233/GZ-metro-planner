@@ -9,6 +9,8 @@
 /* 主菜单循环（内部完成载入与释放），直到用户退出；data_dir 为数据目录，
  * 返回 0 正常退出 / -1 载入失败 */
 int ui_main_loop(const char *data_dir);
+/* 设置数据目录（维护保存用，默认 "data"；测试可指向临时目录） */
+void ui_set_data_dir(const char *dir);
 /* 读取一行输入并去除首尾空白，返回 0 成功 / -1 EOF */
 int ui_read_line(char *buf, size_t size);
 /* 交互式规划路线：输入起终点（中文名），选目标后展示 */

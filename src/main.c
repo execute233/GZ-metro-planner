@@ -9,6 +9,10 @@ int main(int argc, char *argv[]) {
 #ifdef _WIN32
     SetConsoleOutputCP(65001);   /* 控制台输出 UTF-8 */
     SetConsoleCP(65001);         /* 控制台输入 UTF-8 */
+    HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
+    DWORD mode = 0;
+    if (GetConsoleMode(hOut, &mode))
+        SetConsoleMode(hOut, mode | ENABLE_VIRTUAL_TERMINAL_PROCESSING);
 #endif
     setlocale(LC_ALL, ".UTF-8");
 

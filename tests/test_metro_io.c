@@ -175,6 +175,21 @@ static void test_validate_failures(void) {
     init_metro(&m);
     CHECK(metro_io_load(TEST_DIR, &m) == -1);
     dispose_metro(&m);
+
+    /* 负数站 id（会导致 graph_build 越界写） */
+    write_file(TEST_DIR "/stations.csv",
+        "id,name,pinyin_name,en_name\n"
+        "-1,体育西路,tiyuxilu,Tiyu Xilu\n"
+        "2,公园前,gongyuanqian,Gongyuanqian\n");
+    write_file(TEST_DIR "/lines.csv",
+        "id,name,en_name,color,station_ids\n"
+        "1,1号线,Line 1,31,-1;2\n");
+    write_file(TEST_DIR "/edges.csv",
+        "id,line_id,from_station_id,to_station_id,cost_time_second,cost_meters\n"
+        "1,1,-1,2,180,4200\n");
+    init_metro(&m);
+    CHECK(metro_io_load(TEST_DIR, &m) == -1);
+    dispose_metro(&m);
 }
 
 static void test_save_roundtrip(void) {

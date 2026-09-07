@@ -1,7 +1,6 @@
 #include "router.h"
 
 #include <stdlib.h>
-#include <string.h>
 
 #define INF 1000000000
 
@@ -21,21 +20,48 @@ void route_dispose(Route *route) {
     al_int_dispose(&route->transfers);
 }
 
-/* 取 (a,b) 之间的边权；无边时返回 1（不应发生，图由边构建） */
-static int edge_weight(const EdgeTable *edges, int a, int b, RouteMetric metric) {
-    ArrayList_Int out;
-    al_int_init(&out);
-    edge_find_between(edges, a, b, &out);
-    int w = 1;
-    if (out.size > 0) {
-        const Edge *e = edge_find_by_id(edges, out.items[0]);
-        w = (metric == ROUTE_MIN_DISTANCE) ? e->cost_meters : e->cost_time_second;
+/* 找 (a,b) 之间的边：共线段优先延续 prev_line，否则取表序第一条；无匹配返回 NULL */
+static const Edge *find_edge(const EdgeTable *edges, int a, int b, int prev_line) {
+    const Edge *first = NULL;
+    for (size_t i = 0; i < edges->rows.size; i++) {
+        const Edge *e = &edges->rows.items[i];
+        if ((e->from_station_id == a && e->to_station_id == b) ||
+            (e->from_station_id == b && e->to_station_id == a)) {
+            if (e->line_id == prev_line)
+                return e;
+            if (first == NULL)
+                first = e;
+        }
     }
-    al_int_dispose(&out);
-    return w;
+    return first;
 }
 
-static int bfs(const Graph *g, int from, int to, int *prev) {
+/* 找 (a,b) 之间按 metric 的最优边（共线段取最小权，与换乘不另计费一致）；无匹配返回 NULL */
+static const Edge *find_best_edge(const EdgeTable *edges, int a, int b,
+                                  RouteMetric metric) {
+    const Edge *best = NULL;
+    for (size_t i = 0; i < edges->rows.size; i++) {
+        const Edge *e = &edges->rows.items[i];
+        if ((e->from_station_id == a && e->to_station_id == b) ||
+            (e->from_station_id == b && e->to_station_id == a)) {
+            if (best == NULL) {
+                best = e;
+                continue;
+            }
+            int ew = (metric == ROUTE_MIN_DISTANCE) ? e->cost_meters
+                                                    : e->cost_time_second;
+            int bw = (metric == ROUTE_MIN_DISTANCE) ? best->cost_meters
+                                                    : best->cost_time_second;
+            if (ew < bw)
+                best = e;
+        }
+    }
+    return best;
+}
+
+/* prev 记录前驱站；prev_edge 记录到达该站所经边的 id（与 prev 一一对应） */
+static int bfs(const Graph *g, const EdgeTable *edges, int from, int to,
+               int *prev, int *prev_edge) {
     ArrayList_Int queue;
     al_int_init(&queue);
     al_int_push(&queue, from);
@@ -52,6 +78,8 @@ static int bfs(const Graph *g, int from, int to, int *prev) {
             int v = nb->items[i];
             if (prev[v] == -1) {
                 prev[v] = cur;
+                const Edge *e = find_edge(edges, cur, v, -1);
+                prev_edge[v] = e != NULL ? e->id : -1;
                 al_int_push(&queue, v);
             }
         }
@@ -61,7 +89,7 @@ static int bfs(const Graph *g, int from, int to, int *prev) {
 }
 
 static int dijkstra(const Graph *g, const EdgeTable *edges, int from, int to,
-                    RouteMetric metric, int *prev) {
+                    RouteMetric metric, int *prev, int *prev_edge) {
     int n = g->capacity;
     int *dist = malloc((size_t)n * sizeof(int));
     char *done = calloc((size_t)n, sizeof(char));
@@ -70,10 +98,8 @@ static int dijkstra(const Graph *g, const EdgeTable *edges, int from, int to,
         free(done);
         return 0;
     }
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++)
         dist[i] = INF;
-        prev[i] = -1;
-    }
     dist[from] = 0;
 
     for (;;) {
@@ -93,10 +119,15 @@ static int dijkstra(const Graph *g, const EdgeTable *edges, int from, int to,
             int v = nb->items[i];
             if (done[v])
                 continue;
-            int w = edge_weight(edges, u, v, metric);
+            const Edge *e = find_best_edge(edges, u, v, metric);
+            if (e == NULL)
+                continue;
+            int w = (metric == ROUTE_MIN_DISTANCE) ? e->cost_meters
+                                                   : e->cost_time_second;
             if (dist[u] + w < dist[v]) {
                 dist[v] = dist[u] + w;
                 prev[v] = u;
+                prev_edge[v] = e->id;
             }
         }
     }
@@ -106,25 +137,9 @@ static int dijkstra(const Graph *g, const EdgeTable *edges, int from, int to,
     return found;
 }
 
-/* 选 (a,b) 之间的边：共线段优先延续上一段所在线路 */
-static int pick_edge(const EdgeTable *edges, int a, int b, int prev_line) {
-    ArrayList_Int out;
-    al_int_init(&out);
-    edge_find_between(edges, a, b, &out);
-    int chosen = out.size > 0 ? out.items[0] : -1;
-    for (size_t i = 0; i < out.size; i++) {
-        const Edge *e = edge_find_by_id(edges, out.items[i]);
-        if (e != NULL && e->line_id == prev_line) {
-            chosen = out.items[i];
-            break;
-        }
-    }
-    al_int_dispose(&out);
-    return chosen;
-}
-
+/* 沿 prev_edge 还原路径并汇总统计 */
 static int build_route(Route *route, const EdgeTable *edges, int from, int to,
-                       const int *prev) {
+                       const int *prev, const int *prev_edge) {
     ArrayList_Int rev;
     al_int_init(&rev);
     int cur = to;
@@ -137,18 +152,14 @@ static int build_route(Route *route, const EdgeTable *edges, int from, int to,
         al_int_push(&route->stations, rev.items[i]);
     al_int_dispose(&rev);
 
-    int prev_line = -1;
-    for (size_t i = 0; i + 1 < route->stations.size; i++) {
-        int a = route->stations.items[i];
-        int b = route->stations.items[i + 1];
-        int eid = pick_edge(edges, a, b, prev_line);
-        if (eid < 0)
+    for (size_t i = 1; i < route->stations.size; i++) {
+        int eid = prev_edge[route->stations.items[i]];
+        const Edge *e = edge_find_by_id(edges, eid);
+        if (e == NULL)
             return -1;
         al_int_push(&route->edges_ids, eid);
-        const Edge *e = edge_find_by_id(edges, eid);
         route->total_meters += e->cost_meters;
         route->total_seconds += e->cost_time_second;
-        prev_line = e->line_id;
     }
     route->total_stations = (int)route->stations.size;
 
@@ -184,22 +195,30 @@ int router_find_route(const Graph *g, const Metro *metro, int from_id, int to_id
     }
 
     int *prev = malloc((size_t)g->capacity * sizeof(int));
-    if (prev == NULL)
+    int *prev_edge = malloc((size_t)g->capacity * sizeof(int));
+    if (prev == NULL || prev_edge == NULL) {
+        free(prev);
+        free(prev_edge);
         return -1;
-    for (int i = 0; i < g->capacity; i++)
+    }
+    for (int i = 0; i < g->capacity; i++) {
         prev[i] = -1;
+        prev_edge[i] = -1;
+    }
 
     int found;
     if (metric == ROUTE_MIN_STATIONS)
-        found = bfs(g, from_id, to_id, prev);
+        found = bfs(g, &metro->edges, from_id, to_id, prev, prev_edge);
     else
-        found = dijkstra(g, &metro->edges, from_id, to_id, metric, prev);
+        found = dijkstra(g, &metro->edges, from_id, to_id, metric, prev, prev_edge);
 
     if (!found) {
         free(prev);
+        free(prev_edge);
         return -1;
     }
-    int rc = build_route(route, &metro->edges, from_id, to_id, prev);
+    int rc = build_route(route, &metro->edges, from_id, to_id, prev, prev_edge);
     free(prev);
+    free(prev_edge);
     return rc;
 }

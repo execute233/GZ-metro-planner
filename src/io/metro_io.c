@@ -200,6 +200,25 @@ int metro_io_validate(const Metro *metro, char *errbuf, size_t errbuf_size) {
         snprintf(errbuf, errbuf_size, "主键 id 重复");
         return -1;
     }
+    for (size_t i = 0; i < stations->rows.size; i++) {
+        if (stations->rows.items[i].id < 1) {
+            snprintf(errbuf, errbuf_size, "站点 id 必须为正数（第 %zu 条）", i + 1);
+            return -1;
+        }
+    }
+    for (size_t i = 0; i < lines->rows.size; i++) {
+        if (lines->rows.items[i].id < 1) {
+            snprintf(errbuf, errbuf_size, "线路 id 必须为正数（第 %zu 条）", i + 1);
+            return -1;
+        }
+    }
+    for (size_t i = 0; i < edges->rows.size; i++) {
+        if (edges->rows.items[i].id < 1 ||
+            edges->rows.items[i].line_id < 1) {
+            snprintf(errbuf, errbuf_size, "边 id/line_id 必须为正数（第 %zu 条）", i + 1);
+            return -1;
+        }
+    }
     for (size_t i = 0; i < lines->rows.size; i++) {
         const Line *ln = &lines->rows.items[i];
         for (size_t k = 0; k < ln->station_ids.size; k++) {

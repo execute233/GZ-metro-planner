@@ -172,10 +172,80 @@ static void test_unreachable_and_missing(void) {
     edge_table_dispose(&m.edges);
 }
 
+static void test_shared_segment(void) {
+    /* 共线段：1-2 同时属于 1号线(4200m/180s) 与 2号线(2600m/120s)，
+     * 2号线还有 2-3(1000m/60s)。1→3 最短路程应取 2号线共线段边 */
+    Metro m;
+    station_table_init(&m.stations);
+    line_table_init(&m.lines);
+    edge_table_init(&m.edges);
+
+    Station s1 = {0, "站A", "zhana", "A"};
+    Station s2 = {0, "站B", "zhanb", "B"};
+    Station s3 = {0, "站C", "zhanc", "C"};
+    station_add(&m.stations, &s1);
+    station_add(&m.stations, &s2);
+    station_add(&m.stations, &s3);
+
+    Line l1 = {0, "1号线", "Line 1", 31, {0}};
+    al_int_init(&l1.station_ids);
+    al_int_push(&l1.station_ids, 1);
+    al_int_push(&l1.station_ids, 2);
+    line_add(&m.lines, &l1);
+    al_int_dispose(&l1.station_ids);
+
+    Line l2 = {0, "2号线", "Line 2", 34, {0}};
+    al_int_init(&l2.station_ids);
+    al_int_push(&l2.station_ids, 1);
+    al_int_push(&l2.station_ids, 2);
+    al_int_push(&l2.station_ids, 3);
+    line_add(&m.lines, &l2);
+    al_int_dispose(&l2.station_ids);
+
+    Edge e1 = {0, 1, 1, 2, 180, 4200};
+    Edge e2 = {0, 2, 1, 2, 120, 2600};
+    Edge e3 = {0, 2, 2, 3, 60, 1000};
+    edge_add(&m.edges, &e1);
+    edge_add(&m.edges, &e2);
+    edge_add(&m.edges, &e3);
+
+    Graph g;
+    graph_build(&g, &m);
+    Route r;
+    route_init(&r);
+
+    /* 最短路程：走 2号线 2600+1000=3600，无换乘 */
+    CHECK(router_find_route(&g, &m, 1, 3, ROUTE_MIN_DISTANCE, &r) == 0);
+    CHECK(r.total_meters == 3600);
+    CHECK(r.total_seconds == 180);
+    CHECK(r.transfers.size == 0);
+    CHECK(r.edges_ids.items[0] == 2);   /* 取的是 2号线共线段边 */
+    CHECK(r.edges_ids.items[1] == 3);
+    route_dispose(&r);
+
+    /* 最少时间：同路径 120+60=180s */
+    route_init(&r);
+    CHECK(router_find_route(&g, &m, 1, 3, ROUTE_MIN_TIME, &r) == 0);
+    CHECK(r.total_seconds == 180);
+    CHECK(r.total_meters == 3600);
+    route_dispose(&r);
+
+    route_init(&r);
+    CHECK(router_find_route(&g, &m, 1, 3, ROUTE_MIN_STATIONS, &r) == 0);
+    CHECK(r.total_stations == 3);
+    route_dispose(&r);
+
+    graph_dispose(&g);
+    station_table_dispose(&m.stations);
+    line_table_dispose(&m.lines);
+    edge_table_dispose(&m.edges);
+}
+
 int main(void) {
     test_min_stations_with_transfer();
     test_min_distance_vs_min_time();
     test_unreachable_and_missing();
+    test_shared_segment();
     if (failures) {
         printf("%d check(s) failed\n", failures);
         return 1;

@@ -12,6 +12,10 @@
 /* 数据目录（由 ui_main_loop 设置，维护保存用） */
 static const char *g_data_dir = "data";
 
+void ui_set_data_dir(const char *dir) {
+    g_data_dir = dir;
+}
+
 int ui_read_line(char *buf, size_t size) {
     if (fgets(buf, (int)size, stdin) == NULL)
         return -1;
@@ -108,7 +112,8 @@ static void ui_add_station(Metro *metro) {
         return;
     }
     if (station_add(&metro->stations, &st) == 0) {
-        metro_io_save(g_data_dir, metro);
+        if (metro_io_save(g_data_dir, metro) != 0)
+            printf("保存失败：数据目录不可写\n");
         printf("已添加站点 %s（id=%d）\n", st.name, st.id);
     } else {
         printf("添加失败\n");
@@ -130,7 +135,8 @@ static void ui_del_station(Metro *metro) {
         return;
     }
     if (station_remove(&metro->stations, st->id) == 0) {
-        metro_io_save(g_data_dir, metro);
+        if (metro_io_save(g_data_dir, metro) != 0)
+            printf("保存失败：数据目录不可写\n");
         printf("已删除站点 %s\n", buf);
     } else {
         printf("删除失败\n");
@@ -163,6 +169,16 @@ static int collect_station_ids(Metro *metro, ArrayList_Int *ids) {
     return ids->size >= 2 ? 0 : -1;
 }
 
+/* 删除某线路的全部区间边（删除线路与回滚共用） */
+static void remove_line_edges(Metro *metro, int line_id) {
+    for (size_t i = 0; i < metro->edges.rows.size;) {
+        if (metro->edges.rows.items[i].line_id == line_id)
+            edge_remove(&metro->edges, metro->edges.rows.items[i].id);
+        else
+            i++;
+    }
+}
+
 static void ui_add_line(Metro *metro) {
     char buf[128];
     Line ln;
@@ -193,7 +209,12 @@ static void ui_add_line(Metro *metro) {
         return;
     }
 
-    line_add(&metro->lines, &ln);
+    if (line_add(&metro->lines, &ln) != 0) {
+        printf("线路添加失败\n");
+        al_int_dispose(&ln.station_ids);
+        return;
+    }
+    int added = 0;
     for (size_t i = 0; i + 1 < ln.station_ids.size; i++) {
         Edge e;
         memset(&e, 0, sizeof(e));
@@ -204,12 +225,14 @@ static void ui_add_line(Metro *metro) {
                station_find_by_id(&metro->stations, e.from_station_id)->name,
                station_find_by_id(&metro->stations, e.to_station_id)->name);
         if (ui_read_line(buf, sizeof(buf)) != 0) {
+            remove_line_edges(metro, ln.id);
             line_remove(&metro->lines, ln.id);
             al_int_dispose(&ln.station_ids);
             return;
         }
         char *comma = strchr(buf, ',');
         if (comma == NULL) {
+            remove_line_edges(metro, ln.id);
             line_remove(&metro->lines, ln.id);
             printf("格式错误，已回滚\n");
             al_int_dispose(&ln.station_ids);
@@ -218,18 +241,26 @@ static void ui_add_line(Metro *metro) {
         *comma = '\0';
         e.cost_time_second = atoi(buf);
         e.cost_meters = atoi(comma + 1);
-        if (e.cost_meters <= 0) {
+        if (e.cost_meters <= 0 || e.cost_time_second < 0) {
+            remove_line_edges(metro, ln.id);
             line_remove(&metro->lines, ln.id);
-            printf("里程非法，已回滚\n");
+            printf("区间数据非法，已回滚\n");
             al_int_dispose(&ln.station_ids);
             return;
         }
-        edge_add(&metro->edges, &e);
+        if (edge_add(&metro->edges, &e) != 0) {
+            remove_line_edges(metro, ln.id);
+            line_remove(&metro->lines, ln.id);
+            printf("区间添加失败，已回滚\n");
+            al_int_dispose(&ln.station_ids);
+            return;
+        }
+        added++;
     }
     al_int_dispose(&ln.station_ids);
-    metro_io_save(g_data_dir, metro);
-    printf("已添加线路 %s（id=%d，%d 个区间）\n", ln.name, ln.id,
-           (int)metro->edges.rows.size);
+    if (metro_io_save(g_data_dir, metro) != 0)
+        printf("保存失败：数据目录不可写\n");
+    printf("已添加线路 %s（id=%d，%d 个区间）\n", ln.name, ln.id, added);
 }
 
 static void ui_del_line(Metro *metro) {
@@ -242,14 +273,10 @@ static void ui_del_line(Metro *metro) {
         printf("线路不存在\n");
         return;
     }
-    for (size_t i = 0; i < metro->edges.rows.size;) {
-        if (metro->edges.rows.items[i].line_id == ln->id)
-            edge_remove(&metro->edges, metro->edges.rows.items[i].id);
-        else
-            i++;
-    }
+    remove_line_edges(metro, ln->id);
     line_remove(&metro->lines, ln->id);
-    metro_io_save(g_data_dir, metro);
+    if (metro_io_save(g_data_dir, metro) != 0)
+        printf("保存失败：数据目录不可写\n");
     printf("已删除线路 %s 及其区间\n", buf);
 }
 
@@ -277,7 +304,11 @@ int ui_main_loop(const char *data_dir) {
     line_table_init(&metro.lines);
     edge_table_init(&metro.edges);
     if (metro_io_load(data_dir, &metro) != 0) {
-        fprintf(stderr, "载入数据失败，请检查 %s 下的三个 CSV 文件\n", data_dir);
+        char errbuf[256];
+        if (metro_io_validate(&metro, errbuf, sizeof(errbuf)) != 0)
+            fprintf(stderr, "载入数据失败：%s\n", errbuf);
+        else
+            fprintf(stderr, "载入数据失败，请检查 %s 下的三个 CSV 文件\n", data_dir);
         station_table_dispose(&metro.stations);
         line_table_dispose(&metro.lines);
         edge_table_dispose(&metro.edges);

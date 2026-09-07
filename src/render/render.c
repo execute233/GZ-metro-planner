@@ -40,7 +40,11 @@ static const char *station_name(const Metro *metro, int station_id) {
 }
 
 void render_line(const Line *line, const Metro *metro) {
-    printf("\033[%dm%s\033[0m: ", line->color, line->name);
+    printf("\033[%dm%s\033[0m", line->color, line->name);
+    int w = render_display_width(line->name);
+    for (int i = w; i < 8; i++)   /* 线名按显示宽度对齐到 8 列 */
+        putchar(' ');
+    printf(": ");
     for (size_t i = 0; i < line->station_ids.size; i++) {
         int id = line->station_ids.items[i];
         if (i > 0)
