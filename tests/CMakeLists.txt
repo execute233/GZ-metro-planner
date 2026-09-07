@@ -5,3 +5,7 @@ add_test(NAME arraylist COMMAND test_arraylist)
 add_executable(test_station test_station.c ../src/adt/station.c)
 target_include_directories(test_station PRIVATE ../src/adt)
 add_test(NAME station COMMAND test_station)
+
+add_executable(test_line test_line.c ../src/adt/line.c)
+target_include_directories(test_line PRIVATE ../src/adt)
+add_test(NAME line COMMAND test_line)
