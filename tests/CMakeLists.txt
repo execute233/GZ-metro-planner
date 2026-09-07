@@ -18,3 +18,8 @@ add_executable(test_metro_io test_metro_io.c
     ../src/adt/station.c ../src/adt/line.c ../src/adt/edge.c ../src/io/metro_io.c)
 target_include_directories(test_metro_io PRIVATE ../src)
 add_test(NAME metro_io COMMAND test_metro_io)
+
+add_executable(test_graph test_graph.c
+    ../src/adt/station.c ../src/adt/line.c ../src/adt/edge.c ../src/algo/graph.c)
+target_include_directories(test_graph PRIVATE ../src)
+add_test(NAME graph COMMAND test_graph)
