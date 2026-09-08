@@ -1,0 +1,198 @@
+{
+  "integrity": "ok",
+  "tiles": 513,
+  "stations": 357,
+  "lines": 21,
+  "edges": 421,
+  "rendered_unique_edges": 421,
+  "decoded_layers": {
+    "edges": 3452
+  },
+  "method": "Distance from z5 edge samples (~1 px intervals) to similarly colored pixels of original 4096px image. Includes symbol/color interference; not percent visual similarity or topology accuracy.",
+  "mean_px": 6.916301720529832,
+  "median_px": 2.0,
+  "p95_px": 25.587594985961914,
+  "within_10px_percent": 77.73223790359971,
+  "worst_edges": [
+    {
+      "edge": 343,
+      "line": "21号线",
+      "from": "天河智慧城",
+      "to": "神舟路",
+      "mean_px": 52.18,
+      "p95_px": 114.2,
+      "max_px": 122.0
+    },
+    {
+      "edge": 235,
+      "line": "10号线",
+      "from": "东沙",
+      "to": "大干围",
+      "mean_px": 45.94,
+      "p95_px": 130.44,
+      "max_px": 143.2
+    },
+    {
+      "edge": 187,
+      "line": "7号线",
+      "from": "石壁",
+      "to": "广州南站",
+      "mean_px": 43.59,
+      "p95_px": 50.77,
+      "max_px": 51.53
+    },
+    {
+      "edge": 416,
+      "line": "佛山3号线",
+      "from": "罗村",
+      "to": "佛山西站",
+      "mean_px": 39.85,
+      "p95_px": 71.38,
+      "max_px": 72.58
+    },
+    {
+      "edge": 157,
+      "line": "6号线",
+      "from": "东山口",
+      "to": "东湖",
+      "mean_px": 39.66,
+      "p95_px": 58.9,
+      "max_px": 61.0
+    },
+    {
+      "edge": 351,
+      "line": "21号线",
+      "from": "镇龙",
+      "to": "中新",
+      "mean_px": 31.13,
+      "p95_px": 67.49,
+      "max_px": 71.79
+    },
+    {
+      "edge": 270,
+      "line": "11号线",
+      "from": "五凤",
+      "to": "逸景路",
+      "mean_px": 23.26,
+      "p95_px": 41.0,
+      "max_px": 43.0
+    },
+    {
+      "edge": 89,
+      "line": "4号线",
+      "from": "车陂",
+      "to": "车陂南",
+      "mean_px": 22.4,
+      "p95_px": 26.21,
+      "max_px": 27.36
+    },
+    {
+      "edge": 73,
+      "line": "3号线",
+      "from": "五山",
+      "to": "天河客运站",
+      "mean_px": 22.38,
+      "p95_px": 48.54,
+      "max_px": 51.13
+    },
+    {
+      "edge": 39,
+      "line": "2号线",
+      "from": "江泰路",
+      "to": "昌岗",
+      "mean_px": 22.21,
+      "p95_px": 25.89,
+      "max_px": 26.77
+    },
+    {
+      "edge": 242,
+      "line": "10号线",
+      "from": "东湖",
+      "to": "五羊邨",
+      "mean_px": 21.44,
+      "p95_px": 76.86,
+      "max_px": 91.0
+    },
+    {
+      "edge": 206,
+      "line": "8号线",
+      "from": "彩虹桥",
+      "to": "陈家祠",
+      "mean_px": 20.77,
+      "p95_px": 25.97,
+      "max_px": 28.36
+    },
+    {
+      "edge": 93,
+      "line": "4号线",
+      "from": "大学城北",
+      "to": "大学城南",
+      "mean_px": 19.31,
+      "p95_px": 27.85,
+      "max_px": 29.39
+    },
+    {
+      "edge": 406,
+      "line": "佛山3号线",
+      "from": "东平",
+      "to": "湾华",
+      "mean_px": 18.97,
+      "p95_px": 22.59,
+      "max_px": 24.79
+    },
+    {
+      "edge": 414,
+      "line": "佛山3号线",
+      "from": "联和",
+      "to": "孝德东",
+      "mean_px": 18.78,
+      "p95_px": 42.97,
+      "max_px": 45.58
+    },
+    {
+      "edge": 280,
+      "line": "12号线",
+      "from": "新市墟",
+      "to": "白云文化广场",
+      "mean_px": 18.13,
+      "p95_px": 32.0,
+      "max_px": 34.18
+    },
+    {
+      "edge": 372,
+      "line": "广佛线",
+      "from": "西塱",
+      "to": "菊树",
+      "mean_px": 18.11,
+      "p95_px": 38.31,
+      "max_px": 40.2
+    },
+    {
+      "edge": 171,
+      "line": "7号线",
+      "from": "水西",
+      "to": "萝岗",
+      "mean_px": 17.26,
+      "p95_px": 24.87,
+      "max_px": 27.18
+    },
+    {
+      "edge": 346,
+      "line": "21号线",
+      "from": "苏元",
+      "to": "水西",
+      "mean_px": 16.67,
+      "p95_px": 29.91,
+      "max_px": 31.58
+    },
+    {
+      "edge": 140,
+      "line": "6号线",
+      "from": "萝岗",
+      "to": "苏元",
+      "mean_px": 16.47,
+      "p95_px": 29.79,
+      "max_px": 31.98
+    }
+  ]
+}

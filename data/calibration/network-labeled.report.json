@@ -1,0 +1,5371 @@
+{
+  "input_sha256": "84558e1d4fce94a1da0999f396bcde0c093780c6530cdfec8895b0d7051f8f2f",
+  "font": "C:\\Windows\\Fonts\\msyh.ttc",
+  "bold_font": "C:\\Windows\\Fonts\\msyhbd.ttc",
+  "overrides": {
+    "39": {
+      "preferred_side": "NE",
+      "reason": "东晓南移至东北侧，为工业大道南保留靠近本站的上方空间，避免引线跨越广佛线。"
+    }
+  },
+  "labels": [
+    {
+      "station_id": 51,
+      "name": "白云文化广场",
+      "transfer": true,
+      "box": [
+        1325.0,
+        1726.0,
+        1433.0,
+        1750.0
+      ],
+      "side": "E",
+      "gap": 23.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 155,
+      "name": "如意坊",
+      "transfer": true,
+      "box": [
+        769.0,
+        2324.0,
+        826.0,
+        2347.0
+      ],
+      "side": "SW",
+      "gap": 12.73,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 5,
+      "name": "黄沙",
+      "transfer": true,
+      "box": [
+        852.5,
+        2387.5,
+        892.5,
+        2410.5
+      ],
+      "side": "SW",
+      "gap": 12.73,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 47,
+      "name": "广州火车站",
+      "transfer": true,
+      "box": [
+        1014.0,
+        1926.0,
+        1105.0,
+        1950.0
+      ],
+      "side": "NW",
+      "gap": 12.73,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 243,
+      "name": "新市墟",
+      "transfer": true,
+      "box": [
+        1170.5,
+        1674.25,
+        1227.5,
+        1699.25
+      ],
+      "side": "W",
+      "gap": 23.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 93,
+      "name": "大学城南",
+      "transfer": true,
+      "box": [
+        2579.25,
+        2925.0,
+        2653.25,
+        2950.0
+      ],
+      "side": "S",
+      "gap": 35.0,
+      "leader": true,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 190,
+      "name": "彩虹桥",
+      "transfer": true,
+      "box": [
+        956.5,
+        2083.5,
+        1013.5,
+        2106.5
+      ],
+      "side": "SE",
+      "gap": 12.73,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 13,
+      "name": "杨箕",
+      "transfer": true,
+      "box": [
+        1526.0,
+        2200.5,
+        1566.0,
+        2224.5
+      ],
+      "side": "W",
+      "gap": 11.72,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 113,
+      "name": "西村",
+      "transfer": true,
+      "box": [
+        895.0,
+        1952.0,
+        935.0,
+        1976.0
+      ],
+      "side": "NW",
+      "gap": 12.73,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 199,
+      "name": "赤岗",
+      "transfer": true,
+      "box": [
+        1899.5,
+        2578.0,
+        1939.5,
+        2602.0
+      ],
+      "side": "S",
+      "gap": 23.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 111,
+      "name": "中山八",
+      "transfer": true,
+      "box": [
+        796.5,
+        2111.5,
+        853.5,
+        2135.5
+      ],
+      "side": "W",
+      "gap": 12.04,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 7,
+      "name": "陈家祠",
+      "transfer": true,
+      "box": [
+        878.0,
+        2192.0,
+        935.0,
+        2216.0
+      ],
+      "side": "W",
+      "gap": 12.04,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 92,
+      "name": "大学城北",
+      "transfer": true,
+      "box": [
+        2455.5,
+        2846.5,
+        2529.5,
+        2871.5
+      ],
+      "side": "W",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 110,
+      "name": "坦尾",
+      "transfer": true,
+      "box": [
+        702.5,
+        2234.75,
+        742.5,
+        2257.75
+      ],
+      "side": "W",
+      "gap": 15.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 136,
+      "name": "萝岗",
+      "transfer": true,
+      "box": [
+        2883.0,
+        1840.0,
+        2923.0,
+        1863.0
+      ],
+      "side": "SW",
+      "gap": 12.73,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 233,
+      "name": "沙涌",
+      "transfer": true,
+      "box": [
+        954.0,
+        2643.75,
+        994.0,
+        2667.75
+      ],
+      "side": "W",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 55,
+      "name": "嘉禾望岗",
+      "transfer": true,
+      "box": [
+        1594.85,
+        1415.0,
+        1668.85,
+        1438.0
+      ],
+      "side": "N",
+      "gap": 9.19,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 16,
+      "name": "广州东站",
+      "transfer": true,
+      "box": [
+        1840.5,
+        1943.0,
+        1914.5,
+        1967.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 127,
+      "name": "大沙东",
+      "transfer": true,
+      "box": [
+        2866.0,
+        2268.5,
+        2923.0,
+        2292.5
+      ],
+      "side": "W",
+      "gap": 11.72,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 12,
+      "name": "东山口",
+      "transfer": true,
+      "box": [
+        1415.0,
+        2200.5,
+        1472.0,
+        2224.5
+      ],
+      "side": "W",
+      "gap": 11.72,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 72,
+      "name": "华师",
+      "transfer": true,
+      "box": [
+        2140.0,
+        2002.5,
+        2180.0,
+        2025.5
+      ],
+      "side": "E",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 137,
+      "name": "苏元",
+      "transfer": true,
+      "box": [
+        2812.5,
+        1761.5,
+        2852.5,
+        1785.5
+      ],
+      "side": "W",
+      "gap": 15.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 60,
+      "name": "番禺广场",
+      "transfer": true,
+      "box": [
+        2306.25,
+        3078.0,
+        2380.25,
+        3102.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 118,
+      "name": "五羊邨",
+      "transfer": true,
+      "box": [
+        1612.67,
+        2318.0,
+        1669.67,
+        2341.0
+      ],
+      "side": "S",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 38,
+      "name": "南洲",
+      "transfer": true,
+      "box": [
+        1347.0,
+        2780.5,
+        1387.0,
+        2804.5
+      ],
+      "side": "W",
+      "gap": 11.72,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 161,
+      "name": "水西",
+      "transfer": true,
+      "box": [
+        2880.0,
+        1684.0,
+        2920.0,
+        1706.0
+      ],
+      "side": "NW",
+      "gap": 12.73,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 40,
+      "name": "江泰路",
+      "transfer": true,
+      "box": [
+        1330.0,
+        2654.0,
+        1387.0,
+        2677.0
+      ],
+      "side": "W",
+      "gap": 11.4,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 67,
+      "name": "客村",
+      "transfer": true,
+      "box": [
+        1782.0,
+        2559.0,
+        1822.0,
+        2583.0
+      ],
+      "side": "W",
+      "gap": 12.04,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 221,
+      "name": "龙潭",
+      "transfer": true,
+      "box": [
+        1996.0,
+        2661.0,
+        2036.0,
+        2685.0
+      ],
+      "side": "W",
+      "gap": 12.04,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 44,
+      "name": "海珠广场",
+      "transfer": true,
+      "box": [
+        1186.5,
+        2420.0,
+        1260.5,
+        2444.0
+      ],
+      "side": "S",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 39,
+      "name": "东晓南",
+      "transfer": true,
+      "box": [
+        1405.0,
+        2720.0,
+        1462.0,
+        2744.0
+      ],
+      "side": "NE",
+      "gap": 12.73,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 26,
+      "name": "魁奇路",
+      "transfer": true,
+      "box": [
+        408.0,
+        3161.5,
+        465.0,
+        3185.5
+      ],
+      "side": "W",
+      "gap": 11.72,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 154,
+      "name": "文化公园",
+      "transfer": true,
+      "box": [
+        1003.75,
+        2420.0,
+        1077.75,
+        2444.0
+      ],
+      "side": "S",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 165,
+      "name": "裕丰围",
+      "transfer": true,
+      "box": [
+        2941.0,
+        2472.0,
+        2998.0,
+        2495.0
+      ],
+      "side": "E",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 200,
+      "name": "磨碟沙",
+      "transfer": true,
+      "box": [
+        1979.0,
+        2485.5,
+        2036.0,
+        2507.5
+      ],
+      "side": "W",
+      "gap": 11.1,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 1,
+      "name": "西塱",
+      "transfer": true,
+      "box": [
+        911.0,
+        2698.5,
+        951.0,
+        2721.5
+      ],
+      "side": "E",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 14,
+      "name": "体育西路",
+      "transfer": true,
+      "box": [
+        1748.0,
+        2125.0,
+        1822.0,
+        2148.0
+      ],
+      "side": "W",
+      "gap": 11.4,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 131,
+      "name": "夏园",
+      "transfer": true,
+      "box": [
+        3237.5,
+        2540.75,
+        3277.5,
+        2563.75
+      ],
+      "side": "E",
+      "gap": 15.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 317,
+      "name": "桂城",
+      "transfer": true,
+      "box": [
+        613.0,
+        2907.0,
+        653.0,
+        2932.0
+      ],
+      "side": "W",
+      "gap": 12.73,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 4,
+      "name": "芳村",
+      "transfer": true,
+      "box": [
+        911.0,
+        2506.25,
+        951.0,
+        2530.25
+      ],
+      "side": "E",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 91,
+      "name": "官洲",
+      "transfer": true,
+      "box": [
+        2438.5,
+        2794.74,
+        2478.5,
+        2817.74
+      ],
+      "side": "W",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 62,
+      "name": "汉溪长隆",
+      "transfer": true,
+      "box": [
+        1855.75,
+        3026.0,
+        1929.75,
+        3050.0
+      ],
+      "side": "S",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 69,
+      "name": "珠江新城",
+      "transfer": true,
+      "box": [
+        1748.0,
+        2267.0,
+        1822.0,
+        2292.0
+      ],
+      "side": "W",
+      "gap": 12.04,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 223,
+      "name": "天河公园",
+      "transfer": true,
+      "box": [
+        2177.0,
+        2158.0,
+        2251.0,
+        2182.0
+      ],
+      "side": "W",
+      "gap": 10.82,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 85,
+      "name": "燕塘",
+      "transfer": true,
+      "box": [
+        1782.0,
+        1879.0,
+        1822.0,
+        1901.0
+      ],
+      "side": "W",
+      "gap": 10.82,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 88,
+      "name": "车陂",
+      "transfer": true,
+      "box": [
+        2447.0,
+        2125.0,
+        2487.0,
+        2148.0
+      ],
+      "side": "W",
+      "gap": 11.4,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 150,
+      "name": "东湖",
+      "transfer": true,
+      "box": [
+        1432.0,
+        2349.0,
+        1472.0,
+        2373.0
+      ],
+      "side": "W",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 236,
+      "name": "燕岗",
+      "transfer": true,
+      "box": [
+        1202.0,
+        2654.0,
+        1242.0,
+        2677.0
+      ],
+      "side": "W",
+      "gap": 11.4,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 179,
+      "name": "北滘公园",
+      "transfer": true,
+      "box": [
+        971.0,
+        3432.0,
+        1045.0,
+        3456.0
+      ],
+      "side": "W",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 24,
+      "name": "湾华",
+      "transfer": true,
+      "box": [
+        613.0,
+        3115.0,
+        653.0,
+        3138.0
+      ],
+      "side": "W",
+      "gap": 11.4,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 186,
+      "name": "聚龙",
+      "transfer": true,
+      "box": [
+        895.0,
+        1731.0,
+        935.0,
+        1755.0
+      ],
+      "side": "W",
+      "gap": 12.04,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 170,
+      "name": "南村万博",
+      "transfer": true,
+      "box": [
+        2127.75,
+        3026.0,
+        2201.75,
+        3050.0
+      ],
+      "side": "S",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 89,
+      "name": "车陂南",
+      "transfer": true,
+      "box": [
+        2430.0,
+        2268.5,
+        2487.0,
+        2292.5
+      ],
+      "side": "W",
+      "gap": 11.72,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 34,
+      "name": "石壁",
+      "transfer": true,
+      "box": [
+        1439.0,
+        3039.62,
+        1479.0,
+        3062.62
+      ],
+      "side": "E",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 41,
+      "name": "昌岗",
+      "transfer": true,
+      "box": [
+        1347.0,
+        2560.5,
+        1387.0,
+        2583.5
+      ],
+      "side": "W",
+      "gap": 11.72,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 66,
+      "name": "大塘",
+      "transfer": true,
+      "box": [
+        1782.0,
+        2661.0,
+        1822.0,
+        2684.0
+      ],
+      "side": "NW",
+      "gap": 12.73,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 121,
+      "name": "员村",
+      "transfer": true,
+      "box": [
+        2249.0,
+        2277.5,
+        2289.0,
+        2301.5
+      ],
+      "side": "W",
+      "gap": 11.72,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 194,
+      "name": "沙园",
+      "transfer": true,
+      "box": [
+        1176.0,
+        2579.5,
+        1216.0,
+        2601.5
+      ],
+      "side": "W",
+      "gap": 11.1,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 17,
+      "name": "广州南站",
+      "transfer": true,
+      "box": [
+        1339.0,
+        3154.0,
+        1413.0,
+        3178.0
+      ],
+      "side": "S",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 116,
+      "name": "区庄",
+      "transfer": true,
+      "box": [
+        1488.5,
+        2064.0,
+        1528.5,
+        2087.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 325,
+      "name": "东平",
+      "transfer": true,
+      "box": [
+        613.0,
+        3233.5,
+        653.0,
+        3257.5
+      ],
+      "side": "W",
+      "gap": 11.72,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 74,
+      "name": "天河客运站",
+      "transfer": true,
+      "box": [
+        2064.5,
+        1856.0,
+        2155.5,
+        1880.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 217,
+      "name": "五凤",
+      "transfer": true,
+      "box": [
+        1500.0,
+        2655.5,
+        1540.0,
+        2677.5
+      ],
+      "side": "W",
+      "gap": 11.1,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 9,
+      "name": "公园前",
+      "transfer": true,
+      "box": [
+        1048.0,
+        2192.0,
+        1105.0,
+        2216.0
+      ],
+      "side": "W",
+      "gap": 12.04,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 87,
+      "name": "黄村",
+      "transfer": true,
+      "box": [
+        2476.0,
+        2037.0,
+        2516.0,
+        2061.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 222,
+      "name": "赤沙",
+      "transfer": true,
+      "box": [
+        2169.25,
+        2626.0,
+        2209.25,
+        2650.0
+      ],
+      "side": "S",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 65,
+      "name": "沥滘",
+      "transfer": true,
+      "box": [
+        1840.0,
+        2805.5,
+        1880.0,
+        2827.5
+      ],
+      "side": "E",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 77,
+      "name": "高增",
+      "transfer": true,
+      "box": [
+        1576.0,
+        1166.5,
+        1616.0,
+        1189.5
+      ],
+      "side": "E",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 90,
+      "name": "万胜围",
+      "transfer": true,
+      "box": [
+        2505.0,
+        2506.5,
+        2562.0,
+        2530.5
+      ],
+      "side": "E",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 125,
+      "name": "鱼珠",
+      "transfer": true,
+      "box": [
+        2744.25,
+        2277.0,
+        2784.25,
+        2300.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 202,
+      "name": "琶洲",
+      "transfer": true,
+      "box": [
+        2222.0,
+        2482.0,
+        2262.0,
+        2505.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 147,
+      "name": "沙河",
+      "transfer": true,
+      "box": [
+        1648.25,
+        1985.0,
+        1688.25,
+        2009.0
+      ],
+      "side": "S",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 271,
+      "name": "新和",
+      "transfer": true,
+      "box": [
+        2572.9,
+        927.0,
+        2612.9,
+        952.0
+      ],
+      "side": "S",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 56,
+      "name": "海傍",
+      "transfer": true,
+      "box": [
+        2853.5,
+        3079.0,
+        2893.5,
+        3102.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 159,
+      "name": "浔峰岗",
+      "transfer": true,
+      "box": [
+        579.0,
+        1850.0,
+        636.0,
+        1873.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 285,
+      "name": "镇龙",
+      "transfer": true,
+      "box": [
+        3348.0,
+        1303.0,
+        3388.0,
+        1327.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 6,
+      "name": "长寿路",
+      "transfer": false,
+      "box": [
+        839.0,
+        2270.0,
+        893.0,
+        2291.0
+      ],
+      "side": "NW",
+      "gap": 12.73,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 15,
+      "name": "体育中心",
+      "transfer": false,
+      "box": [
+        1897.0,
+        2022.5,
+        1967.0,
+        2045.5
+      ],
+      "side": "W",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 216,
+      "name": "工业大道南",
+      "transfer": false,
+      "box": [
+        1276.0,
+        2730.0,
+        1362.0,
+        2752.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 50,
+      "name": "白云公园",
+      "transfer": false,
+      "box": [
+        1243.0,
+        1806.0,
+        1313.0,
+        1829.0
+      ],
+      "side": "S",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 3,
+      "name": "花地湾",
+      "transfer": false,
+      "box": [
+        839.0,
+        2597.5,
+        893.0,
+        2620.5
+      ],
+      "side": "W",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 232,
+      "name": "大冲口",
+      "transfer": false,
+      "box": [
+        938.0,
+        2548.0,
+        992.0,
+        2569.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 49,
+      "name": "飞翔公园",
+      "transfer": false,
+      "box": [
+        1191.0,
+        1857.0,
+        1261.0,
+        1879.0
+      ],
+      "side": "S",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 260,
+      "name": "云霄路",
+      "transfer": false,
+      "box": [
+        1120.0,
+        1732.0,
+        1174.0,
+        1754.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 117,
+      "name": "动物园",
+      "transfer": false,
+      "box": [
+        1512.0,
+        2127.5,
+        1566.0,
+        2148.5
+      ],
+      "side": "W",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 247,
+      "name": "赤沙北",
+      "transfer": false,
+      "box": [
+        2052.0,
+        2586.0,
+        2106.0,
+        2608.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 231,
+      "name": "石围塘",
+      "transfer": false,
+      "box": [
+        772.0,
+        2399.0,
+        826.0,
+        2421.0
+      ],
+      "side": "W",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 241,
+      "name": "广州白云站",
+      "transfer": false,
+      "box": [
+        980.0,
+        1657.0,
+        1066.0,
+        1680.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 193,
+      "name": "凤凰新村",
+      "transfer": false,
+      "box": [
+        1187.0,
+        2487.0,
+        1257.0,
+        2508.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 195,
+      "name": "宝岗大道",
+      "transfer": false,
+      "box": [
+        1267.0,
+        2607.98,
+        1337.0,
+        2628.98
+      ],
+      "side": "S",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 246,
+      "name": "赤岗塔",
+      "transfer": false,
+      "box": [
+        1855.5,
+        2456.5,
+        1909.5,
+        2478.5
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 2,
+      "name": "坑口",
+      "transfer": false,
+      "box": [
+        855.0,
+        2656.5,
+        893.0,
+        2677.5
+      ],
+      "side": "W",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 309,
+      "name": "石溪",
+      "transfer": false,
+      "box": [
+        1204.0,
+        2725.0,
+        1242.0,
+        2747.0
+      ],
+      "side": "W",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 310,
+      "name": "鹤洞",
+      "transfer": false,
+      "box": [
+        951.5,
+        2705.0,
+        989.5,
+        2727.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 218,
+      "name": "中大南门",
+      "transfer": false,
+      "box": [
+        1558.0,
+        2605.5,
+        1628.0,
+        2628.5
+      ],
+      "side": "E",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 191,
+      "name": "华林寺",
+      "transfer": false,
+      "box": [
+        953.0,
+        2346.0,
+        1007.0,
+        2368.0
+      ],
+      "side": "S",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 338,
+      "name": "高村",
+      "transfer": false,
+      "box": [
+        1007.0,
+        3390.5,
+        1045.0,
+        3411.5
+      ],
+      "side": "W",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 316,
+      "name": "南桂路",
+      "transfer": false,
+      "box": [
+        714.0,
+        2896.0,
+        768.0,
+        2918.0
+      ],
+      "side": "E",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 230,
+      "name": "流花",
+      "transfer": false,
+      "box": [
+        965.0,
+        1988.0,
+        1003.0,
+        2010.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 86,
+      "name": "林和西",
+      "transfer": false,
+      "box": [
+        1768.0,
+        2043.0,
+        1822.0,
+        2065.0
+      ],
+      "side": "W",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 149,
+      "name": "黄花岗",
+      "transfer": false,
+      "box": [
+        1512.5,
+        2023.5,
+        1566.5,
+        2045.5
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 112,
+      "name": "西场",
+      "transfer": false,
+      "box": [
+        847.0,
+        2068.5,
+        885.0,
+        2089.5
+      ],
+      "side": "W",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 337,
+      "name": "广教",
+      "transfer": false,
+      "box": [
+        1007.0,
+        3476.0,
+        1045.0,
+        3498.0
+      ],
+      "side": "W",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 346,
+      "name": "西约",
+      "transfer": false,
+      "box": [
+        635.5,
+        2849.5,
+        673.5,
+        2871.5
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 192,
+      "name": "同福西",
+      "transfer": false,
+      "box": [
+        1073.5,
+        2466.5,
+        1127.5,
+        2487.5
+      ],
+      "side": "S",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 73,
+      "name": "五山",
+      "transfer": false,
+      "box": [
+        2084.0,
+        1948.5,
+        2122.0,
+        1969.5
+      ],
+      "side": "W",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 151,
+      "name": "团一大广场",
+      "transfer": false,
+      "box": [
+        1395.0,
+        2420.0,
+        1481.0,
+        2441.0
+      ],
+      "side": "S",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 148,
+      "name": "沙河顶",
+      "transfer": false,
+      "box": [
+        1547.5,
+        1989.5,
+        1601.5,
+        2010.5
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 225,
+      "name": "龙口西",
+      "transfer": false,
+      "box": [
+        2009.0,
+        1946.0,
+        2063.0,
+        1967.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 52,
+      "name": "萧岗",
+      "transfer": false,
+      "box": [
+        1332.0,
+        1639.0,
+        1370.0,
+        1660.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 261,
+      "name": "马务",
+      "transfer": false,
+      "box": [
+        1272.5,
+        1596.5,
+        1310.5,
+        1617.5
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 68,
+      "name": "广州塔",
+      "transfer": false,
+      "box": [
+        1768.0,
+        2382.5,
+        1822.0,
+        2403.5
+      ],
+      "side": "W",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 189,
+      "name": "鹅掌坦",
+      "transfer": false,
+      "box": [
+        881.0,
+        1914.0,
+        935.0,
+        1936.0
+      ],
+      "side": "W",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 220,
+      "name": "杨箕东",
+      "transfer": false,
+      "box": [
+        1652.0,
+        2218.0,
+        1706.0,
+        2240.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 343,
+      "name": "亚艺公园",
+      "transfer": false,
+      "box": [
+        583.0,
+        3082.5,
+        653.0,
+        3105.5
+      ],
+      "side": "W",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 153,
+      "name": "一德路",
+      "transfer": false,
+      "box": [
+        1162.0,
+        2381.0,
+        1216.0,
+        2402.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 53,
+      "name": "江夏",
+      "transfer": false,
+      "box": [
+        1392.0,
+        1579.0,
+        1430.0,
+        1600.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 187,
+      "name": "上步",
+      "transfer": false,
+      "box": [
+        897.0,
+        1811.5,
+        935.0,
+        1832.5
+      ],
+      "side": "W",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 262,
+      "name": "鹤边",
+      "transfer": false,
+      "box": [
+        1324.0,
+        1545.0,
+        1362.0,
+        1566.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 54,
+      "name": "黄边",
+      "transfer": false,
+      "box": [
+        1452.0,
+        1519.0,
+        1490.0,
+        1540.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 43,
+      "name": "市二宫",
+      "transfer": false,
+      "box": [
+        1266.0,
+        2480.0,
+        1320.0,
+        2502.0
+      ],
+      "side": "S",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 322,
+      "name": "季华园",
+      "transfer": false,
+      "box": [
+        411.0,
+        3066.5,
+        465.0,
+        3087.5
+      ],
+      "side": "W",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 263,
+      "name": "鹤龙",
+      "transfer": false,
+      "box": [
+        1375.5,
+        1493.5,
+        1413.5,
+        1514.5
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 315,
+      "name": "礌岗",
+      "transfer": false,
+      "box": [
+        714.0,
+        2844.5,
+        752.0,
+        2865.5
+      ],
+      "side": "E",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 48,
+      "name": "三元里",
+      "transfer": false,
+      "box": [
+        1086.0,
+        1869.0,
+        1140.0,
+        1890.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 80,
+      "name": "白云大道北",
+      "transfer": false,
+      "box": [
+        1608.0,
+        1559.0,
+        1694.0,
+        1582.0
+      ],
+      "side": "S",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 46,
+      "name": "越秀公园",
+      "transfer": false,
+      "box": [
+        1035.0,
+        2085.0,
+        1105.0,
+        2107.0
+      ],
+      "side": "W",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 286,
+      "name": "冼村",
+      "transfer": false,
+      "box": [
+        1984.0,
+        2142.0,
+        2022.0,
+        2163.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 31,
+      "name": "绿岛湖",
+      "transfer": false,
+      "box": [
+        44.0,
+        3075.5,
+        98.0,
+        3096.5
+      ],
+      "side": "W",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 35,
+      "name": "会江",
+      "transfer": false,
+      "box": [
+        1349.0,
+        2972.0,
+        1387.0,
+        2994.0
+      ],
+      "side": "W",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 42,
+      "name": "江南西",
+      "transfer": false,
+      "box": [
+        1317.0,
+        2531.0,
+        1371.0,
+        2553.0
+      ],
+      "side": "S",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 185,
+      "name": "石潭",
+      "transfer": false,
+      "box": [
+        897.0,
+        1672.0,
+        935.0,
+        1694.0
+      ],
+      "side": "W",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 250,
+      "name": "天河珠村",
+      "transfer": false,
+      "box": [
+        2591.0,
+        2235.0,
+        2661.0,
+        2256.0
+      ],
+      "side": "S",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 264,
+      "name": "彭边",
+      "transfer": false,
+      "box": [
+        1426.0,
+        1443.0,
+        1464.0,
+        1464.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 70,
+      "name": "石牌桥",
+      "transfer": false,
+      "box": [
+        2000.0,
+        2038.0,
+        2054.0,
+        2060.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 95,
+      "name": "石碁",
+      "transfer": false,
+      "box": [
+        2777.5,
+        3082.5,
+        2815.5,
+        3104.5
+      ],
+      "side": "S",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 138,
+      "name": "暹岗",
+      "transfer": false,
+      "box": [
+        2797.0,
+        1740.0,
+        2835.0,
+        1761.0
+      ],
+      "side": "S",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 219,
+      "name": "滨江东路",
+      "transfer": false,
+      "box": [
+        1470.0,
+        2493.5,
+        1540.0,
+        2516.5
+      ],
+      "side": "W",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 224,
+      "name": "华景路",
+      "transfer": false,
+      "box": [
+        2133.5,
+        2088.5,
+        2187.5,
+        2110.5
+      ],
+      "side": "S",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 99,
+      "name": "黄阁汽车城",
+      "transfer": false,
+      "box": [
+        2951.5,
+        3304.5,
+        3037.5,
+        3325.5
+      ],
+      "side": "S",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 314,
+      "name": "千灯湖",
+      "transfer": false,
+      "box": [
+        642.0,
+        2801.0,
+        696.0,
+        2823.0
+      ],
+      "side": "W",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 313,
+      "name": "金融高新区",
+      "transfer": false,
+      "box": [
+        610.0,
+        2757.5,
+        696.0,
+        2780.5
+      ],
+      "side": "W",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 344,
+      "name": "季华六路",
+      "transfer": false,
+      "box": [
+        583.0,
+        3040.5,
+        653.0,
+        3061.5
+      ],
+      "side": "W",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 45,
+      "name": "纪念堂",
+      "transfer": false,
+      "box": [
+        1051.0,
+        2144.0,
+        1105.0,
+        2166.0
+      ],
+      "side": "W",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 259,
+      "name": "乐嘉路",
+      "transfer": false,
+      "box": [
+        1096.0,
+        1823.0,
+        1150.0,
+        1845.0
+      ],
+      "side": "S",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 336,
+      "name": "伦教",
+      "transfer": false,
+      "box": [
+        1007.0,
+        3517.0,
+        1045.0,
+        3539.0
+      ],
+      "side": "W",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 132,
+      "name": "保盈大道",
+      "transfer": false,
+      "box": [
+        3186.0,
+        2647.5,
+        3256.0,
+        2668.5
+      ],
+      "side": "W",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 84,
+      "name": "梅花园",
+      "transfer": false,
+      "box": [
+        1768.0,
+        1827.5,
+        1822.0,
+        1850.5
+      ],
+      "side": "W",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 32,
+      "name": "湖涌",
+      "transfer": false,
+      "box": [
+        60.0,
+        3126.0,
+        98.0,
+        3148.0
+      ],
+      "side": "W",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 37,
+      "name": "洛溪",
+      "transfer": false,
+      "box": [
+        1349.0,
+        2871.0,
+        1387.0,
+        2891.0
+      ],
+      "side": "W",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 239,
+      "name": "浔峰岗北",
+      "transfer": false,
+      "box": [
+        699.19,
+        1827.23,
+        769.19,
+        1848.23
+      ],
+      "side": "S",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 297,
+      "name": "镇龙西",
+      "transfer": false,
+      "box": [
+        3185.5,
+        1374.5,
+        3239.5,
+        1395.5
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 188,
+      "name": "同德",
+      "transfer": false,
+      "box": [
+        897.0,
+        1862.5,
+        935.0,
+        1883.5
+      ],
+      "side": "W",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 323,
+      "name": "澜石",
+      "transfer": false,
+      "box": [
+        427.0,
+        3194.0,
+        465.0,
+        3216.0
+      ],
+      "side": "W",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 335,
+      "name": "荔村",
+      "transfer": false,
+      "box": [
+        1007.0,
+        3560.5,
+        1045.0,
+        3581.5
+      ],
+      "side": "W",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 180,
+      "name": "美的大道",
+      "transfer": false,
+      "box": [
+        1054.0,
+        3343.0,
+        1124.0,
+        3366.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 36,
+      "name": "南浦",
+      "transfer": false,
+      "box": [
+        1349.0,
+        2921.0,
+        1387.0,
+        2943.0
+      ],
+      "side": "W",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 78,
+      "name": "人和",
+      "transfer": false,
+      "box": [
+        1520.0,
+        1257.5,
+        1558.0,
+        1278.5
+      ],
+      "side": "W",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 184,
+      "name": "小坪",
+      "transfer": false,
+      "box": [
+        897.0,
+        1605.0,
+        935.0,
+        1627.0
+      ],
+      "side": "W",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 213,
+      "name": "花围",
+      "transfer": false,
+      "box": [
+        1001.0,
+        2730.0,
+        1039.0,
+        2752.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 320,
+      "name": "祖庙",
+      "transfer": false,
+      "box": [
+        427.0,
+        2964.5,
+        465.0,
+        2985.5
+      ],
+      "side": "W",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 345,
+      "name": "镇安",
+      "transfer": false,
+      "box": [
+        615.0,
+        2998.5,
+        653.0,
+        3019.5
+      ],
+      "side": "W",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 292,
+      "name": "天河智慧城",
+      "transfer": false,
+      "box": [
+        2478.0,
+        1897.5,
+        2564.0,
+        1918.5
+      ],
+      "side": "W",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 291,
+      "name": "大观南路",
+      "transfer": false,
+      "box": [
+        2494.0,
+        1991.0,
+        2564.0,
+        2013.0
+      ],
+      "side": "W",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 8,
+      "name": "西门口",
+      "transfer": false,
+      "box": [
+        1019.0,
+        2241.0,
+        1073.0,
+        2264.0
+      ],
+      "side": "S",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 162,
+      "name": "科丰路",
+      "transfer": false,
+      "box": [
+        2869.0,
+        1938.5,
+        2923.0,
+        1959.5
+      ],
+      "side": "W",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 321,
+      "name": "同济路",
+      "transfer": false,
+      "box": [
+        411.0,
+        3015.5,
+        465.0,
+        3036.5
+      ],
+      "side": "W",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 79,
+      "name": "龙归",
+      "transfer": false,
+      "box": [
+        1520.0,
+        1342.5,
+        1558.0,
+        1363.5
+      ],
+      "side": "W",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 178,
+      "name": "美的",
+      "transfer": false,
+      "box": [
+        1104.0,
+        3446.0,
+        1142.0,
+        3469.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 275,
+      "name": "从化客运站",
+      "transfer": false,
+      "box": [
+        2777.47,
+        597.47,
+        2863.47,
+        618.47
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 352,
+      "name": "佛山西站",
+      "transfer": false,
+      "box": [
+        207.0,
+        2425.5,
+        277.0,
+        2446.5
+      ],
+      "side": "W",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 353,
+      "name": "兴业东路",
+      "transfer": false,
+      "box": [
+        207.0,
+        2340.0,
+        277.0,
+        2362.0
+      ],
+      "side": "W",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 355,
+      "name": "博爱中路",
+      "transfer": false,
+      "box": [
+        207.0,
+        2169.0,
+        277.0,
+        2191.0
+      ],
+      "side": "W",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 354,
+      "name": "科盛路",
+      "transfer": false,
+      "box": [
+        223.0,
+        2255.5,
+        277.0,
+        2276.5
+      ],
+      "side": "W",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 128,
+      "name": "文冲",
+      "transfer": false,
+      "box": [
+        2984.5,
+        2373.5,
+        3022.5,
+        2395.5
+      ],
+      "side": "S",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 157,
+      "name": "沙贝",
+      "transfer": false,
+      "box": [
+        649.0,
+        2051.5,
+        687.0,
+        2072.5
+      ],
+      "side": "W",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 163,
+      "name": "加庄",
+      "transfer": false,
+      "box": [
+        2885.0,
+        2050.5,
+        2923.0,
+        2071.5
+      ],
+      "side": "W",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 164,
+      "name": "姬堂",
+      "transfer": false,
+      "box": [
+        2885.0,
+        2160.5,
+        2923.0,
+        2181.5
+      ],
+      "side": "W",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 183,
+      "name": "石井",
+      "transfer": false,
+      "box": [
+        897.0,
+        1536.5,
+        935.0,
+        1557.5
+      ],
+      "side": "W",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 351,
+      "name": "罗村",
+      "transfer": false,
+      "box": [
+        239.0,
+        2511.5,
+        277.0,
+        2532.5
+      ],
+      "side": "W",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 83,
+      "name": "京溪南方医院",
+      "transfer": false,
+      "box": [
+        1720.0,
+        1767.5,
+        1822.0,
+        1790.5
+      ],
+      "side": "W",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 229,
+      "name": "梓元岗",
+      "transfer": false,
+      "box": [
+        1216.0,
+        1945.0,
+        1270.0,
+        1967.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 63,
+      "name": "大石",
+      "transfer": false,
+      "box": [
+        1855.62,
+        2909.44,
+        1893.62,
+        2931.44
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 248,
+      "name": "北山",
+      "transfer": false,
+      "box": [
+        2351.0,
+        2706.0,
+        2389.0,
+        2727.0
+      ],
+      "side": "S",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 251,
+      "name": "双岗",
+      "transfer": false,
+      "box": [
+        2949.5,
+        2561.5,
+        2987.5,
+        2582.5
+      ],
+      "side": "S",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 305,
+      "name": "南漖",
+      "transfer": false,
+      "box": [
+        944.5,
+        2850.5,
+        982.5,
+        2872.5
+      ],
+      "side": "S",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 208,
+      "name": "花果山公园",
+      "transfer": false,
+      "box": [
+        696.0,
+        962.0,
+        782.0,
+        985.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 126,
+      "name": "大沙地",
+      "transfer": false,
+      "box": [
+        2828.0,
+        2318.0,
+        2882.0,
+        2339.0
+      ],
+      "side": "S",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 173,
+      "name": "大洲",
+      "transfer": false,
+      "box": [
+        1366.5,
+        3209.5,
+        1404.5,
+        3230.5
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 197,
+      "name": "中大",
+      "transfer": false,
+      "box": [
+        1496.0,
+        2569.0,
+        1534.0,
+        2590.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 226,
+      "name": "云台花园",
+      "transfer": false,
+      "box": [
+        1531.0,
+        1944.0,
+        1601.0,
+        1967.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 311,
+      "name": "菊树",
+      "transfer": false,
+      "box": [
+        788.0,
+        2705.0,
+        826.0,
+        2727.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 319,
+      "name": "普君北路",
+      "transfer": false,
+      "box": [
+        490.0,
+        2911.0,
+        560.0,
+        2932.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 103,
+      "name": "飞沙角",
+      "transfer": false,
+      "box": [
+        3154.5,
+        3475.5,
+        3208.5,
+        3497.5
+      ],
+      "side": "S",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 146,
+      "name": "天平架",
+      "transfer": false,
+      "box": [
+        1728.0,
+        1887.0,
+        1782.0,
+        1908.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 272,
+      "name": "太平",
+      "transfer": false,
+      "box": [
+        2683.86,
+        815.86,
+        2721.86,
+        836.86
+      ],
+      "side": "S",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 356,
+      "name": "南海大学城",
+      "transfer": false,
+      "box": [
+        191.0,
+        2084.0,
+        277.0,
+        2106.0
+      ],
+      "side": "W",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 284,
+      "name": "镇龙北",
+      "transfer": false,
+      "box": [
+        3125.0,
+        1302.0,
+        3179.0,
+        1323.0
+      ],
+      "side": "S",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 350,
+      "name": "孝德东",
+      "transfer": false,
+      "box": [
+        223.0,
+        2596.0,
+        277.0,
+        2618.0
+      ],
+      "side": "W",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 114,
+      "name": "小北",
+      "transfer": false,
+      "box": [
+        1238.5,
+        2062.5,
+        1276.5,
+        2084.5
+      ],
+      "side": "S",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 130,
+      "name": "庙头",
+      "transfer": false,
+      "box": [
+        3103.5,
+        2492.5,
+        3141.5,
+        2513.5
+      ],
+      "side": "S",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 133,
+      "name": "夏港",
+      "transfer": false,
+      "box": [
+        3218.0,
+        2733.5,
+        3256.0,
+        2754.5
+      ],
+      "side": "W",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 158,
+      "name": "横沙",
+      "transfer": false,
+      "box": [
+        704.94,
+        1974.5,
+        742.94,
+        1995.5
+      ],
+      "side": "E",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 76,
+      "name": "机场南",
+      "transfer": false,
+      "box": [
+        1487.0,
+        1020.0,
+        1541.0,
+        1042.0
+      ],
+      "side": "S",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 144,
+      "name": "植物园",
+      "transfer": false,
+      "box": [
+        2232.5,
+        1727.5,
+        2286.5,
+        1748.5
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 174,
+      "name": "陈村北",
+      "transfer": false,
+      "box": [
+        1308.0,
+        3251.0,
+        1362.0,
+        3273.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 209,
+      "name": "花城路",
+      "transfer": false,
+      "box": [
+        685.0,
+        1006.0,
+        739.0,
+        1028.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 234,
+      "name": "鹤洞东",
+      "transfer": false,
+      "box": [
+        1060.01,
+        2701.84,
+        1114.01,
+        2723.84
+      ],
+      "side": "S",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 269,
+      "name": "钟落潭",
+      "transfer": false,
+      "box": [
+        2339.7,
+        1066.7,
+        2393.7,
+        1087.7
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 280,
+      "name": "知识城",
+      "transfer": false,
+      "box": [
+        2920.5,
+        1097.5,
+        2974.5,
+        1119.5
+      ],
+      "side": "S",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 281,
+      "name": "何棠下",
+      "transfer": false,
+      "box": [
+        2971.5,
+        1148.5,
+        3025.5,
+        1169.5
+      ],
+      "side": "S",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 306,
+      "name": "南浦西",
+      "transfer": false,
+      "box": [
+        1005.5,
+        2927.5,
+        1059.5,
+        2949.5
+      ],
+      "side": "S",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 307,
+      "name": "陈头岗",
+      "transfer": false,
+      "box": [
+        1082.0,
+        3004.0,
+        1136.0,
+        3026.0
+      ],
+      "side": "S",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 28,
+      "name": "石湾",
+      "transfer": false,
+      "box": [
+        300.5,
+        3086.5,
+        338.5,
+        3108.5
+      ],
+      "side": "S",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 64,
+      "name": "厦滘",
+      "transfer": false,
+      "box": [
+        1840.11,
+        2870.5,
+        1878.11,
+        2891.5
+      ],
+      "side": "E",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 167,
+      "name": "深井",
+      "transfer": false,
+      "box": [
+        2651.5,
+        2771.5,
+        2689.5,
+        2792.5
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 168,
+      "name": "板桥",
+      "transfer": false,
+      "box": [
+        2490.0,
+        2933.0,
+        2528.0,
+        2954.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 252,
+      "name": "南海神庙",
+      "transfer": false,
+      "box": [
+        3068.0,
+        2585.0,
+        3138.0,
+        2608.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 82,
+      "name": "同和",
+      "transfer": false,
+      "box": [
+        1839.95,
+        1708.5,
+        1877.95,
+        1729.5
+      ],
+      "side": "E",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 177,
+      "name": "南涌",
+      "transfer": false,
+      "box": [
+        1153.5,
+        3421.5,
+        1191.5,
+        3443.5
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 27,
+      "name": "沙岗",
+      "transfer": false,
+      "box": [
+        343.5,
+        3129.5,
+        381.5,
+        3150.5
+      ],
+      "side": "S",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 61,
+      "name": "市桥",
+      "transfer": false,
+      "box": [
+        2110.0,
+        3080.0,
+        2148.0,
+        3102.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 94,
+      "name": "新造",
+      "transfer": false,
+      "box": [
+        2658.5,
+        2963.5,
+        2696.5,
+        2984.5
+      ],
+      "side": "S",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 96,
+      "name": "低涌",
+      "transfer": false,
+      "box": [
+        2871.5,
+        3176.5,
+        2909.5,
+        3198.5
+      ],
+      "side": "S",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 119,
+      "name": "猎德",
+      "transfer": false,
+      "box": [
+        2009.0,
+        2277.0,
+        2047.0,
+        2300.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 156,
+      "name": "河沙",
+      "transfer": false,
+      "box": [
+        649.0,
+        2127.5,
+        687.0,
+        2148.5
+      ],
+      "side": "W",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 342,
+      "name": "大墩",
+      "transfer": false,
+      "box": [
+        653.0,
+        3346.0,
+        691.0,
+        3368.0
+      ],
+      "side": "S",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 215,
+      "name": "大干围",
+      "transfer": false,
+      "box": [
+        1164.0,
+        2770.0,
+        1218.0,
+        2791.0
+      ],
+      "side": "S",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 160,
+      "name": "燕山",
+      "transfer": false,
+      "box": [
+        2913.0,
+        1627.0,
+        2951.0,
+        1648.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 97,
+      "name": "东涌",
+      "transfer": false,
+      "box": [
+        2914.5,
+        3219.5,
+        2952.5,
+        3241.5
+      ],
+      "side": "S",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 100,
+      "name": "黄阁",
+      "transfer": false,
+      "box": [
+        3042.5,
+        3347.5,
+        3080.5,
+        3368.5
+      ],
+      "side": "S",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 101,
+      "name": "蕉门",
+      "transfer": false,
+      "box": [
+        3085.5,
+        3390.5,
+        3123.5,
+        3413.5
+      ],
+      "side": "S",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 102,
+      "name": "金洲",
+      "transfer": false,
+      "box": [
+        3127.5,
+        3432.5,
+        3165.5,
+        3453.5
+      ],
+      "side": "S",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 182,
+      "name": "亭岗",
+      "transfer": false,
+      "box": [
+        897.0,
+        1485.5,
+        935.0,
+        1506.5
+      ],
+      "side": "W",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 270,
+      "name": "马沥",
+      "transfer": false,
+      "box": [
+        2441.25,
+        981.25,
+        2479.25,
+        1002.25
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 295,
+      "name": "长平",
+      "transfer": false,
+      "box": [
+        2996.5,
+        1580.5,
+        3034.5,
+        1600.5
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 104,
+      "name": "广隆",
+      "transfer": false,
+      "box": [
+        3213.5,
+        3518.5,
+        3251.5,
+        3539.5
+      ],
+      "side": "S",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 129,
+      "name": "双沙",
+      "transfer": false,
+      "box": [
+        3043.5,
+        2432.5,
+        3081.5,
+        2452.5
+      ],
+      "side": "S",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 267,
+      "name": "太和",
+      "transfer": false,
+      "box": [
+        2125.07,
+        1297.07,
+        2163.07,
+        1318.07
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 268,
+      "name": "竹料",
+      "transfer": false,
+      "box": [
+        2262.15,
+        1159.15,
+        2300.15,
+        1181.15
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 273,
+      "name": "神岗",
+      "transfer": false,
+      "box": [
+        2705.9,
+        715.9,
+        2743.9,
+        737.9
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 274,
+      "name": "赤草",
+      "transfer": false,
+      "box": [
+        2802.93,
+        696.93,
+        2840.93,
+        718.93
+      ],
+      "side": "S",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 152,
+      "name": "北京路",
+      "transfer": false,
+      "box": [
+        1317.0,
+        2380.0,
+        1371.0,
+        2402.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 245,
+      "name": "二沙岛",
+      "transfer": false,
+      "box": [
+        1566.0,
+        2389.0,
+        1620.0,
+        2410.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 98,
+      "name": "庆盛",
+      "transfer": false,
+      "box": [
+        2957.0,
+        3262.0,
+        2995.0,
+        3283.0
+      ],
+      "side": "S",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 105,
+      "name": "大涌",
+      "transfer": false,
+      "box": [
+        3256.0,
+        3561.0,
+        3294.0,
+        3583.0
+      ],
+      "side": "S",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 145,
+      "name": "长湴",
+      "transfer": false,
+      "box": [
+        2188.0,
+        1788.0,
+        2226.0,
+        1809.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 166,
+      "name": "长洲",
+      "transfer": false,
+      "box": [
+        2754.0,
+        2669.0,
+        2792.0,
+        2690.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 175,
+      "name": "陈村",
+      "transfer": false,
+      "box": [
+        1239.0,
+        3336.0,
+        1277.0,
+        3358.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 196,
+      "name": "晓港",
+      "transfer": false,
+      "box": [
+        1444.0,
+        2568.0,
+        1482.0,
+        2590.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 203,
+      "name": "清塘",
+      "transfer": false,
+      "box": [
+        1349.5,
+        1122.5,
+        1387.5,
+        1144.5
+      ],
+      "side": "S",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 204,
+      "name": "清布",
+      "transfer": false,
+      "box": [
+        1298.0,
+        1071.0,
+        1336.0,
+        1093.0
+      ],
+      "side": "S",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 253,
+      "name": "南岗",
+      "transfer": false,
+      "box": [
+        3296.0,
+        2406.0,
+        3334.0,
+        2428.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 254,
+      "name": "沙村",
+      "transfer": false,
+      "box": [
+        3390.0,
+        2313.0,
+        3428.0,
+        2334.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 255,
+      "name": "白江",
+      "transfer": false,
+      "box": [
+        3484.0,
+        2218.0,
+        3522.0,
+        2240.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 278,
+      "name": "新南",
+      "transfer": false,
+      "box": [
+        2834.0,
+        995.0,
+        2872.0,
+        1017.0
+      ],
+      "side": "S",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 279,
+      "name": "枫下",
+      "transfer": false,
+      "box": [
+        2885.0,
+        1046.0,
+        2923.0,
+        1067.0
+      ],
+      "side": "S",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 282,
+      "name": "旺村",
+      "transfer": false,
+      "box": [
+        3039.0,
+        1200.0,
+        3077.0,
+        1221.0
+      ],
+      "side": "S",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 283,
+      "name": "汤村",
+      "transfer": false,
+      "box": [
+        3090.5,
+        1251.5,
+        3128.5,
+        1272.5
+      ],
+      "side": "S",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 287,
+      "name": "沙溪",
+      "transfer": false,
+      "box": [
+        2050.0,
+        2916.0,
+        2088.0,
+        2936.0
+      ],
+      "side": "S",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 288,
+      "name": "横沥",
+      "transfer": false,
+      "box": [
+        2642.5,
+        3508.5,
+        2680.5,
+        3529.5
+      ],
+      "side": "S",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 296,
+      "name": "金坑",
+      "transfer": false,
+      "box": [
+        3099.0,
+        1477.0,
+        3137.0,
+        1498.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 81,
+      "name": "永泰",
+      "transfer": false,
+      "box": [
+        1716.0,
+        1619.0,
+        1754.0,
+        1640.0
+      ],
+      "side": "S",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 176,
+      "name": "锦龙",
+      "transfer": false,
+      "box": [
+        1196.0,
+        3380.0,
+        1234.0,
+        3401.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 205,
+      "name": "莲塘",
+      "transfer": false,
+      "box": [
+        1247.0,
+        1020.0,
+        1285.0,
+        1042.0
+      ],
+      "side": "S",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 256,
+      "name": "新塘",
+      "transfer": false,
+      "box": [
+        3577.5,
+        2125.5,
+        3615.5,
+        2146.5
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 277,
+      "name": "红卫",
+      "transfer": false,
+      "box": [
+        2782.5,
+        943.5,
+        2820.5,
+        965.5
+      ],
+      "side": "S",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 318,
+      "name": "朝安",
+      "transfer": false,
+      "box": [
+        575.0,
+        2911.0,
+        613.0,
+        2932.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 244,
+      "name": "广州体育馆",
+      "transfer": false,
+      "box": [
+        1310.0,
+        1837.0,
+        1396.0,
+        1860.0
+      ],
+      "side": "S",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 18,
+      "name": "林岳东",
+      "transfer": false,
+      "box": [
+        1217.0,
+        3154.0,
+        1271.0,
+        3176.0
+      ],
+      "side": "S",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 201,
+      "name": "新港东",
+      "transfer": false,
+      "box": [
+        2112.0,
+        2483.0,
+        2166.0,
+        2505.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 71,
+      "name": "岗顶",
+      "transfer": false,
+      "box": [
+        2068.0,
+        2039.0,
+        2106.0,
+        2060.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 124,
+      "name": "三溪",
+      "transfer": false,
+      "box": [
+        2656.0,
+        2279.0,
+        2694.0,
+        2300.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 122,
+      "name": "科韵路",
+      "transfer": false,
+      "box": [
+        2349.0,
+        2277.0,
+        2403.0,
+        2300.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 312,
+      "name": "龙溪",
+      "transfer": false,
+      "box": [
+        703.31,
+        2707.28,
+        741.31,
+        2728.28
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 30,
+      "name": "智慧新城",
+      "transfer": false,
+      "box": [
+        115.0,
+        3004.0,
+        185.0,
+        3025.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 33,
+      "name": "南庄",
+      "transfer": false,
+      "box": [
+        88.0,
+        3197.0,
+        126.0,
+        3219.0
+      ],
+      "side": "S",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 249,
+      "name": "棠下",
+      "transfer": false,
+      "box": [
+        2408.0,
+        2125.0,
+        2446.0,
+        2146.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 334,
+      "name": "顺德人民医院",
+      "transfer": false,
+      "box": [
+        1072.0,
+        3574.0,
+        1174.0,
+        3596.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 238,
+      "name": "上涌",
+      "transfer": false,
+      "box": [
+        1755.0,
+        2702.0,
+        1793.0,
+        2724.0
+      ],
+      "side": "S",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 290,
+      "name": "棠东",
+      "transfer": false,
+      "box": [
+        2408.0,
+        2065.0,
+        2446.0,
+        2087.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 25,
+      "name": "石梁",
+      "transfer": false,
+      "box": [
+        549.0,
+        3114.0,
+        587.0,
+        3136.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 237,
+      "name": "逸景路",
+      "transfer": false,
+      "box": [
+        1623.0,
+        2662.0,
+        1677.0,
+        2684.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 235,
+      "name": "棣园",
+      "transfer": false,
+      "box": [
+        1128.0,
+        2663.0,
+        1166.0,
+        2684.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 242,
+      "name": "棠涌",
+      "transfer": false,
+      "box": [
+        1147.0,
+        1612.0,
+        1185.0,
+        1634.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 228,
+      "name": "中医药大学",
+      "transfer": false,
+      "box": [
+        1310.0,
+        1946.0,
+        1396.0,
+        1967.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 324,
+      "name": "世纪莲",
+      "transfer": false,
+      "box": [
+        524.0,
+        3243.0,
+        578.0,
+        3265.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 134,
+      "name": "黄埔新港",
+      "transfer": false,
+      "box": [
+        3230.0,
+        2838.0,
+        3300.0,
+        2859.0
+      ],
+      "side": "S",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 357,
+      "name": "佛山大学",
+      "transfer": false,
+      "box": [
+        251.0,
+        1979.0,
+        321.0,
+        2000.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 57,
+      "name": "海涌路",
+      "transfer": false,
+      "box": [
+        2700.0,
+        3080.0,
+        2754.0,
+        3102.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 181,
+      "name": "滘心",
+      "transfer": false,
+      "box": [
+        925.0,
+        1415.0,
+        963.0,
+        1436.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 349,
+      "name": "联和",
+      "transfer": false,
+      "box": [
+        267.0,
+        2702.0,
+        305.0,
+        2723.0
+      ],
+      "side": "S",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 308,
+      "name": "市广路",
+      "transfer": false,
+      "box": [
+        1881.0,
+        3098.0,
+        1935.0,
+        3120.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 198,
+      "name": "鹭江",
+      "transfer": false,
+      "box": [
+        1710.0,
+        2569.0,
+        1748.0,
+        2590.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 214,
+      "name": "东沙",
+      "transfer": false,
+      "box": [
+        1086.0,
+        2730.0,
+        1124.0,
+        2752.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 210,
+      "name": "广州北站",
+      "transfer": false,
+      "box": [
+        602.0,
+        1041.0,
+        672.0,
+        1062.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 19,
+      "name": "林岳西",
+      "transfer": false,
+      "box": [
+        1132.0,
+        3114.0,
+        1186.0,
+        3136.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 75,
+      "name": "机场北",
+      "transfer": false,
+      "box": [
+        1455.0,
+        922.0,
+        1509.0,
+        943.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 115,
+      "name": "淘金",
+      "transfer": false,
+      "box": [
+        1368.0,
+        2065.0,
+        1406.0,
+        2087.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 326,
+      "name": "新城东",
+      "transfer": false,
+      "box": [
+        754.0,
+        3243.0,
+        808.0,
+        3265.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 109,
+      "name": "滘口",
+      "transfer": false,
+      "box": [
+        660.0,
+        2336.0,
+        698.0,
+        2357.0
+      ],
+      "side": "S",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 123,
+      "name": "东圃",
+      "transfer": false,
+      "box": [
+        2588.0,
+        2278.0,
+        2626.0,
+        2300.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 143,
+      "name": "龙洞",
+      "transfer": false,
+      "box": [
+        2357.0,
+        1673.0,
+        2395.0,
+        1695.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 341,
+      "name": "岳步",
+      "transfer": false,
+      "box": [
+        753.0,
+        3337.0,
+        791.0,
+        3358.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 293,
+      "name": "神舟路",
+      "transfer": false,
+      "box": [
+        2631.0,
+        1782.0,
+        2685.0,
+        1805.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 106,
+      "name": "塘坑",
+      "transfer": false,
+      "box": [
+        3349.0,
+        3560.0,
+        3387.0,
+        3581.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 276,
+      "name": "东风",
+      "transfer": false,
+      "box": [
+        2904.0,
+        537.0,
+        2942.0,
+        559.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 347,
+      "name": "叠滘",
+      "transfer": false,
+      "box": [
+        506.0,
+        2817.0,
+        544.0,
+        2838.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 294,
+      "name": "科学城",
+      "transfer": false,
+      "box": [
+        2725.0,
+        1784.0,
+        2779.0,
+        1805.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 339,
+      "name": "北滘西站",
+      "transfer": false,
+      "box": [
+        908.0,
+        3337.0,
+        978.0,
+        3358.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 10,
+      "name": "农讲所",
+      "transfer": false,
+      "box": [
+        1217.0,
+        2202.0,
+        1271.0,
+        2223.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 169,
+      "name": "员岗",
+      "transfer": false,
+      "box": [
+        2342.0,
+        2987.0,
+        2380.0,
+        3008.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 227,
+      "name": "大金钟路",
+      "transfer": false,
+      "box": [
+        1420.0,
+        1946.0,
+        1490.0,
+        1967.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 139,
+      "name": "金峰",
+      "transfer": false,
+      "box": [
+        2716.0,
+        1674.0,
+        2754.0,
+        1695.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 171,
+      "name": "钟村",
+      "transfer": false,
+      "box": [
+        1726.0,
+        2987.0,
+        1764.0,
+        3008.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 23,
+      "name": "登洲",
+      "transfer": false,
+      "box": [
+        754.0,
+        3115.0,
+        792.0,
+        3136.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 29,
+      "name": "张槎",
+      "transfer": false,
+      "box": [
+        217.0,
+        3004.0,
+        255.0,
+        3025.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 59,
+      "name": "傍江",
+      "transfer": false,
+      "box": [
+        2451.0,
+        3081.0,
+        2489.0,
+        3102.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 206,
+      "name": "马鞍山公园",
+      "transfer": false,
+      "box": [
+        1080.0,
+        921.0,
+        1166.0,
+        943.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 11,
+      "name": "烈士陵园",
+      "transfer": false,
+      "box": [
+        1303.0,
+        2202.0,
+        1373.0,
+        2223.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 172,
+      "name": "谢村",
+      "transfer": false,
+      "box": [
+        1574.0,
+        2986.0,
+        1612.0,
+        3008.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 265,
+      "name": "白云东平",
+      "transfer": false,
+      "box": [
+        1745.0,
+        1415.0,
+        1815.0,
+        1438.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 340,
+      "name": "潭洲会展",
+      "transfer": false,
+      "box": [
+        814.0,
+        3336.0,
+        884.0,
+        3358.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 141,
+      "name": "高塘石",
+      "transfer": false,
+      "box": [
+        2554.0,
+        1673.0,
+        2608.0,
+        1695.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 140,
+      "name": "黄陂",
+      "transfer": false,
+      "box": [
+        2639.0,
+        1674.0,
+        2677.0,
+        1695.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 240,
+      "name": "西洲",
+      "transfer": false,
+      "box": [
+        780.0,
+        1741.0,
+        818.0,
+        1762.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 107,
+      "name": "南横",
+      "transfer": false,
+      "box": [
+        3408.0,
+        3559.0,
+        3446.0,
+        3581.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 120,
+      "name": "潭村",
+      "transfer": false,
+      "box": [
+        2128.0,
+        2279.0,
+        2166.0,
+        2300.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 266,
+      "name": "夏良",
+      "transfer": false,
+      "box": [
+        1932.0,
+        1416.0,
+        1970.0,
+        1438.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 58,
+      "name": "石碁南",
+      "transfer": false,
+      "box": [
+        2572.0,
+        3080.0,
+        2626.0,
+        3102.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 211,
+      "name": "花都汽车城",
+      "transfer": false,
+      "box": [
+        483.0,
+        1040.0,
+        569.0,
+        1062.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 207,
+      "name": "花都广场",
+      "transfer": false,
+      "box": [
+        951.0,
+        921.0,
+        1021.0,
+        943.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 142,
+      "name": "柯木塱",
+      "transfer": false,
+      "box": [
+        2469.0,
+        1674.0,
+        2523.0,
+        1695.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 333,
+      "name": "环市北",
+      "transfer": false,
+      "box": [
+        1223.0,
+        3573.0,
+        1277.0,
+        3596.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 20,
+      "name": "石洲",
+      "transfer": false,
+      "box": [
+        1044.0,
+        3114.0,
+        1082.0,
+        3136.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 328,
+      "name": "顺德欢乐海岸",
+      "transfer": false,
+      "box": [
+        1668.0,
+        3574.0,
+        1770.0,
+        3596.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 22,
+      "name": "花卉世界",
+      "transfer": false,
+      "box": [
+        840.0,
+        3114.0,
+        910.0,
+        3136.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 329,
+      "name": "顺德一中",
+      "transfer": false,
+      "box": [
+        1565.0,
+        3575.0,
+        1635.0,
+        3596.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 330,
+      "name": "驹荣北路",
+      "transfer": false,
+      "box": [
+        1471.0,
+        3575.0,
+        1541.0,
+        3596.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 332,
+      "name": "大良钟楼",
+      "transfer": false,
+      "box": [
+        1300.0,
+        3574.0,
+        1370.0,
+        3596.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 348,
+      "name": "中山公园",
+      "transfer": false,
+      "box": [
+        405.0,
+        2816.0,
+        475.0,
+        2838.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 331,
+      "name": "东乐路",
+      "transfer": false,
+      "box": [
+        1394.0,
+        3574.0,
+        1448.0,
+        3596.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 21,
+      "name": "仙涌",
+      "transfer": false,
+      "box": [
+        959.0,
+        3114.0,
+        997.0,
+        3136.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 298,
+      "name": "中新",
+      "transfer": false,
+      "box": [
+        3434.0,
+        1306.0,
+        3472.0,
+        1327.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 299,
+      "name": "坑贝",
+      "transfer": false,
+      "box": [
+        3494.0,
+        1306.0,
+        3532.0,
+        1327.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 300,
+      "name": "凤岗",
+      "transfer": false,
+      "box": [
+        3554.0,
+        1306.0,
+        3592.0,
+        1327.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 301,
+      "name": "朱村",
+      "transfer": false,
+      "box": [
+        3614.0,
+        1306.0,
+        3652.0,
+        1327.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 302,
+      "name": "山田",
+      "transfer": false,
+      "box": [
+        3674.0,
+        1306.0,
+        3712.0,
+        1327.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 257,
+      "name": "官湖",
+      "transfer": false,
+      "box": [
+        3758.0,
+        2082.0,
+        3796.0,
+        2103.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 303,
+      "name": "钟岗",
+      "transfer": false,
+      "box": [
+        3733.0,
+        1306.0,
+        3771.0,
+        1327.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 108,
+      "name": "南沙客运港",
+      "transfer": false,
+      "box": [
+        3479.0,
+        3559.0,
+        3565.0,
+        3581.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 327,
+      "name": "顺德学院站",
+      "transfer": false,
+      "box": [
+        1805.0,
+        3574.0,
+        1891.0,
+        3596.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 304,
+      "name": "增城广场",
+      "transfer": false,
+      "box": [
+        3803.0,
+        1306.0,
+        3873.0,
+        1327.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 212,
+      "name": "飞鹅岭",
+      "transfer": false,
+      "box": [
+        404.0,
+        1040.0,
+        458.0,
+        1062.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 289,
+      "name": "万顷沙",
+      "transfer": false,
+      "box": [
+        2982.0,
+        3611.0,
+        3036.0,
+        3632.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 135,
+      "name": "香雪",
+      "transfer": false,
+      "box": [
+        3152.0,
+        1835.0,
+        3190.0,
+        1856.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    },
+    {
+      "station_id": 258,
+      "name": "新沙",
+      "transfer": false,
+      "box": [
+        3819.0,
+        2082.0,
+        3857.0,
+        2103.0
+      ],
+      "side": "N",
+      "gap": 9.0,
+      "leader": false,
+      "leader_track_pixels": 0
+    }
+  ],
+  "label_count": 357,
+  "leader_count": 1,
+  "svg_sha256": "ea38e5bd1044abe840b07faa4f27ee5ef0f7f801fdd869d8b4a579abc7675207"
+}

@@ -1,0 +1,1899 @@
+{
+  "status": "visually traced draft; SVG only",
+  "source_sha256": "096dd68985bb5f6b12dd0125b8c3324855cbffd99274cd88e7ada4438d7c4136",
+  "lines": [
+    {
+      "line_id": 1,
+      "name": "1号线",
+      "svg_color": "F3CD44",
+      "edges": 15,
+      "stations": 16,
+      "seed_projection": [
+        {
+          "station_id": 1,
+          "seed_offset_px": 26.91
+        },
+        {
+          "station_id": 2,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 3,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 4,
+          "seed_offset_px": 18.0
+        },
+        {
+          "station_id": 5,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 6,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 7,
+          "seed_offset_px": 8.0
+        },
+        {
+          "station_id": 8,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 9,
+          "seed_offset_px": 8.0
+        },
+        {
+          "station_id": 10,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 11,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 12,
+          "seed_offset_px": 9.0
+        },
+        {
+          "station_id": 13,
+          "seed_offset_px": 9.0
+        },
+        {
+          "station_id": 14,
+          "seed_offset_px": 9.0
+        },
+        {
+          "station_id": 15,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 16,
+          "seed_offset_px": 9.0
+        }
+      ]
+    },
+    {
+      "line_id": 2,
+      "name": "佛山2号线",
+      "svg_color": "F8262F",
+      "edges": 16,
+      "stations": 17,
+      "seed_projection": [
+        {
+          "station_id": 17,
+          "seed_offset_px": 18.79
+        },
+        {
+          "station_id": 18,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 19,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 20,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 21,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 22,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 23,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 24,
+          "seed_offset_px": 9.0
+        },
+        {
+          "station_id": 25,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 26,
+          "seed_offset_px": 9.0
+        },
+        {
+          "station_id": 27,
+          "seed_offset_px": 0.71
+        },
+        {
+          "station_id": 28,
+          "seed_offset_px": 0.71
+        },
+        {
+          "station_id": 29,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 30,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 31,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 32,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 33,
+          "seed_offset_px": 0.0
+        }
+      ]
+    },
+    {
+      "line_id": 3,
+      "name": "2号线",
+      "svg_color": "036596",
+      "edges": 23,
+      "stations": 24,
+      "seed_projection": []
+    },
+    {
+      "line_id": 4,
+      "name": "3号线",
+      "svg_color": "EE9541",
+      "edges": 33,
+      "stations": 34,
+      "seed_projection": [
+        {
+          "station_id": 56,
+          "seed_offset_px": 9.0
+        },
+        {
+          "station_id": 57,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 58,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 59,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 60,
+          "seed_offset_px": 9.0
+        },
+        {
+          "station_id": 61,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 62,
+          "seed_offset_px": 12.02
+        },
+        {
+          "station_id": 63,
+          "seed_offset_px": 0.84
+        },
+        {
+          "station_id": 64,
+          "seed_offset_px": 0.11
+        },
+        {
+          "station_id": 65,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 66,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 67,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 68,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 69,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 14,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 70,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 71,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 72,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 73,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 74,
+          "seed_offset_px": 9.0
+        },
+        {
+          "station_id": 75,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 76,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 77,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 78,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 79,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 55,
+          "seed_offset_px": 5.17
+        },
+        {
+          "station_id": 80,
+          "seed_offset_px": 1.41
+        },
+        {
+          "station_id": 81,
+          "seed_offset_px": 1.41
+        },
+        {
+          "station_id": 82,
+          "seed_offset_px": 0.05
+        },
+        {
+          "station_id": 83,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 84,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 85,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 16,
+          "seed_offset_px": 19.0
+        },
+        {
+          "station_id": 86,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 14,
+          "seed_offset_px": 0.0
+        }
+      ]
+    },
+    {
+      "line_id": 5,
+      "name": "4号线",
+      "svg_color": "08814B",
+      "edges": 22,
+      "stations": 23,
+      "seed_projection": [
+        {
+          "station_id": 87,
+          "seed_offset_px": 17.0
+        },
+        {
+          "station_id": 88,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 89,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 90,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 91,
+          "seed_offset_px": 11.25
+        },
+        {
+          "station_id": 92,
+          "seed_offset_px": 10.61
+        },
+        {
+          "station_id": 93,
+          "seed_offset_px": 4.95
+        },
+        {
+          "station_id": 94,
+          "seed_offset_px": 4.95
+        },
+        {
+          "station_id": 95,
+          "seed_offset_px": 4.95
+        },
+        {
+          "station_id": 56,
+          "seed_offset_px": 1.41
+        },
+        {
+          "station_id": 96,
+          "seed_offset_px": 4.95
+        },
+        {
+          "station_id": 97,
+          "seed_offset_px": 4.95
+        },
+        {
+          "station_id": 98,
+          "seed_offset_px": 4.24
+        },
+        {
+          "station_id": 99,
+          "seed_offset_px": 4.95
+        },
+        {
+          "station_id": 100,
+          "seed_offset_px": 4.95
+        },
+        {
+          "station_id": 101,
+          "seed_offset_px": 4.95
+        },
+        {
+          "station_id": 102,
+          "seed_offset_px": 4.95
+        },
+        {
+          "station_id": 103,
+          "seed_offset_px": 4.95
+        },
+        {
+          "station_id": 104,
+          "seed_offset_px": 4.95
+        },
+        {
+          "station_id": 105,
+          "seed_offset_px": 4.24
+        },
+        {
+          "station_id": 106,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 107,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 108,
+          "seed_offset_px": 0.0
+        }
+      ]
+    },
+    {
+      "line_id": 6,
+      "name": "5号线",
+      "svg_color": "BE104B",
+      "edges": 29,
+      "stations": 30,
+      "seed_projection": [
+        {
+          "station_id": 109,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 110,
+          "seed_offset_px": 3.54
+        },
+        {
+          "station_id": 111,
+          "seed_offset_px": 4.95
+        },
+        {
+          "station_id": 112,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 113,
+          "seed_offset_px": 2.83
+        },
+        {
+          "station_id": 47,
+          "seed_offset_px": 17.0
+        },
+        {
+          "station_id": 114,
+          "seed_offset_px": 0.71
+        },
+        {
+          "station_id": 115,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 116,
+          "seed_offset_px": 9.0
+        },
+        {
+          "station_id": 117,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 13,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 118,
+          "seed_offset_px": 9.0
+        },
+        {
+          "station_id": 69,
+          "seed_offset_px": 9.0
+        },
+        {
+          "station_id": 119,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 120,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 121,
+          "seed_offset_px": 9.0
+        },
+        {
+          "station_id": 122,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 89,
+          "seed_offset_px": 9.0
+        },
+        {
+          "station_id": 123,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 124,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 125,
+          "seed_offset_px": 9.0
+        },
+        {
+          "station_id": 126,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 127,
+          "seed_offset_px": 9.0
+        },
+        {
+          "station_id": 128,
+          "seed_offset_px": 4.95
+        },
+        {
+          "station_id": 129,
+          "seed_offset_px": 4.95
+        },
+        {
+          "station_id": 130,
+          "seed_offset_px": 4.95
+        },
+        {
+          "station_id": 131,
+          "seed_offset_px": 11.31
+        },
+        {
+          "station_id": 132,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 133,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 134,
+          "seed_offset_px": 0.0
+        }
+      ]
+    },
+    {
+      "line_id": 7,
+      "name": "6号线",
+      "svg_color": "761653",
+      "edges": 31,
+      "stations": 32,
+      "seed_projection": [
+        {
+          "station_id": 135,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 136,
+          "seed_offset_px": 2.12
+        },
+        {
+          "station_id": 137,
+          "seed_offset_px": 9.19
+        },
+        {
+          "station_id": 138,
+          "seed_offset_px": 8.49
+        },
+        {
+          "station_id": 139,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 140,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 141,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 142,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 143,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 144,
+          "seed_offset_px": 4.95
+        },
+        {
+          "station_id": 145,
+          "seed_offset_px": 5.66
+        },
+        {
+          "station_id": 74,
+          "seed_offset_px": 1.41
+        },
+        {
+          "station_id": 85,
+          "seed_offset_px": 10.0
+        },
+        {
+          "station_id": 146,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 147,
+          "seed_offset_px": 4.95
+        },
+        {
+          "station_id": 148,
+          "seed_offset_px": 0.71
+        },
+        {
+          "station_id": 149,
+          "seed_offset_px": 0.71
+        },
+        {
+          "station_id": 116,
+          "seed_offset_px": 7.07
+        },
+        {
+          "station_id": 12,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 150,
+          "seed_offset_px": 17.0
+        },
+        {
+          "station_id": 151,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 152,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 44,
+          "seed_offset_px": 9.0
+        },
+        {
+          "station_id": 153,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 154,
+          "seed_offset_px": 9.0
+        },
+        {
+          "station_id": 5,
+          "seed_offset_px": 0.71
+        },
+        {
+          "station_id": 155,
+          "seed_offset_px": 2.12
+        },
+        {
+          "station_id": 110,
+          "seed_offset_px": 9.9
+        },
+        {
+          "station_id": 156,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 157,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 158,
+          "seed_offset_px": 0.06
+        },
+        {
+          "station_id": 159,
+          "seed_offset_px": 10.0
+        }
+      ]
+    },
+    {
+      "line_id": 8,
+      "name": "7号线",
+      "svg_color": "9AD420",
+      "edges": 26,
+      "stations": 27,
+      "seed_projection": [
+        {
+          "station_id": 160,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 161,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 136,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 162,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 163,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 164,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 127,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 165,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 166,
+          "seed_offset_px": 2.83
+        },
+        {
+          "station_id": 167,
+          "seed_offset_px": 3.54
+        },
+        {
+          "station_id": 93,
+          "seed_offset_px": 4.24
+        },
+        {
+          "station_id": 168,
+          "seed_offset_px": 2.83
+        },
+        {
+          "station_id": 169,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 170,
+          "seed_offset_px": 8.0
+        },
+        {
+          "station_id": 62,
+          "seed_offset_px": 8.0
+        },
+        {
+          "station_id": 171,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 172,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 34,
+          "seed_offset_px": 17.01
+        },
+        {
+          "station_id": 17,
+          "seed_offset_px": 17.0
+        },
+        {
+          "station_id": 173,
+          "seed_offset_px": 0.71
+        },
+        {
+          "station_id": 174,
+          "seed_offset_px": 1.41
+        },
+        {
+          "station_id": 175,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 176,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 177,
+          "seed_offset_px": 0.71
+        },
+        {
+          "station_id": 178,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 179,
+          "seed_offset_px": 26.0
+        },
+        {
+          "station_id": 180,
+          "seed_offset_px": 0.0
+        }
+      ]
+    },
+    {
+      "line_id": 9,
+      "name": "8号线",
+      "svg_color": "008A90",
+      "edges": 27,
+      "stations": 28,
+      "seed_projection": [
+        {
+          "station_id": 181,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 182,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 183,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 184,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 185,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 186,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 187,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 188,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 189,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 113,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 190,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 7,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 191,
+          "seed_offset_px": 7.07
+        },
+        {
+          "station_id": 154,
+          "seed_offset_px": 12.02
+        },
+        {
+          "station_id": 192,
+          "seed_offset_px": 6.36
+        },
+        {
+          "station_id": 193,
+          "seed_offset_px": 7.07
+        },
+        {
+          "station_id": 194,
+          "seed_offset_px": 12.73
+        },
+        {
+          "station_id": 195,
+          "seed_offset_px": 0.02
+        },
+        {
+          "station_id": 41,
+          "seed_offset_px": 8.0
+        },
+        {
+          "station_id": 196,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 197,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 198,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 67,
+          "seed_offset_px": 8.0
+        },
+        {
+          "station_id": 199,
+          "seed_offset_px": 7.07
+        },
+        {
+          "station_id": 200,
+          "seed_offset_px": 9.0
+        },
+        {
+          "station_id": 201,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 202,
+          "seed_offset_px": 9.0
+        },
+        {
+          "station_id": 90,
+          "seed_offset_px": 9.0
+        }
+      ]
+    },
+    {
+      "line_id": 10,
+      "name": "9号线",
+      "svg_color": "65C997",
+      "edges": 10,
+      "stations": 11,
+      "seed_projection": [
+        {
+          "station_id": 77,
+          "seed_offset_px": 8.0
+        },
+        {
+          "station_id": 203,
+          "seed_offset_px": 0.71
+        },
+        {
+          "station_id": 204,
+          "seed_offset_px": 1.41
+        },
+        {
+          "station_id": 205,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 206,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 207,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 208,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 209,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 210,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 211,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 212,
+          "seed_offset_px": 0.0
+        }
+      ]
+    },
+    {
+      "line_id": 11,
+      "name": "10号线",
+      "svg_color": "7492B4",
+      "edges": 11,
+      "stations": 12,
+      "seed_projection": [
+        {
+          "station_id": 1,
+          "seed_offset_px": 18.97
+        },
+        {
+          "station_id": 213,
+          "seed_offset_px": 7.0
+        },
+        {
+          "station_id": 214,
+          "seed_offset_px": 7.0
+        },
+        {
+          "station_id": 215,
+          "seed_offset_px": 7.0
+        },
+        {
+          "station_id": 216,
+          "seed_offset_px": 7.0
+        },
+        {
+          "station_id": 39,
+          "seed_offset_px": 8.0
+        },
+        {
+          "station_id": 217,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 218,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 219,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 150,
+          "seed_offset_px": 17.0
+        },
+        {
+          "station_id": 118,
+          "seed_offset_px": 0.24
+        },
+        {
+          "station_id": 220,
+          "seed_offset_px": 0.0
+        }
+      ]
+    },
+    {
+      "line_id": 12,
+      "name": "11号线",
+      "svg_color": "EDB700",
+      "edges": 30,
+      "stations": 30,
+      "seed_projection": [
+        {
+          "station_id": 221,
+          "seed_offset_px": 8.0
+        },
+        {
+          "station_id": 222,
+          "seed_offset_px": 4.95
+        },
+        {
+          "station_id": 202,
+          "seed_offset_px": 5.66
+        },
+        {
+          "station_id": 121,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 223,
+          "seed_offset_px": 8.49
+        },
+        {
+          "station_id": 224,
+          "seed_offset_px": 0.71
+        },
+        {
+          "station_id": 72,
+          "seed_offset_px": 8.49
+        },
+        {
+          "station_id": 225,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 16,
+          "seed_offset_px": 9.0
+        },
+        {
+          "station_id": 147,
+          "seed_offset_px": 8.0
+        },
+        {
+          "station_id": 226,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 227,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 228,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 229,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 230,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 190,
+          "seed_offset_px": 4.95
+        },
+        {
+          "station_id": 111,
+          "seed_offset_px": 6.36
+        },
+        {
+          "station_id": 155,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 231,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 4,
+          "seed_offset_px": 2.12
+        },
+        {
+          "station_id": 232,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 233,
+          "seed_offset_px": 12.02
+        },
+        {
+          "station_id": 234,
+          "seed_offset_px": 0.16
+        },
+        {
+          "station_id": 235,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 236,
+          "seed_offset_px": 9.0
+        },
+        {
+          "station_id": 40,
+          "seed_offset_px": 9.0
+        },
+        {
+          "station_id": 217,
+          "seed_offset_px": 9.0
+        },
+        {
+          "station_id": 237,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 238,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 66,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 221,
+          "seed_offset_px": 8.0
+        }
+      ]
+    },
+    {
+      "line_id": 13,
+      "name": "12号线",
+      "svg_color": "50580D",
+      "edges": 16,
+      "stations": 18,
+      "seed_projection": [
+        {
+          "station_id": 159,
+          "seed_offset_px": 8.0
+        },
+        {
+          "station_id": 239,
+          "seed_offset_px": 6.77
+        },
+        {
+          "station_id": 240,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 186,
+          "seed_offset_px": 8.0
+        },
+        {
+          "station_id": 241,
+          "seed_offset_px": 2.83
+        },
+        {
+          "station_id": 242,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 243,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 51,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 244,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 245,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 246,
+          "seed_offset_px": 0.71
+        },
+        {
+          "station_id": 199,
+          "seed_offset_px": 2.83
+        },
+        {
+          "station_id": 247,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 222,
+          "seed_offset_px": 10.0
+        },
+        {
+          "station_id": 248,
+          "seed_offset_px": 5.66
+        },
+        {
+          "station_id": 91,
+          "seed_offset_px": 24.75
+        },
+        {
+          "station_id": 92,
+          "seed_offset_px": 24.75
+        },
+        {
+          "station_id": 93,
+          "seed_offset_px": 9.0
+        }
+      ]
+    },
+    {
+      "line_id": 14,
+      "name": "13号线",
+      "svg_color": "8E8907",
+      "edges": 14,
+      "stations": 15,
+      "seed_projection": [
+        {
+          "station_id": 223,
+          "seed_offset_px": 9.0
+        },
+        {
+          "station_id": 249,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 88,
+          "seed_offset_px": 9.0
+        },
+        {
+          "station_id": 250,
+          "seed_offset_px": 8.49
+        },
+        {
+          "station_id": 125,
+          "seed_offset_px": 10.61
+        },
+        {
+          "station_id": 165,
+          "seed_offset_px": 12.73
+        },
+        {
+          "station_id": 251,
+          "seed_offset_px": 6.36
+        },
+        {
+          "station_id": 252,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 131,
+          "seed_offset_px": 0.71
+        },
+        {
+          "station_id": 253,
+          "seed_offset_px": 1.41
+        },
+        {
+          "station_id": 254,
+          "seed_offset_px": 1.41
+        },
+        {
+          "station_id": 255,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 256,
+          "seed_offset_px": 0.71
+        },
+        {
+          "station_id": 257,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 258,
+          "seed_offset_px": 0.0
+        }
+      ]
+    },
+    {
+      "line_id": 15,
+      "name": "14号线",
+      "svg_color": "7B271C",
+      "edges": 19,
+      "stations": 20,
+      "seed_projection": [
+        {
+          "station_id": 259,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 260,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 243,
+          "seed_offset_px": 0.71
+        },
+        {
+          "station_id": 261,
+          "seed_offset_px": 0.71
+        },
+        {
+          "station_id": 262,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 263,
+          "seed_offset_px": 0.71
+        },
+        {
+          "station_id": 264,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 55,
+          "seed_offset_px": 9.0
+        },
+        {
+          "station_id": 265,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 266,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 267,
+          "seed_offset_px": 0.1
+        },
+        {
+          "station_id": 268,
+          "seed_offset_px": 1.21
+        },
+        {
+          "station_id": 269,
+          "seed_offset_px": 0.43
+        },
+        {
+          "station_id": 270,
+          "seed_offset_px": 0.35
+        },
+        {
+          "station_id": 271,
+          "seed_offset_px": 0.28
+        },
+        {
+          "station_id": 272,
+          "seed_offset_px": 0.19
+        },
+        {
+          "station_id": 273,
+          "seed_offset_px": 0.14
+        },
+        {
+          "station_id": 274,
+          "seed_offset_px": 0.1
+        },
+        {
+          "station_id": 275,
+          "seed_offset_px": 0.75
+        },
+        {
+          "station_id": 276,
+          "seed_offset_px": 0.0
+        }
+      ]
+    },
+    {
+      "line_id": 16,
+      "name": "14号线支线",
+      "svg_color": "7D291E",
+      "edges": 9,
+      "stations": 10,
+      "seed_projection": [
+        {
+          "station_id": 271,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 277,
+          "seed_offset_px": 0.71
+        },
+        {
+          "station_id": 278,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 279,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 280,
+          "seed_offset_px": 0.71
+        },
+        {
+          "station_id": 281,
+          "seed_offset_px": 0.71
+        },
+        {
+          "station_id": 282,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 283,
+          "seed_offset_px": 0.71
+        },
+        {
+          "station_id": 284,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 285,
+          "seed_offset_px": 0.0
+        }
+      ]
+    },
+    {
+      "line_id": 17,
+      "name": "18号线",
+      "svg_color": "0048AC",
+      "edges": 7,
+      "stations": 8,
+      "seed_projection": [
+        {
+          "station_id": 286,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 200,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 221,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 287,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 170,
+          "seed_offset_px": 6.36
+        },
+        {
+          "station_id": 60,
+          "seed_offset_px": 4.95
+        },
+        {
+          "station_id": 288,
+          "seed_offset_px": 6.36
+        },
+        {
+          "station_id": 289,
+          "seed_offset_px": 0.0
+        }
+      ]
+    },
+    {
+      "line_id": 18,
+      "name": "21号线",
+      "svg_color": "140F4F",
+      "edges": 19,
+      "stations": 20,
+      "seed_projection": [
+        {
+          "station_id": 223,
+          "seed_offset_px": 20.12
+        },
+        {
+          "station_id": 290,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 87,
+          "seed_offset_px": 9.0
+        },
+        {
+          "station_id": 291,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 292,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 293,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 294,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 137,
+          "seed_offset_px": 0.71
+        },
+        {
+          "station_id": 161,
+          "seed_offset_px": 4.24
+        },
+        {
+          "station_id": 295,
+          "seed_offset_px": 0.71
+        },
+        {
+          "station_id": 296,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 297,
+          "seed_offset_px": 0.71
+        },
+        {
+          "station_id": 285,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 298,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 299,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 300,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 301,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 302,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 303,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 304,
+          "seed_offset_px": 0.0
+        }
+      ]
+    },
+    {
+      "line_id": 19,
+      "name": "22号线",
+      "svg_color": "D35429",
+      "edges": 7,
+      "stations": 8,
+      "seed_projection": [
+        {
+          "station_id": 4,
+          "seed_offset_px": 17.46
+        },
+        {
+          "station_id": 1,
+          "seed_offset_px": 2.12
+        },
+        {
+          "station_id": 305,
+          "seed_offset_px": 4.95
+        },
+        {
+          "station_id": 306,
+          "seed_offset_px": 4.95
+        },
+        {
+          "station_id": 307,
+          "seed_offset_px": 4.24
+        },
+        {
+          "station_id": 17,
+          "seed_offset_px": 8.0
+        },
+        {
+          "station_id": 308,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 60,
+          "seed_offset_px": 9.0
+        }
+      ]
+    },
+    {
+      "line_id": 20,
+      "name": "广佛线",
+      "svg_color": "C8D61F",
+      "edges": 24,
+      "stations": 25,
+      "seed_projection": [
+        {
+          "station_id": 65,
+          "seed_offset_px": 9.0
+        },
+        {
+          "station_id": 38,
+          "seed_offset_px": 9.0
+        },
+        {
+          "station_id": 309,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 236,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 194,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 233,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 310,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 1,
+          "seed_offset_px": 4.0
+        },
+        {
+          "station_id": 311,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 312,
+          "seed_offset_px": 1.32
+        },
+        {
+          "station_id": 313,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 314,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 315,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 316,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 317,
+          "seed_offset_px": 7.0
+        },
+        {
+          "station_id": 318,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 319,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 320,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 321,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 322,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 26,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 323,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 324,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 325,
+          "seed_offset_px": 9.0
+        },
+        {
+          "station_id": 326,
+          "seed_offset_px": 0.0
+        }
+      ]
+    },
+    {
+      "line_id": 21,
+      "name": "佛山3号线",
+      "svg_color": "0038A6",
+      "edges": 33,
+      "stations": 35,
+      "seed_projection": [
+        {
+          "station_id": 327,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 328,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 329,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 330,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 331,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 332,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 333,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 334,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 335,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 336,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 337,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 179,
+          "seed_offset_px": 9.0
+        },
+        {
+          "station_id": 338,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 339,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 340,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 341,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 342,
+          "seed_offset_px": 5.66
+        },
+        {
+          "station_id": 325,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 24,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 343,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 344,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 345,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 317,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 346,
+          "seed_offset_px": 0.71
+        },
+        {
+          "station_id": 347,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 348,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 349,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 350,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 351,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 352,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 353,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 354,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 355,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 356,
+          "seed_offset_px": 0.0
+        },
+        {
+          "station_id": 357,
+          "seed_offset_px": 0.0
+        }
+      ]
+    }
+  ],
+  "station_count": 357,
+  "edge_count": 421,
+  "line_count": 21,
+  "skipped_edges": [
+    [
+      "佛山3号线",
+      "中山公园",
+      "敦厚"
+    ],
+    [
+      "佛山3号线",
+      "敦厚",
+      "佛山站"
+    ],
+    [
+      "佛山3号线",
+      "佛山站",
+      "联和"
+    ]
+  ],
+  "svg_sha256": "84558e1d4fce94a1da0999f396bcde0c093780c6530cdfec8895b0d7051f8f2f"
+}
