@@ -11,7 +11,7 @@
  * 线路被删除时其区间边须级联删除（由 ui 层负责），否则图上残留幽灵区间。
  */
 
-#define LINE_NAME_MAX 16
+#define LINE_NAME_MAX 64
 #define LINE_EN_MAX   32
 
 /* Line —— 地铁线路；id 为主键，station_ids 为该线有序站序 */

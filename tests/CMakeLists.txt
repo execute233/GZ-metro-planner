@@ -41,3 +41,10 @@ add_executable(test_ui test_ui.c
     ../src/render/render.c ../src/ui/ui.c)
 target_include_directories(test_ui PRIVATE ../src)
 add_test(NAME ui COMMAND test_ui)
+
+add_executable(test_map test_map.c
+    ../src/adt/station.c ../src/adt/line.c ../src/adt/edge.c
+    ../src/algo/graph.c ../src/algo/router.c)
+target_link_libraries(test_map PRIVATE gzmp_map)
+target_compile_options(test_map PRIVATE -Wall -Wextra -Wpedantic)
+add_test(NAME map COMMAND test_map "${PROJECT_SOURCE_DIR}/data/metro.mbtiles")
