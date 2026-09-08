@@ -4,23 +4,25 @@
 #include "arraylist.h"
 
 /*
- * line —— 线路表（对应 data/lines.csv）
+ * line —— 线路表（对应 SQLite 的 lines 表）
  *
- * 一条线路 = 线路元信息 + 有序站序 station_ids（外键 → stations.id）。
- * station_ids 的"顺序"是该线的行驶方向，渲染按此输出、图的边按相邻对构建。
+ * 一条线路 = 线路元信息 + 站点成员 station_ids（外键 → stations.id）。
+ * 读取时由 edges 推导成员；拓扑以 edges 为准，可含分支与断开的区段。
+ * 新增线路时 UI 临时使用 station_ids 收集站序并创建相邻区间。
  * 线路被删除时其区间边须级联删除（由 ui 层负责），否则图上残留幽灵区间。
  */
 
 #define LINE_NAME_MAX 64
 #define LINE_EN_MAX   32
 
-/* Line —— 地铁线路；id 为主键，station_ids 为该线有序站序 */
+/* Line —— 地铁线路；id 为主键，station_ids 为该线站点成员 */
 typedef struct {
     int  id;                        /* 线路主键，外键引用依据 */
     char name[LINE_NAME_MAX];       /* 线路名，如 "1号线" */
     char en_name[LINE_EN_MAX];      /* 线路英文名 */
     int  color;                     /* ANSI 前景色号，渲染用 */
-    ArrayList_Int station_ids;      /* 有序站序（外键 → stations.id） */
+    ArrayList_Int station_ids;      /* 站点成员（外键 → stations.id） */
+    unsigned rgb;                  /* 地图线路色，0xRRGGBB */
 } Line;
 
 DEFINE_ARRAYLIST(Line, Line, line)

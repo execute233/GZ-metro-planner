@@ -14,5 +14,7 @@ typedef struct {
  * out must be zero-initialized or contain a previous decode result.
  * On failure out is empty. Caller owns out and must dispose it. */
 int mvt_decode(const uint8_t *bytes, size_t size, int z, int x, int y, MapSegments *out);
+/* Accept gzip-compressed or raw tile bytes. */
+int mvt_decode_blob(const uint8_t *bytes, size_t size, int z, int x, int y, MapSegments *out);
 void mvt_dispose(MapSegments *segments);
 #endif

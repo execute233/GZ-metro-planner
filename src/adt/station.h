@@ -4,7 +4,7 @@
 #include "arraylist.h"
 
 /*
- * station —— 站点表（对应 data/stations.csv）
+ * station —— 站点表（对应 SQLite 的 stations 表）
  *
  * 站点是地铁网络的最小节点。id 为全局主键：
  *   - 跨文件稳定：被线路站序与边引用，删除后不重用（见 station_next_id）；
@@ -23,6 +23,9 @@ typedef struct {
     char name[STATION_NAME_MAX];    /* 中文站名，同名判定换乘的唯一依据 */
     char pinyin_name[STATION_PINYIN_MAX]; /* 全拼，预留拼音搜索 */
     char en_name[STATION_EN_MAX];   /* 英文名 */
+    double x, y;                   /* 4096×4096 示意图坐标 */
+    char initials[STATION_PINYIN_MAX]; /* 搜索首字母 */
+    int transfer;                  /* 是否属于多条线路 */
 } Station;
 
 DEFINE_ARRAYLIST(Station, Station, station)

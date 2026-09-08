@@ -4,7 +4,7 @@
 #include "arraylist.h"
 
 /*
- * edge —— 区间边表（对应 data/edges.csv）
+ * edge —— 区间边表（对应 SQLite 的 edges 表）
  *
  * 一条边 = 某条线路上两个相邻车站之间的区间，承担双重职责：
  *   1. 数据层：记录区间运行时长与里程（未来票价按里程计算）；

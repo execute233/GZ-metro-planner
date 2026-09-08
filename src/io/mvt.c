@@ -2,6 +2,7 @@
 #include <limits.h>
 #include <stdlib.h>
 #include <string.h>
+#include <zlib.h>
 
 typedef struct {
     const uint8_t *p, *end;
@@ -194,4 +195,28 @@ int mvt_decode(const uint8_t *bytes, size_t size, int z, int x, int y, MapSegmen
         return -1;
     }
     return 0;
+}
+
+int mvt_decode_blob(const uint8_t *bytes, size_t size, int z, int x, int y, MapSegments *out) {
+    mvt_dispose(out);
+    if (!bytes || !size || size > 4 * 1024 * 1024)
+        return -1;
+    if (size < 2 || bytes[0] != 31 || bytes[1] != 139)
+        return mvt_decode(bytes, size, z, x, y, out);
+    uint8_t *raw = malloc(4 * 1024 * 1024);
+    if (!raw)
+        return -1;
+    z_stream stream = {0};
+    stream.next_in = (Bytef *)bytes;
+    stream.avail_in = (unsigned)size;
+    stream.next_out = raw;
+    stream.avail_out = 4 * 1024 * 1024;
+    int result = -1;
+    if (inflateInit2(&stream, 31) == Z_OK) {
+        if (inflate(&stream, Z_FINISH) == Z_STREAM_END && !stream.avail_in)
+            result = mvt_decode(raw, stream.total_out, z, x, y, out);
+        inflateEnd(&stream);
+    }
+    free(raw);
+    return result;
 }

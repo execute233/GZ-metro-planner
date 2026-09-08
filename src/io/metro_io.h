@@ -1,24 +1,21 @@
 #ifndef GZMP_IO_METRO_IO_H
 #define GZMP_IO_METRO_IO_H
-
 #include <stddef.h>
+#include <sqlite3.h>
 #include "../metro.h"
 
-/*
- * metro_io —— CSV 持久化层（接口定义）
- *
- * 数据文件：data/ 下 stations.csv、lines.csv、edges.csv（UTF-8 无 BOM）。
- * 载入（load）= 读文件 + 解析 + metro_io_validate 一致性校验，任一失败返回 -1；
- * 保存（save）= 三表写回三个 CSV。
- * 实现见 metro_io.c。
- */
+#define METRO_STATION_LIMIT 4096
+#define METRO_LINE_LIMIT 128
+#define METRO_EDGE_LIMIT (METRO_STATION_LIMIT * 4)
 
-/* 从 data_dir 读取三个 CSV 载入内存表，返回 0 成功 / -1 失败 */
-int metro_io_load(const char *data_dir, Metro *metro);
-/* 把三表写回 data_dir 的三个 CSV，返回 0 成功 / -1 失败 */
-int metro_io_save(const char *data_dir, const Metro *metro);
-/* 校验三表一致性：id 唯一、引用存在、边与站序一致、cost_meters > 0；
- * 返回 0 通过 / -1 不通过，错误详情写入 errbuf（需 errbuf_size 空间） */
+/* Accept a data directory or an explicit .mbtiles path. */
+int metro_io_path(const char *arg, char *path, size_t capacity);
+/* SQLite is the sole runtime data source. metro must be initialized; failed
+ * loads leave it unchanged. Successful loads replace and release old tables. */
+int metro_io_load(const char *data_path, Metro *metro);
+int metro_io_load_db(sqlite3 *db, Metro *metro);
+/* Save to an existing GZMP database. Model and affected map tiles commit in one
+ * transaction; failure leaves the database unchanged. */
+int metro_io_save(const char *data_path, const Metro *metro);
 int metro_io_validate(const Metro *metro, char *errbuf, size_t errbuf_size);
-
 #endif

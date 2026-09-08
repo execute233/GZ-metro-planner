@@ -44,6 +44,7 @@ cmake -S . -B cmake-build-debug -G Ninja -DGZMP_PDCURSES_SOURCE_DIR='E:/deps/PDC
 | 全网总览 / 适配路线 | R / F |
 | 交换起终点 / 清除路线 | X / C |
 | 滚动行程 | PgUp / PgDn |
+| 维护站点和线路 | 地图中 M，Esc 取消并返回 |
 | 退出 | 地图中 Q；任意位置 Ctrl+C |
 
 确认起终点后自动规划，改变目标后自动重算。输入文字时不触发地图快捷键。总览只显示轮廓；放大后先显示换乘站标签，再显示普通站名，重叠标签会避让。起终点使用 `@` 标记。
@@ -61,9 +62,9 @@ cmake -S . -B cmake-build-debug -G Ninja -DGZMP_PDCURSES_SOURCE_DIR='E:/deps/PDC
 
 ## 校对与重新生成
 
-`data/source/network.json` 是可编辑的源数据：站点、拼音、坐标、线路色、区间端点、折线和权重都在其中。修改区间的 `meters`、`seconds` 后重新生成 MBTiles；不要修改瓦片二进制来调整权重。
+`data/source/network.json` 是离线导入素材，应用运行和维护不读取它：站点、拼音、坐标、线路色、区间端点、折线和权重都在其中。日常增删请使用地图内维护。直接修改 SQLite 的 `edges.seconds` / `edges.meters` 后重启可更新规划权重；不要修改瓦片二进制来调整权重。
 
-仅离线制图需要 Python。建议使用独立虚拟环境：
+重新导入会覆盖 SQLite 中的维护结果，请先备份数据库。仅离线制图需要 Python。建议使用独立虚拟环境：
 
 ```powershell
 python -m venv .venv-map
@@ -73,17 +74,23 @@ python -m venv .venv-map
 
 生成器使用 MVT v2、4096 extent、0～5 级缩放、gzip 压缩和 MBTiles TMS 行号；先生成临时数据库，通过完整性检查后替换目标。源数据变化后应关闭应用、重新生成并重启，确保缓存和规划数据一致。
 
-完整的重新提取流程为 `tools/ocr_map.py` → `tools/prepare_network.py --force` → `tools/build_mbtiles.py`。**重新提取会重建源数据并覆盖人工改动**；日常校对只修改 `network.json` 并运行最后一步。`station_overrides.json` 保存局部位置修正。
+完整的重新提取流程为 `tools/ocr_map.py` → `tools/prepare_network.py --force` → `tools/build_mbtiles.py`。**重新提取会重建源数据并覆盖人工改动**；仅在有意重新导入整个图集时修改 `network.json` 并运行最后一步。`station_overrides.json` 保存局部位置修正。
 
-MBTiles 增加 `stations`、`lines`、`edges` 表存放规划与搜索数据；标准地图软件可以读取其中的标准 `metadata` / `tiles`，本程序则要求 `gzmp_schema=1` 的应用数据。它不是通用的任意 MBTiles 查看器。
+MBTiles 增加 `stations`、`lines`、`edges` 表存放规划与搜索数据；标准地图软件可以读取其中的标准 `metadata` / `tiles`，本程序则要求 `gzmp_schema=2` 的应用数据。它不是通用的任意 MBTiles 查看器。
 
-## 旧文本入口
+## 地图内维护
 
-```powershell
-./cmake-build-debug/GZ_metro_planner.exe --text data
-```
+`data/metro.mbtiles`（SQLite）是应用唯一的数据源。旧独立文字模式及 CSV 数据文件已移除。
 
-旧菜单与站线维护保留，读取原有三份 CSV 示例数据。**该入口与新地图图集的数据独立**，修改旧 CSV 不会修改全网地图。全网初版通过上述源数据流程校对；尚未提供全网几何编辑器。
+在地图焦点下按 **M**，选择添加/删除站点或添加/删除线路。表单中按 Enter 进入下一步，最终输入 `y` 保存，`n` 返回维护菜单；Esc 丢弃尚未保存的表单并回到地图。
+
+- 新站点填写名称、全拼、首字母、可选英文名和 0–4096 范围的示意图坐标。面板显示进入维护前的地图中心坐标供参考。
+- 新线路填写名称、六位 RGB 颜色，依次输入已有站点的完整名称，空行结束；随后逐段填写秒数和米数。
+- 已被区间引用的站点不能直接删除。删除线路会一并删除它的全部区间。
+- 保存用同一个 SQLite 事务更新三张业务表、换乘标记和受影响瓦片。失败时数据库不变；成功后刷新地图并清除旧路线。新增区间以两站间直线绘制，原有线路折线保留。
+- 维护支持本项目生成器的 0–5 级瓦片。使用单个应用实例维护同一图集；其他已打开的实例需重启才能载入新数据。
+
+旧版图集可以在关闭应用后执行 `python tools/migrate_mbtiles.py path/to/map.mbtiles` 升级；这只增加维护字段并更新版本，保留原有站线、坐标、权重和瓦片。
 
 ## 验证和预览
 

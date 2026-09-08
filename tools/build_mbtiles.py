@@ -32,8 +32,8 @@ db.executescript("""
 CREATE TABLE metadata(name TEXT PRIMARY KEY,value TEXT NOT NULL);
 CREATE TABLE tiles(zoom_level INTEGER,tile_column INTEGER,tile_row INTEGER,tile_data BLOB,
 PRIMARY KEY(zoom_level,tile_column,tile_row));
-CREATE TABLE stations(id INTEGER PRIMARY KEY,name TEXT,pinyin TEXT,initials TEXT,x REAL,y REAL,transfer INTEGER);
-CREATE TABLE lines(id INTEGER PRIMARY KEY,name TEXT,color INTEGER);
+CREATE TABLE stations(id INTEGER PRIMARY KEY,name TEXT,pinyin TEXT,initials TEXT,x REAL,y REAL,transfer INTEGER,en_name TEXT NOT NULL DEFAULT '');
+CREATE TABLE lines(id INTEGER PRIMARY KEY,name TEXT,color INTEGER,en_name TEXT NOT NULL DEFAULT '',ansi_color INTEGER NOT NULL DEFAULT 37);
 CREATE TABLE edges(id INTEGER PRIMARY KEY,line_id INTEGER,from_id INTEGER,to_id INTEGER,seconds INTEGER,meters INTEGER);
 """)
 meta = {
@@ -45,7 +45,7 @@ meta = {
     "maxzoom": "5",
     "bounds": "-180,-85.05112878,180,85.05112878",
     "center": "0,0,0",
-    "gzmp_schema": "1",
+    "gzmp_schema": "2",
     "description": "Synthetic schematic coordinates; provisional 1000 m / 60 s per edge; "
     + d["status"],
     "json": json.dumps(
@@ -63,7 +63,7 @@ meta = {
 }
 db.executemany("INSERT INTO metadata VALUES(?,?)", meta.items())
 db.executemany(
-    "INSERT INTO stations VALUES(?,?,?,?,?,?,?)",
+    "INSERT INTO stations(id,name,pinyin,initials,x,y,transfer) VALUES(?,?,?,?,?,?,?)",
     [
         (
             s["id"],
@@ -78,7 +78,7 @@ db.executemany(
     ],
 )
 db.executemany(
-    "INSERT INTO lines VALUES(?,?,?)",
+    "INSERT INTO lines(id,name,color) VALUES(?,?,?)",
     [(l["id"], l["name"], int(l["color"], 16)) for l in d["lines"]],
 )
 db.executemany(

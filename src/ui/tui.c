@@ -17,14 +17,83 @@ int tui_init(TuiState *s, MapDb *m, int w, int h) {
     route_init(&s->route);
     if (graph_build(&s->graph, &m->metro))
         return -1;
+    s->view = (Viewport){.x = 2048, .y = 2048, .scale = .05};
     viewport_fit(&s->view, m, NULL, map_width(w), h - 3);
     snprintf(s->status, sizeof(s->status), "每区间暂定 1000m / 60s；数据待人工校对");
     tui_search(s);
     return 0;
 }
 void tui_dispose(TuiState *s) {
+    maintenance_close(&s->edit);
     route_dispose(&s->route);
     graph_dispose(&s->graph);
+}
+
+int tui_maintenance_submit(TuiState *s, const char *path, int width, int height) {
+    int result = maintenance_submit(&s->edit, &s->map->metro);
+    if (result != 1)
+        return result;
+    if (maintenance_save(&s->edit, path))
+        return -1;
+    MapDb *loaded = calloc(1, sizeof(*loaded));
+    TuiState next;
+    if (!loaded || map_db_open(loaded, path) || tui_init(&next, loaded, width, height)) {
+        if (loaded) {
+            map_db_close(loaded);
+            free(loaded);
+        }
+        maintenance_close(&s->edit);
+        snprintf(s->status, sizeof(s->status), "已保存；重新载入失败，请退出后重启");
+        return -1;
+    }
+    MapDb *map = s->map;
+    tui_dispose(s);
+    map_db_close(map);
+    *map = *loaded;
+    free(loaded);
+    next.map = map;
+    *s = next;
+    snprintf(s->status, sizeof(s->status), "已保存，地图已刷新；原路线已清除");
+    return 1;
+}
+
+static void maintenance_frame(TuiState *s, MapFrame *frame) {
+    Maintenance *edit = &s->edit;
+    int width = frame->width - 4;
+    char text[256];
+    frame_text(frame, 2, 0, width, "广州地铁 · 地图维护", 1, 0);
+    frame_text(frame, 2, 2, width, "1 添加站点  2 删除站点", 0, 0);
+    frame_text(frame, 2, 3, width, "3 添加线路  4 删除线路及区间", 0, 0);
+    frame_text(frame, 2, 5, width, maintenance_prompt(edit), 1, 0);
+    snprintf(text, sizeof(text), "> %s_", edit->input);
+    frame_text(frame, 2, 6, width, text, 0, 0);
+    if (edit->action == 1 || edit->action == 2) {
+        snprintf(text, sizeof(text), "站点：%s", edit->station.name);
+        frame_text(frame, 2, 8, width, text, 0, 0);
+        if (edit->confirm) {
+            snprintf(text, sizeof(text), "坐标：%.1f,%.1f", edit->station.x, edit->station.y);
+            frame_text(frame, 2, 9, width, text, 0, 1);
+        } else {
+            snprintf(text, sizeof(text), "当前地图中心：%.0f,%.0f", s->view.x, s->view.y);
+            frame_text(frame, 2, 9, width, text, 0, 1);
+        }
+    } else if (edit->action == 3 || edit->action == 4) {
+        snprintf(text, sizeof(text), "线路：%s", edit->line.name);
+        frame_text(frame, 2, 8, width, text, 0, 0);
+        if (edit->action == 3 && edit->step == 3 && !edit->confirm) {
+            snprintf(text, sizeof(text), "%s → %s", name(s, edit->line.station_ids.items[edit->interval]),
+                     name(s, edit->line.station_ids.items[edit->interval + 1]));
+        } else if (edit->action == 3) {
+            snprintf(text, sizeof(text), "%zu 个站点，%zu 个区间；颜色 #%06X",
+                     edit->line.station_ids.size, edit->edges.rows.size, edit->line.rgb);
+        } else {
+            snprintf(text, sizeof(text), "保存后删除这条线路的全部区间");
+        }
+        frame_text(frame, 2, 9, width, text, 0, 1);
+    }
+    frame_text(frame, 2, 11, width, "新增区间以两站间直线绘制", 0, 1);
+    frame_text(frame, 2, frame->height - 3, width, edit->message, 1, 0);
+    frame_text(frame, 2, frame->height - 1, width, "Enter 下一步/确认  Esc 取消并返回地图", 0, 0);
 }
 void tui_search(TuiState *s) {
     char query[128];
@@ -138,6 +207,10 @@ void tui_frame(TuiState *s, MapFrame *f) {
         frame_text(f, 0, 0, w, "窗口至少需要 50×16；Q 退出", 0, 0);
         return;
     }
+    if (s->edit.active) {
+        maintenance_frame(s, f);
+        return;
+    }
     int mw = map_width(w), mh = h - 3;
     int compact = w < 90 && s->focus != 0;
     if (!compact) {
@@ -157,7 +230,7 @@ void tui_frame(TuiState *s, MapFrame *f) {
         frame_glyph(f, x, h - 3, 0x2500, 0, 0);
     frame_text(f, 0, h - 2, w,
                s->focus == 0
-                   ? "Tab 搜索  WASD/方向键 平移  +/- 缩放  R 全图  F 路线  X 交换  Q 退出"
+                   ? "M 维护  Tab 搜索  WASD 平移  +/- 缩放  R 全图  F 路线  X 交换  Q 退出"
                    : "Tab 焦点  ↑↓ 候选  Enter 确认  Esc 地图  PgUp/PgDn 行程",
                0, 0);
     frame_text(f, 0, h - 1, w, s->status, 0, 1);

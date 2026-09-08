@@ -6,6 +6,7 @@ set_property(TARGET gzmp_sqlite PROPERTY C_STANDARD 17)
 add_library(gzmp_zlib STATIC
     third_party/zlib/adler32.c third_party/zlib/crc32.c
     third_party/zlib/inflate.c third_party/zlib/inftrees.c
-    third_party/zlib/inffast.c third_party/zlib/zutil.c)
+    third_party/zlib/inffast.c third_party/zlib/zutil.c
+    third_party/zlib/deflate.c third_party/zlib/trees.c)
 target_include_directories(gzmp_zlib SYSTEM PUBLIC third_party/zlib)
 set_property(TARGET gzmp_zlib PROPERTY C_STANDARD 17)

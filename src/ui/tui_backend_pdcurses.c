@@ -102,7 +102,7 @@ int tui_run(const char *path) {
     HANDLE input = GetStdHandle(STD_INPUT_HANDLE), output = GetStdHandle(STD_OUTPUT_HANDLE);
     DWORD imode, omode;
     if (!GetConsoleMode(input, &imode) || !GetConsoleMode(output, &omode)) {
-        fprintf(stderr, "地图模式需要交互式终端；使用 --text data 进入文本模式。\n");
+        fprintf(stderr, "地图模式需要交互式终端；可使用 --snapshot 导出地图快照。\n");
         map_db_close(db);
         free(db);
         return -1;
@@ -155,6 +155,27 @@ int tui_run(const char *path) {
         dirty = 1;
         if ((w < 50 || h < 16) && (key == 'q' || key == 'Q'))
             break;
+        if (w < 50 || h < 16)
+            continue;
+        if (s.edit.active) {
+            if (key == 27) {
+                maintenance_close(&s.edit);
+            } else if (key == '\n' || key == '\r' || key == KEY_ENTER) {
+                if (tui_maintenance_submit(&s, path, w, h) == 1)
+                    colors(db);
+            } else if (key == KEY_BACKSPACE || key == 127 || key == 8) {
+                size_t n = strlen(s.edit.input);
+                if (n) {
+                    n--;
+                    while (n && ((unsigned char)s.edit.input[n] & 0xc0) == 0x80)
+                        n--;
+                    s.edit.input[n] = 0;
+                }
+            } else if (kind != KEY_CODE_YES) {
+                append_utf8(s.edit.input, sizeof(s.edit.input), (unsigned)key);
+            }
+            continue;
+        }
         if (key == 27) {
             focus(&s, 0);
             continue;
@@ -223,6 +244,10 @@ int tui_run(const char *path) {
             break;
         if (key == '/') {
             focus(&s, 1);
+            continue;
+        }
+        if (key == 'm' || key == 'M') {
+            s.edit.active = 1;
             continue;
         }
         if (key == KEY_LEFT || key == 'a')
