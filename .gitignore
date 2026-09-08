@@ -2,3 +2,5 @@
 cmake-build-*/
 metroshell/
 docs/superpowers/
+.venv-map/
+__pycache__/
