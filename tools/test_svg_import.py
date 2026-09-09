@@ -55,7 +55,7 @@ class SvgImportTests(unittest.TestCase):
         with tempfile.TemporaryDirectory(prefix="gzmp-import-") as directory:
             path = Path(directory) / "map.mbtiles"
             with (
-                connection(ROOT / "data/metro.mbtiles") as source,
+                connection(ROOT / "metro.mbtiles") as source,
                 connection(path) as target,
             ):
                 source.backup(target)

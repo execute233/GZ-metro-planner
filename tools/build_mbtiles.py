@@ -12,7 +12,7 @@ from map_tiles import encode_tiles
 
 ROOT = Path(__file__).resolve().parents[1]
 src = Path(sys.argv[1]) if len(sys.argv) > 1 else ROOT / "data/source/network.json"
-out = Path(sys.argv[2]) if len(sys.argv) > 2 else ROOT / "data/metro.mbtiles"
+out = Path(sys.argv[2]) if len(sys.argv) > 2 else ROOT / "metro.mbtiles"
 d = json.loads(src.read_text(encoding="utf8"))
 ids = {s["id"] for s in d["stations"]}
 lids = {l["id"] for l in d["lines"]}

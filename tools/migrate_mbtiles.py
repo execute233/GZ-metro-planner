@@ -7,7 +7,7 @@ import sqlite3
 import sys
 from pathlib import Path
 
-path = Path(sys.argv[1]) if len(sys.argv) > 1 else Path(__file__).resolve().parents[1] / "data/metro.mbtiles"
+path = Path(sys.argv[1]) if len(sys.argv) > 1 else Path(__file__).resolve().parents[1] / "metro.mbtiles"
 with sqlite3.connect(path.resolve().as_uri() + "?mode=rw", uri=True) as db:
     db.execute("BEGIN IMMEDIATE")
     version = db.execute("SELECT value FROM metadata WHERE name='gzmp_schema'").fetchone()

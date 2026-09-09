@@ -30,10 +30,17 @@ add_executable(test_map test_map.c
     ../src/algo/graph.c ../src/algo/router.c)
 target_link_libraries(test_map PRIVATE gzmp_map)
 target_compile_options(test_map PRIVATE -Wall -Wextra -Wpedantic)
-add_test(NAME map COMMAND test_map "${PROJECT_SOURCE_DIR}/data/metro.mbtiles")
+add_test(NAME map COMMAND test_map "${PROJECT_SOURCE_DIR}/metro.mbtiles")
 
 add_executable(test_maintenance test_maintenance.c
     ../src/adt/station.c ../src/adt/line.c ../src/adt/edge.c
     ../src/algo/graph.c ../src/algo/router.c)
 target_link_libraries(test_maintenance PRIVATE gzmp_map)
-add_test(NAME maintenance COMMAND test_maintenance "${PROJECT_SOURCE_DIR}/data/metro.mbtiles")
+add_test(NAME maintenance COMMAND test_maintenance "${PROJECT_SOURCE_DIR}/metro.mbtiles")
+
+add_test(NAME packaged_app COMMAND "${CMAKE_COMMAND}"
+    "-DAPP=$<TARGET_FILE:GZ_metro_planner>"
+    "-DSOURCE_ATLAS=${PROJECT_SOURCE_DIR}/metro.mbtiles"
+    "-DTEST_ROOT=${CMAKE_CURRENT_BINARY_DIR}"
+    "-DBUNDLED=${GZMP_RELEASE_BUNDLE}"
+    -P "${CMAKE_CURRENT_SOURCE_DIR}/test_packaged_app.cmake")

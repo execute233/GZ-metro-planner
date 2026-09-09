@@ -2,7 +2,7 @@
 
 ## Project Structure & Module Organization
 
-This is a C23 command-line Guangzhou Metro route planner. `src/main.c` starts the map UI or exports a snapshot. Code is layered under `src/`: `adt/` owns station, line, edge, and array-list data structures; `io/` reads, validates, and transactionally saves SQLite data and map tiles; `algo/` builds the graph and calculates routes; `render/` formats terminal output; and `ui/` handles menus and input. Runtime fixtures live in `data/`. Each module has a matching standalone test in `tests/test_<module>.c`. Design decisions and implementation plans are in `docs/superpowers/`.
+This is a C23 command-line Guangzhou Metro route planner. `src/main.c` starts the map UI or exports a snapshot. Code is layered under `src/`: `adt/` owns station, line, edge, and array-list data structures; `io/` reads, validates, and transactionally saves SQLite data and map tiles; `algo/` builds the graph and calculates routes; `render/` formats terminal output; and `ui/` handles menus and input. The authoritative atlas is `metro.mbtiles` at the project root; source artwork lives in `data/`. Each module has a matching standalone test in `tests/test_<module>.c`. Design decisions and implementation plans are in `docs/superpowers/`.
 
 ## Build, Test, and Development Commands
 
@@ -12,16 +12,16 @@ Use CMake 4.0+, a C23-capable GCC toolchain, and Ninja on Windows:
 cmake -S . -B cmake-build-debug -G Ninja
 cmake --build cmake-build-debug
 ctest --test-dir cmake-build-debug --output-on-failure
-./cmake-build-debug/GZ_metro_planner.exe data
+./cmake-build-debug/GZ_metro_planner.exe
 ```
 
-The first command configures the build, the second compiles the application and tests, and the third runs all CTest targets. The executable accepts an optional data-directory argument; omit `data` to use the same default.
+The first command configures the build, the second compiles the application and tests, and the third runs all CTest targets. The executable reads metro.mbtiles beside the EXE without a path argument. Non-bundled builds copy the project-root atlas into the build directory.
 
 ## Coding Style & Naming Conventions
 
 Follow the existing C style: four-space indentation, opening braces on the declaration line, and short, single-purpose functions. Use `snake_case` for functions and variables, `PascalCase` for structs and enums, and `UPPER_SNAKE_CASE` for macros/constants. Keep public declarations in `.h` files and implementation details `static` in `.c` files. Preserve the current dependency direction: `adt` → `io`/`algo` → `render`/`ui` → `main`.
 
-All source and text files must be UTF-8 without BOM. Do not truncate Chinese text by byte index; use the repository's UTF-8-aware display helpers. The sole runtime data source is `data/metro.mbtiles` (SQLite, gzmp_schema=2). Keep station, line, edge and tile updates atomic; synchronize schemas with the offline importer and migration tool. Do not reintroduce CSV or a standalone text mode.
+All source and text files must be UTF-8 without BOM. Do not truncate Chinese text by byte index; use the repository's UTF-8-aware display helpers. The sole runtime data source is `metro.mbtiles` beside the EXE (SQLite, gzmp_schema=2). Keep station, line, edge and tile updates atomic; synchronize schemas with the offline importer and migration tool. Do not reintroduce CSV or a standalone text mode.
 
 ## Testing Guidelines
 

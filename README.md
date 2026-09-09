@@ -10,7 +10,7 @@ C23 / Windows Terminal / PDCursesMod。地图由 SQLite 查询本地 MBTiles，�
 cmake -S . -B cmake-build-debug -G Ninja
 cmake --build cmake-build-debug
 ctest --test-dir cmake-build-debug --output-on-failure
-./cmake-build-debug/GZ_metro_planner.exe data
+./cmake-build-debug/GZ_metro_planner.exe
 ```
 
 推荐深色 Windows Terminal、支持中文的等宽字体、120×40 或更大窗口。背景与普通文字使用终端默认色，线路对深色背景做亮度调整。
@@ -20,20 +20,16 @@ ctest --test-dir cmake-build-debug --output-on-failure
 版本、下载来源、校验值和许可证记录见 [lib/README.md](lib/README.md)。
 旧的 `GZMP_PDCURSES_SOURCE_DIR` 配置不再使用；现有构建目录重新运行 CMake 即可切换到仓库内源码。
 
-也可以传入另一份由本项目工具生成的图集：
-
-```powershell
-./cmake-build-debug/GZ_metro_planner.exe data/metro.mbtiles
-```
+程序固定读取 EXE 同目录的 `metro.mbtiles`，无需路径参数，从其他工作目录启动也一样。非内嵌构建（包括 Debug）每次构建会将项目根目录的 `metro.mbtiles` 同步到 EXE 目录；构建会覆盖开发副本的修改，需保留的维护数据请先复制回项目根目录。
 
 ## 打包单文件分发包
 
-默认数据 `data/metro.mbtiles` 可编译进 exe，产出一个自包含、可直接发给他人运行的
-`GZ_metro_planner.exe`。首次运行会把内置地图释放到 exe 所在文件夹；若该目录不可写，
+默认数据 `metro.mbtiles` 可编译进 exe，产出一个自包含、可直接发给他人运行的
+`GZ_metro_planner.exe`。同目录地图缺失时会把内置地图完整释放到 exe 所在文件夹，已有地图始终保留；若该目录不可写，
 程序只报错并退出，不写入别处（地图内按 M 的维护变更也写回同一位置）。
 
 ```powershell
-cmake -S . -B cmake-build-release -G Ninja -DGZMP_RELEASE_BUNDLE=ON
+cmake -S . -B cmake-build-release -G Ninja -DCMAKE_BUILD_TYPE=Release -DGZMP_RELEASE_BUNDLE=ON
 cmake --build cmake-build-release --target GZ_metro_planner
 ```
 
@@ -98,7 +94,7 @@ SVG 导入额外写入可选 metadata：`svg_source_sha256` 和 `svg_label_side_
 
 ## 地图内维护
 
-`data/metro.mbtiles`（SQLite）是应用唯一的数据源。旧独立文字模式及 CSV 数据文件已移除。
+`metro.mbtiles`（SQLite）是应用唯一的数据源。旧独立文字模式及 CSV 数据文件已移除。
 
 在地图焦点下按 **M**，选择添加/删除站点或添加/删除线路。表单中按 Enter 进入下一步，最终输入 `y` 保存，`n` 返回维护菜单；Esc 丢弃尚未保存的表单并回到地图。
 
@@ -117,7 +113,7 @@ SVG 导入额外写入可选 metadata：`svg_source_sha256` 和 `svg_label_side_
 可导出 C 渲染器实际生成的字符帧，再离线预览：
 
 ```powershell
-./cmake-build-debug/GZ_metro_planner.exe --snapshot data/metro.mbtiles cmake-build-debug/route.json 140 48 tyxl gznz
+./cmake-build-debug/GZ_metro_planner.exe --snapshot cmake-build-debug/route.json 140 48 tyxl gznz
 python tools/preview_map.py cmake-build-debug/route.json
 ```
 

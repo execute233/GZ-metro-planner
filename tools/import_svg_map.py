@@ -198,7 +198,7 @@ def main():
     parser.add_argument(
         "--svg", type=Path, default=ROOT / "data/calibration/network-labeled.svg"
     )
-    parser.add_argument("--atlas", type=Path, default=ROOT / "data/metro.mbtiles")
+    parser.add_argument("--atlas", type=Path, default=ROOT / "metro.mbtiles")
     parser.add_argument(
         "--backup-dir", type=Path, default=ROOT / "output/svg-import-backups"
     )
