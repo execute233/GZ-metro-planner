@@ -22,5 +22,7 @@ add_executable(GZ_metro_planner
 )
 target_link_libraries(GZ_metro_planner PRIVATE gzmp_map gzmp_pdcurses)
 
+include(cmake/PackagedApp.cmake)
+
 enable_testing()
 add_subdirectory(tests)

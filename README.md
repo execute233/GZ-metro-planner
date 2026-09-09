@@ -4,7 +4,7 @@ C23 / Windows Terminal / PDCursesMod。地图由 SQLite 查询本地 MBTiles，�
 
 ## 构建与运行
 
-需要 CMake 4.0+、MinGW GCC、Ninja。SQLite 3.50.4 和 zlib 1.3.1 的 C 源码已随项目提供；首次配置会获取固定版本 PDCursesMod。
+需要 CMake 4.0+、MinGW GCC、Ninja。SQLite 3.50.4、zlib 1.3.1 和固定版本 PDCursesMod 的源码均已随项目保存在 `lib/`，直接编译并静态链接；首次配置也不需要联网下载、Git 或 Python。
 
 ```powershell
 cmake -S . -B cmake-build-debug -G Ninja
@@ -15,19 +15,29 @@ ctest --test-dir cmake-build-debug --output-on-failure
 
 推荐深色 Windows Terminal、支持中文的等宽字体、120×40 或更大窗口。背景与普通文字使用终端默认色，线路对深色背景做亮度调整。
 
-如果已准备 PDCursesMod 源码，可以离线配置：
-
-```powershell
-cmake -S . -B cmake-build-debug -G Ninja -DGZMP_PDCURSES_SOURCE_DIR='E:/deps/PDCursesMod'
-```
-
-固定提交：`520adbae06981c8eb9c0222bc582b6435329335e`。
+依赖目录为 `lib/sqlite/`、`lib/zlib/`、`lib/pdcursesmod/`。PDCursesMod 固定提交为
+`520adbae06981c8eb9c0222bc582b6435329335e`，构建只使用 C 核心和 WinCon 后端。
+版本、下载来源、校验值和许可证记录见 [lib/README.md](lib/README.md)。
+旧的 `GZMP_PDCURSES_SOURCE_DIR` 配置不再使用；现有构建目录重新运行 CMake 即可切换到仓库内源码。
 
 也可以传入另一份由本项目工具生成的图集：
 
 ```powershell
 ./cmake-build-debug/GZ_metro_planner.exe data/metro.mbtiles
 ```
+
+## 打包单文件分发包
+
+默认数据 `data/metro.mbtiles` 可编译进 exe，产出一个自包含、可直接发给他人运行的
+`GZ_metro_planner.exe`。首次运行会把内置地图释放到 exe 所在文件夹；若该目录不可写，
+程序只报错并退出，不写入别处（地图内按 M 的维护变更也写回同一位置）。
+
+```powershell
+cmake -S . -B cmake-build-release -G Ninja -DGZMP_RELEASE_BUNDLE=ON
+cmake --build cmake-build-release --target GZ_metro_planner
+```
+
+打包产物可以不带 `data/` 目录，exe 首次运行会在同目录生成 `metro.mbtiles`。
 
 ## 操作
 
@@ -113,4 +123,4 @@ python tools/preview_map.py cmake-build-debug/route.json
 
 PNG 是字符帧预览，不是 Windows Terminal 截图；实际字体、颜色与输入法表现取决于终端。项目已通过 ConPTY 执行搜索、自动规划和正常退出；拖动窗口及特定输入法应在目标终端补充验收。
 
-数据来源与依赖记录见 `data/source/PROVENANCE.md` 和 `third_party/README.md`。
+数据来源与依赖记录见 `data/source/PROVENANCE.md` 和 `lib/README.md`。
