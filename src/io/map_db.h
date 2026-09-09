@@ -9,6 +9,7 @@ typedef struct {
     double x, y;
     char initials[65];
     int transfer;
+    int label_side; /* Optional SVG preference: E,W,N,S,NE,NW,SE,SW = 1..8. */
 } MapStation;
 typedef struct {
     int z, x, y, valid, status;

@@ -234,25 +234,37 @@ int map_render(MapFrame *f, MapDb *db, Viewport v, const Route *r, int from, int
                 }
             }
     unsigned char *occupied = calloc((size_t)cols * rows, 1);
-    if (!occupied)
+    int *marker_at = calloc((size_t)cols * rows, sizeof(*marker_at));
+    if (!occupied || !marker_at) {
+        free(occupied);
+        free(marker_at);
         return -1;
-    for (size_t i = 0; i < db->metro.stations.rows.size; i++) {
-        int id = db->metro.stations.rows.items[i].id;
-        MapStation p = db->stations[id];
-        int x = (int)floor(((p.x - v.x) * v.scale + cols) / 2),
-            y = (int)floor(((p.y - v.y) * v.scale + rows * 2) / 4);
-        if (x < 0 || y < 0 || x >= cols || y >= rows)
-            continue;
-        int endpoint = id == from || id == to;
-        if (v.scale > .065 || endpoint) {
+    }
+    /* A label must never replace a Braille cell, even on a dimmed line. */
+    for (int y = 0; y < rows; y++)
+        for (int x = 0; x < cols; x++) {
+            MapCell c = f->cells[y * f->width + x];
+            occupied[y * cols + x] = c.glyph != 0 || c.continuation;
+        }
+    /* Resolve collisions before labels: endpoints, transfers, ordinary stops. */
+    for (int priority = 0; priority < 3; priority++)
+        for (size_t i = 0; i < db->metro.stations.rows.size; i++) {
+            int id = db->metro.stations.rows.items[i].id;
+            MapStation p = db->stations[id];
+            int endpoint = id == from || id == to;
+            int rank = endpoint ? 0 : p.transfer ? 1 : 2;
+            if (rank != priority || (v.scale <= .065 && !endpoint))
+                continue;
+            int x = (int)floor(((p.x - v.x) * v.scale + cols) / 2),
+                y = (int)floor(((p.y - v.y) * v.scale + rows * 2) / 4);
+            if (x < 0 || y < 0 || x >= cols || y >= rows || marker_at[y * cols + x])
+                continue;
             frame_glyph(f, x, y,
-                        endpoint     ? '@'
-                        : p.transfer ? 0x25ce
-                                     : 0x00b7,
+                        endpoint ? MAP_ENDPOINT_GLYPH : p.transfer ? MAP_TRANSFER_GLYPH : 0x00b7,
                         endpoint ? 1 : 0, 0);
+            marker_at[y * cols + x] = id;
             occupied[y * cols + x] = 1;
         }
-    }
     for (int priority = 0; priority < 3; priority++)
         for (size_t i = 0; i < db->metro.stations.rows.size; i++) {
             const Station *st = &db->metro.stations.rows.items[i];
@@ -262,30 +274,41 @@ int map_render(MapFrame *f, MapDb *db, Viewport v, const Route *r, int from, int
                 continue;
             int x = (int)floor(((p.x - v.x) * v.scale + cols) / 2),
                 y = (int)floor(((p.y - v.y) * v.scale + rows * 2) / 4);
-            if (x < 0 || y < 0 || x >= cols || y >= rows)
+            if (x < 0 || y < 0 || x >= cols || y >= rows || marker_at[y * cols + x] != st->id)
                 continue;
             int width = 0;
             uint32_t cp;
             const char *s = st->name;
             while (utf8_next(&s, &cp))
                 width += unicode_width(cp);
-            int offsets[4][2] = {{1, 0}, {-width - 1, 0}, {1, -1}, {1, 1}};
-            for (int k = 0; k < 4; k++) {
-                int a = x + offsets[k][0], b = y + offsets[k][1];
-                if (a < 0 || b < 0 || a + width > cols || b >= rows)
-                    continue;
-                int ok = 1;
-                for (int t = 0; t < width; t++)
-                    if (occupied[b * cols + a + t])
-                        ok = 0;
-                if (!ok)
-                    continue;
-                frame_text(f, a, b, width, st->name, rank == 0 ? 1 : 0, 0);
-                for (int t = 0; t < width; t++)
-                    occupied[b * cols + a + t] = 1;
-                break;
+            if (!width)
+                continue;
+            int placed = 0;
+            for (int radius = 1; radius <= 2 && !placed; radius++) {
+                int offsets[8][2] = {{2, 0}, {-width - 2, 0}, {-width / 2, -radius},
+                                     {-width / 2, radius}, {2, -radius}, {-width - 2, -radius},
+                                     {2, radius}, {-width - 2, radius}};
+                int preferred = p.label_side >= 1 && p.label_side <= 8 ? p.label_side - 1 : 0;
+                for (int k = 0; k < 8; k++) {
+                    int side = (preferred + k) % 8;
+                    int a = x + offsets[side][0], b = y + offsets[side][1];
+                    if (a < 0 || b < 0 || a + width > cols || b >= rows)
+                        continue;
+                    int ok = 1;
+                    for (int t = 0; t < width; t++)
+                        if (occupied[b * cols + a + t])
+                            ok = 0;
+                    if (!ok)
+                        continue;
+                    frame_text(f, a, b, width, st->name, rank == 0 ? 1 : 0, 0);
+                    for (int t = a > 0 ? a - 1 : a; t < cols && t <= a + width; t++)
+                        occupied[b * cols + t] = 1;
+                    placed = 1;
+                    break;
+                }
             }
         }
+    free(marker_at);
     free(occupied);
     return errors;
 }

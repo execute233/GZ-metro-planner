@@ -1,6 +1,7 @@
 #include "map_db.h"
 #include <math.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include "metro_io.h"
 
@@ -25,6 +26,28 @@ int map_db_open(MapDb *m, const char *path) {
         const Line *ln = &m->metro.lines.rows.items[i];
         m->colors[ln->id] = ln->rgb;
     }
+    if (sqlite3_prepare_v2(m->db,
+                          "SELECT name,value FROM metadata WHERE name GLOB 'svg_label_side_*'",
+                          -1, &q, NULL) != SQLITE_OK)
+        goto bad;
+    int label_status;
+    while ((label_status = sqlite3_step(q)) == SQLITE_ROW) {
+        const char *key = (const char *)sqlite3_column_text(q, 0);
+        const char *value = (const char *)sqlite3_column_text(q, 1);
+        if (!key || !value || strlen(key) < 16)
+            continue;
+        char *end;
+        long id = strtol(key + 15, &end, 10);
+        if (*end || id <= 0 || id >= MAP_LIMIT)
+            continue;
+        long side = strtol(value, &end, 10);
+        if (!*end && side >= 1 && side <= 8)
+            m->stations[id].label_side = (int)side;
+    }
+    sqlite3_finalize(q);
+    q = NULL;
+    if (label_status != SQLITE_DONE)
+        goto bad;
     if (sqlite3_prepare_v2(m->db, "SELECT min(zoom_level),max(zoom_level) FROM tiles", -1, &q,
                            NULL) != SQLITE_OK)
         goto bad;

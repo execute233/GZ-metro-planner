@@ -4,3 +4,4 @@ metroshell/
 docs/superpowers/
 .venv-map/
 __pycache__/
+output/svg-import-backups/

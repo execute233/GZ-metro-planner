@@ -2,6 +2,10 @@
 #define GZMP_MAP_RENDER_H
 #include "../algo/router.h"
 #include "../io/map_db.h"
+
+/* ASCII gives a stable single terminal column, including Chinese locales. */
+#define MAP_TRANSFER_GLYPH '#'
+#define MAP_ENDPOINT_GLYPH '@'
 typedef struct {
     uint32_t glyph;
     short color;

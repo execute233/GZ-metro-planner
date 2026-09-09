@@ -18,7 +18,7 @@ int tui_init(TuiState *s, MapDb *m, int w, int h) {
     if (graph_build(&s->graph, &m->metro))
         return -1;
     s->view = (Viewport){.x = 2048, .y = 2048, .scale = .05};
-    viewport_fit(&s->view, m, NULL, map_width(w), h - 3);
+    viewport_fit(&s->view, m, NULL, map_width(w), h - 4);
     snprintf(s->status, sizeof(s->status), "每区间暂定 1000m / 60s；数据待人工校对");
     tui_search(s);
     return 0;
@@ -123,7 +123,7 @@ void tui_plan(TuiState *s, int w, int h) {
         return;
     }
     s->ready = 1;
-    viewport_fit(&s->view, s->map, &s->route, map_width(w), h - 3);
+    viewport_fit(&s->view, s->map, &s->route, map_width(w), h - 4);
     snprintf(s->status, sizeof(s->status), "%d 站（含起终点） / %.1f km / %d 分钟；暂定权重",
              s->route.total_stations, s->route.total_meters / 1000., s->route.total_seconds / 60);
 }
@@ -214,11 +214,13 @@ void tui_frame(TuiState *s, MapFrame *f) {
     int mw = map_width(w), mh = h - 3;
     int compact = w < 90 && s->focus != 0;
     if (!compact) {
-        int errors =
-            map_render(f, s->map, s->view, s->ready ? &s->route : NULL, s->from, s->to, mw, mh);
+        /* Header owns row zero; map coordinates start below it. */
+        MapFrame area = {.width = f->width, .height = mh - 1, .cells = f->cells + f->width};
+        int errors = map_render(&area, s->map, s->view, s->ready ? &s->route : NULL,
+                                s->from, s->to, mw, mh - 1);
         if (errors)
             snprintf(s->status, sizeof(s->status), "%d 个瓦片读取失败；路线计算仍可用", errors);
-        frame_text(f, 1, 0, mw - 2, "广州地铁 · 全网示意图", 0, 0);
+        frame_text(f, 1, 0, mw - 2, "广州地铁 · 全网示意图   # 换乘  @ 起终点", 0, 0);
     }
     if (w >= 90) {
         for (int y = 0; y < mh; y++)

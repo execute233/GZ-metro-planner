@@ -52,7 +52,10 @@ static void present(MapFrame *f) {
             short pair = c.color;
             if (c.dim && c.color >= 5 && dim_pairs)
                 pair += 128;
-            setcchar(&value, str, c.dim ? A_DIM : A_NORMAL, pair, NULL);
+            attr_t attr = c.dim ? A_DIM : A_NORMAL;
+            if (c.glyph == MAP_TRANSFER_GLYPH || c.glyph == MAP_ENDPOINT_GLYPH)
+                attr |= A_BOLD;
+            setcchar(&value, str, attr, pair, NULL);
             mvadd_wch(y, x, &value);
         }
     wnoutrefresh(stdscr);
@@ -238,7 +241,7 @@ int tui_run(const char *path) {
             }
             continue;
         }
-        int mw = w >= 90 ? w - 37 : w, mh = h - 3;
+        int mw = w >= 90 ? w - 37 : w, mh = h - 4;
         double step = 12 / s.view.scale;
         if (key == 'q' || key == 'Q')
             break;

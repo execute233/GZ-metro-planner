@@ -189,6 +189,82 @@ static void test_routes_frames(MapDb *db) {
     frame_dispose(&f);
     tui_dispose(&s);
 }
+static void test_map_labels_preserve_lines(MapDb *db) {
+    const double scales[] = {.09, .2, .5, 1.2};
+    MapFrame bare = {0}, labeled = {0};
+    CHECK(!frame_resize(&bare, 140, 48));
+    CHECK(!frame_resize(&labeled, 140, 48));
+    size_t count = db->metro.stations.rows.size;
+    Station *saved = malloc(count * sizeof(*saved));
+    CHECK(saved != NULL);
+    if (!saved) {
+        frame_dispose(&bare);
+        frame_dispose(&labeled);
+        return;
+    }
+    memcpy(saved, db->metro.stations.rows.items, count * sizeof(*saved));
+    TuiState route_state;
+    CHECK(!tui_init(&route_state, db, 140, 48));
+    route_state.from = station_id(db, "体育西路");
+    route_state.to = station_id(db, "广州南站");
+    tui_plan(&route_state, 140, 48);
+    CHECK(route_state.ready);
+    int text_cells = 0;
+    for (size_t k = 0; k < sizeof(scales) / sizeof(scales[0]); k++) {
+        Viewport v = {.x = 1700, .y = 2350, .scale = scales[k]};
+        const Route *route = k % 2 ? &route_state.route : NULL;
+        for (size_t i = 0; i < count; i++)
+            db->metro.stations.rows.items[i].name[0] = '\0';
+        frame_clear(&bare);
+        CHECK(!map_render(&bare, db, v, route, 0, 0, 140, 48));
+        memcpy(db->metro.stations.rows.items, saved, count * sizeof(*saved));
+        frame_clear(&labeled);
+        CHECK(!map_render(&labeled, db, v, route, 0, 0, 140, 48));
+        for (int i = 0; i < 140 * 48; i++) {
+            if (bare.cells[i].glyph)
+                CHECK(labeled.cells[i].glyph == bare.cells[i].glyph);
+            if (unicode_width(labeled.cells[i].glyph) == 2)
+                text_cells++;
+            CHECK(labeled.cells[i].glyph != 0x25ce);
+        }
+    }
+    CHECK(text_cells > 0);
+    tui_dispose(&route_state);
+    free(saved);
+    frame_dispose(&bare);
+    frame_dispose(&labeled);
+}
+
+static void test_single_station_marker(MapDb *db) {
+    size_t size = db->metro.stations.rows.size;
+    int a = db->metro.stations.rows.items[0].id, b = db->metro.stations.rows.items[1].id;
+    MapStation pa = db->stations[a], pb = db->stations[b];
+    db->metro.stations.rows.size = 2;
+    db->stations[a] = (MapStation){.x = 2000, .y = 2000, .transfer = 0};
+    db->stations[b] = (MapStation){.x = 2000, .y = 2000, .transfer = 1};
+    MapFrame f = {0};
+    CHECK(!frame_resize(&f, 80, 30));
+    Viewport v = {.x = 2000, .y = 2000, .scale = .5};
+    CHECK(!map_render(&f, db, v, NULL, 0, 0, 80, 30));
+    int markers = 0;
+    for (int i = 0; i < 80 * 30; i++)
+        markers += f.cells[i].glyph == MAP_TRANSFER_GLYPH;
+    CHECK(markers == 1);
+    CHECK(f.cells[15 * 80 + 40].glyph == MAP_TRANSFER_GLYPH);
+    frame_clear(&f);
+    CHECK(!map_render(&f, db, v, NULL, a, a, 80, 30));
+    markers = 0;
+    for (int i = 0; i < 80 * 30; i++)
+        markers += f.cells[i].glyph == MAP_ENDPOINT_GLYPH || f.cells[i].glyph == MAP_TRANSFER_GLYPH;
+    CHECK(markers == 1);
+    CHECK(f.cells[15 * 80 + 40].glyph == MAP_ENDPOINT_GLYPH);
+    CHECK(unicode_width(MAP_TRANSFER_GLYPH) == 1);
+    frame_dispose(&f);
+    db->stations[a] = pa;
+    db->stations[b] = pb;
+    db->metro.stations.rows.size = size;
+}
+
 int main(int argc, char **argv) {
     if (argc != 2)
         return 2;
@@ -207,6 +283,8 @@ int main(int argc, char **argv) {
     CHECK(db->metro.edges.rows.size == 421);
     test_tiles(db);
     test_routes_frames(db);
+    test_map_labels_preserve_lines(db);
+    test_single_station_marker(db);
     map_db_close(db);
     CHECK(map_db_open(db, "this-file-does-not-exist.mbtiles") == -1);
     CHECK(!db->db);
