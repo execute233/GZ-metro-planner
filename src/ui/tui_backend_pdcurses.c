@@ -261,9 +261,9 @@ int tui_run(const char *path) {
             s.view.y -= step;
         if (key == KEY_DOWN || key == 's')
             s.view.y += step;
-        if (key == '+' || key == '=')
+        if (key == '+' || key == '=' || key == PADPLUS)
             viewport_zoom(&s.view, 1.3, mw, mh, mw, mh * 2);
-        if (key == '-' || key == '_')
+        if (key == '-' || key == '_' || key == PADMINUS)
             viewport_zoom(&s.view, 1 / 1.3, mw, mh, mw, mh * 2);
         if (key == 'r' || key == 'R')
             viewport_fit(&s.view, db, NULL, mw, mh);

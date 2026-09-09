@@ -19,7 +19,6 @@ int tui_init(TuiState *s, MapDb *m, int w, int h) {
         return -1;
     s->view = (Viewport){.x = 2048, .y = 2048, .scale = .05};
     viewport_fit(&s->view, m, NULL, map_width(w), h - 4);
-    snprintf(s->status, sizeof(s->status), "每区间暂定 1000m / 60s；数据待人工校对");
     tui_search(s);
     return 0;
 }
@@ -197,7 +196,7 @@ static void sidebar(TuiState *s, MapFrame *f, int x, int width, int height) {
         }
     } else if (s->focus == 0) {
         frame_text(f, x + 2, 11, inside, "Tab 或 / 开始搜索", 0, 0);
-        frame_text(f, x + 2, 13, inside, "确认起终点后自动规划", 0, 1);
+        frame_text(f, x + 2, 13, inside, "确认起终点后自动规划", 0, 0);
     }
 }
 void tui_frame(TuiState *s, MapFrame *f) {

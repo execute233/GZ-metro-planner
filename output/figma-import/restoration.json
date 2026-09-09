@@ -1,0 +1,27 @@
+{
+  "export_paths": 417,
+  "restored_edges": 421,
+  "station_line_anchors": 443,
+  "max_marker_shift_px": 32.984845004941285,
+  "merged_edge_groups": [
+    [
+      32,
+      33
+    ],
+    [
+      187,
+      188
+    ],
+    [
+      287,
+      288,
+      289
+    ]
+  ],
+  "recovered_anchor": {
+    "station_id": 17,
+    "line_id": 3,
+    "from_line_id": 19
+  },
+  "labels": "Prior names and placement hints retained; exported outline text is not imported."
+}

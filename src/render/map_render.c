@@ -301,6 +301,8 @@ int map_render(MapFrame *f, MapDb *db, Viewport v, const Route *r, int from, int
                     if (!ok)
                         continue;
                     frame_text(f, a, b, width, st->name, rank == 0 ? 1 : 0, 0);
+                    if (rank == 2)
+                        frame_glyph(f, x, y, MAP_STATION_GLYPH, 0, 0);
                     for (int t = a > 0 ? a - 1 : a; t < cols && t <= a + width; t++)
                         occupied[b * cols + t] = 1;
                     placed = 1;

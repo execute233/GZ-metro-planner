@@ -5,6 +5,7 @@
 
 /* ASCII gives a stable single terminal column, including Chinese locales. */
 #define MAP_TRANSFER_GLYPH '#'
+#define MAP_STATION_GLYPH 0x25cb /* Single-cell hollow circle for a labeled ordinary stop. */
 #define MAP_ENDPOINT_GLYPH '@'
 typedef struct {
     uint32_t glyph;

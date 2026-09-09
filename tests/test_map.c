@@ -221,7 +221,9 @@ static void test_map_labels_preserve_lines(MapDb *db) {
         frame_clear(&labeled);
         CHECK(!map_render(&labeled, db, v, route, 0, 0, 140, 48));
         for (int i = 0; i < 140 * 48; i++) {
-            if (bare.cells[i].glyph)
+            if (bare.cells[i].glyph == 0x00b7)
+                CHECK(labeled.cells[i].glyph == 0x00b7 || labeled.cells[i].glyph == MAP_STATION_GLYPH);
+            else if (bare.cells[i].glyph)
                 CHECK(labeled.cells[i].glyph == bare.cells[i].glyph);
             if (unicode_width(labeled.cells[i].glyph) == 2)
                 text_cells++;
@@ -233,6 +235,31 @@ static void test_map_labels_preserve_lines(MapDb *db) {
     free(saved);
     frame_dispose(&bare);
     frame_dispose(&labeled);
+}
+
+static void test_labeled_station_marker(MapDb *db) {
+    size_t size = db->metro.stations.rows.size;
+    int id = db->metro.stations.rows.items[0].id;
+    MapStation saved = db->stations[id];
+    db->metro.stations.rows.size = 1;
+    db->stations[id] = (MapStation){.x = 4000, .y = 4000};
+    MapFrame f = {0};
+    CHECK(!frame_resize(&f, 80, 30));
+    Viewport v = {.x = 4000, .y = 4000, .scale = .1};
+    CHECK(!map_render(&f, db, v, NULL, 0, 0, 80, 30));
+    CHECK(f.cells[15 * 80 + 40].glyph == 0x00b7);
+    frame_clear(&f);
+    v.scale = .5;
+    CHECK(!map_render(&f, db, v, NULL, 0, 0, 80, 30));
+    CHECK(f.cells[15 * 80 + 40].glyph == MAP_STATION_GLYPH);
+    CHECK(unicode_width(MAP_STATION_GLYPH) == 1);
+    /* Eligible zoom alone must not promote the marker when no label fits. */
+    CHECK(!frame_resize(&f, 1, 1));
+    CHECK(!map_render(&f, db, v, NULL, 0, 0, 1, 1));
+    CHECK(f.cells[0].glyph == 0x00b7);
+    frame_dispose(&f);
+    db->stations[id] = saved;
+    db->metro.stations.rows.size = size;
 }
 
 static void test_single_station_marker(MapDb *db) {
@@ -285,6 +312,7 @@ int main(int argc, char **argv) {
     test_routes_frames(db);
     test_map_labels_preserve_lines(db);
     test_single_station_marker(db);
+    test_labeled_station_marker(db);
     map_db_close(db);
     CHECK(map_db_open(db, "this-file-does-not-exist.mbtiles") == -1);
     CHECK(!db->db);
