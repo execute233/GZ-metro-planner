@@ -142,7 +142,7 @@ int tui_run(const char *path) {
         getmaxyx(stdscr, h, w);
         ULONGLONG now = GetTickCount64();
         if (now - last_animation >= TRAIN_FRAME_MS) {
-            int stopped = s.edit.active || w < 50 || h < 16;
+            int stopped = s.edit.active || s.browser.active || w < 50 || h < 16;
             trains_advance(&s.trains, (now - last_animation) / 1000.0, stopped);
             if (!stopped && !s.trains.paused)
                 dirty = 1;
@@ -188,6 +188,17 @@ int tui_run(const char *path) {
             } else if (kind != KEY_CODE_YES) {
                 append_utf8(s.edit.input, sizeof(s.edit.input), (unsigned)key);
             }
+            continue;
+        }
+        if (s.browser.active) {
+            if (key == 27)
+                line_browser_key(&s.browser, &db->metro, LINE_BACK, h);
+            else if (key == '\n' || key == '\r' || key == KEY_ENTER)
+                line_browser_key(&s.browser, &db->metro, LINE_ENTER, h);
+            else if (key == KEY_UP || key == KEY_DOWN || key == KEY_PPAGE || key == KEY_NPAGE)
+                line_browser_key(&s.browser, &db->metro,
+                                 key == KEY_UP ? LINE_UP : key == KEY_DOWN ? LINE_DOWN :
+                                 key == KEY_PPAGE ? LINE_PAGE_UP : LINE_PAGE_DOWN, h);
             continue;
         }
         if (key == 27) {
@@ -264,6 +275,10 @@ int tui_run(const char *path) {
         }
         if (key == 'm' || key == 'M') {
             s.edit.active = 1;
+            continue;
+        }
+        if (key == 'l' || key == 'L') {
+            s.browser.active = 1;
             continue;
         }
         if (key == KEY_LEFT || key == 'a')

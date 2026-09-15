@@ -51,3 +51,10 @@ add_executable(test_trains test_trains.c
 target_link_libraries(test_trains PRIVATE gzmp_map)
 target_compile_options(test_trains PRIVATE -Wall -Wextra -Wpedantic)
 add_test(NAME trains COMMAND test_trains "${PROJECT_SOURCE_DIR}/metro.mbtiles")
+
+add_executable(test_line_browser test_line_browser.c
+    ../src/adt/station.c ../src/adt/line.c ../src/adt/edge.c
+    ../src/algo/graph.c ../src/algo/router.c)
+target_link_libraries(test_line_browser PRIVATE gzmp_map)
+target_compile_options(test_line_browser PRIVATE -Wall -Wextra -Wpedantic)
+add_test(NAME line_browser COMMAND test_line_browser "${PROJECT_SOURCE_DIR}/metro.mbtiles")

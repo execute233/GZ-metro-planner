@@ -25,6 +25,7 @@ int tui_init(TuiState *s, MapDb *m, int w, int h) {
     return 0;
 }
 void tui_dispose(TuiState *s) {
+    line_browser_close(&s->browser);
     trains_dispose(&s->trains);
     maintenance_close(&s->edit);
     route_dispose(&s->route);
@@ -221,6 +222,10 @@ void tui_frame(TuiState *s, MapFrame *f) {
         maintenance_frame(s, f);
         return;
     }
+    if (s->browser.active) {
+        line_browser_frame(&s->browser, &s->map->metro, f);
+        return;
+    }
     int mw = map_width(w), mh = h - 3;
     int compact = w < 90 && s->focus != 0;
     if (!compact) {
@@ -246,7 +251,7 @@ void tui_frame(TuiState *s, MapFrame *f) {
         frame_glyph(f, x, h - 3, 0x2500, 0, 0);
     frame_text(f, 0, h - 2, w,
                s->focus == 0
-                   ? "M 维护  Tab 搜索  WASD 平移  +/- 缩放  R 全图  F 路线  X 交换  Q 退出"
+                   ? "L 线路  M 维护  Tab 搜索  WASD 平移  +/- 缩放  R 全图  F 路线  X 交换  Q 退出"
                    : "Tab 焦点  ↑↓ 候选  Enter 确认  Esc 地图  PgUp/PgDn 行程",
                0, 0);
     frame_text(f, 0, h - 1, w, s->status, 0, 1);
