@@ -127,7 +127,7 @@ int tui_run(const char *path) {
     noecho();
     keypad(stdscr, TRUE);
     curs_set(0);
-    timeout(100);
+    timeout(TRAIN_FRAME_MS);
     colors(db);
     int h, w;
     getmaxyx(stdscr, h, w);
@@ -135,8 +135,17 @@ int tui_run(const char *path) {
         goto done;
     initialized = 1;
     int dirty = 1;
+    ULONGLONG last_animation = GetTickCount64();
     while (!interrupted) {
         getmaxyx(stdscr, h, w);
+        ULONGLONG now = GetTickCount64();
+        if (now - last_animation >= TRAIN_FRAME_MS) {
+            int stopped = s.edit.active || w < 50 || h < 16;
+            trains_advance(&s.trains, (now - last_animation) / 1000.0, stopped);
+            if (!stopped && !s.trains.paused)
+                dirty = 1;
+            last_animation = now;
+        }
         if (dirty) {
             if (frame_resize(&frame, w, h))
                 goto done;
@@ -242,6 +251,8 @@ int tui_run(const char *path) {
             continue;
         }
         int mw = w >= 90 ? w - 37 : w, mh = h - 4;
+        if (key == ' ')
+            s.trains.paused = !s.trains.paused;
         double step = 12 / s.view.scale;
         if (key == 'q' || key == 'Q')
             break;

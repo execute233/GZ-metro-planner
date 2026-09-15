@@ -44,3 +44,10 @@ add_test(NAME packaged_app COMMAND "${CMAKE_COMMAND}"
     "-DTEST_ROOT=${CMAKE_CURRENT_BINARY_DIR}"
     "-DBUNDLED=${GZMP_RELEASE_BUNDLE}"
     -P "${CMAKE_CURRENT_SOURCE_DIR}/test_packaged_app.cmake")
+
+add_executable(test_trains test_trains.c
+    ../src/adt/station.c ../src/adt/line.c ../src/adt/edge.c
+    ../src/algo/graph.c ../src/algo/router.c)
+target_link_libraries(test_trains PRIVATE gzmp_map)
+target_compile_options(test_trains PRIVATE -Wall -Wextra -Wpedantic)
+add_test(NAME trains COMMAND test_trains "${PROJECT_SOURCE_DIR}/metro.mbtiles")

@@ -3,6 +3,7 @@
 #include "../algo/graph.h"
 #include "../render/map_render.h"
 #include "maintenance.h"
+#include "../render/trains.h"
 typedef struct {
     MapDb *map;
     Graph graph;
@@ -12,6 +13,7 @@ typedef struct {
     int matches[MAP_LIMIT], match_count;
     char query[128], status[256];
     Maintenance edit;
+    Trains trains;
 } TuiState;
 int tui_init(TuiState *s, MapDb *map, int width, int height);
 void tui_dispose(TuiState *s);
