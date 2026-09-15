@@ -130,7 +130,7 @@ void tui_plan(TuiState *s, int w, int h) {
     s->ready = 1;
     trains_plan(&s->trains, &s->route);
     viewport_fit(&s->view, s->map, &s->route, map_width(w), h - 4);
-    snprintf(s->status, sizeof(s->status), "%d 站（含起终点） / %.1f km / %d 分钟；暂定权重",
+    snprintf(s->status, sizeof(s->status), "%d 站（含起终点） / %.1f km / %d 分钟",
              s->route.total_stations, s->route.total_meters / 1000., s->route.total_seconds / 60);
 }
 static void sidebar(TuiState *s, MapFrame *f, int x, int width, int height) {
@@ -187,8 +187,8 @@ static void sidebar(TuiState *s, MapFrame *f, int x, int width, int height) {
         snprintf(text, sizeof(text), "%d 站 · %.1fkm · %dmin", s->route.total_stations,
                  s->route.total_meters / 1000., s->route.total_seconds / 60);
         frame_text(f, x + 2, row++, inside, text, 0, 0);
-        snprintf(text, sizeof(text), "换乘 %zu 次 · 里程/时间暂定", s->route.transfers.size);
-        frame_text(f, x + 2, row++, inside, text, 0, 1);
+        snprintf(text, sizeof(text), "换乘 %zu 次", s->route.transfers.size);
+        frame_text(f, x + 2, row++, inside, text, 0, 0);
         for (size_t i = (size_t)s->scroll; i < s->route.stations.size && row < height - 1; i++) {
             int color = 0;
             const char *line_name = "起点";

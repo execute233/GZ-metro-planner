@@ -291,7 +291,7 @@ int tui_run(const char *path) {
         if (key == 'c' || key == 'C') {
             s.from = s.to = 0;
             tui_plan(&s, w, h);
-            snprintf(s.status, sizeof(s.status), "已清除路线；每区间暂定 1000m / 60s");
+            snprintf(s.status, sizeof(s.status), "已清除路线");
         }
     }
     rc = 0;
