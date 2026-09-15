@@ -5,3 +5,10 @@ docs/superpowers/
 .venv-map/
 __pycache__/
 output/svg-import-backups/
+tmp/
+
+# Local agent tooling configuration; not shared.
+.claude/
+.codex/
+.codegraph/
+.mcp.json
