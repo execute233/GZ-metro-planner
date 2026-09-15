@@ -1,0 +1,10 @@
+论文/文章引用
+https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0185349
+https://arxiv.org/abs/2401.18059
+项目参考
+https://github.com/adot-7/metroshell
+第三方库参考
+https://github.com/Bill-Gray/PDCursesMod
+https://github.com/sqlite/sqlite
+https://github.com/madler/zlib
+资料参考
