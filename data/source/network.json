@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "source_image": "railway.png",
-  "status": "draft; requires visual/topology verification",
+  "status": "distances read from the GBA track-layout diagram (配线图 v2.0.7); run times derived from per-line average travel speeds; requires visual/topology verification",
   "stations": [
     {
       "id": 1,
@@ -3330,8 +3330,8 @@
       "line_id": 1,
       "from_id": 1,
       "to_id": 2,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 177,
+      "meters": 1571,
       "points": [
         [
           912.0,
@@ -3348,8 +3348,8 @@
       "line_id": 1,
       "from_id": 2,
       "to_id": 3,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 105,
+      "meters": 928,
       "points": [
         [
           896.0,
@@ -3366,8 +3366,8 @@
       "line_id": 1,
       "from_id": 3,
       "to_id": 4,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 149,
+      "meters": 1321,
       "points": [
         [
           896.0,
@@ -3396,8 +3396,8 @@
       "line_id": 1,
       "from_id": 4,
       "to_id": 5,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 156,
+      "meters": 1380,
       "points": [
         [
           908.0,
@@ -3422,8 +3422,8 @@
       "line_id": 1,
       "from_id": 5,
       "to_id": 6,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 107,
+      "meters": 951,
       "points": [
         [
           924.0,
@@ -3440,8 +3440,8 @@
       "line_id": 1,
       "from_id": 6,
       "to_id": 7,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 128,
+      "meters": 1135,
       "points": [
         [
           900.0,
@@ -3466,8 +3466,8 @@
       "line_id": 1,
       "from_id": 7,
       "to_id": 8,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 105,
+      "meters": 932,
       "points": [
         [
           972.0,
@@ -3484,8 +3484,8 @@
       "line_id": 1,
       "from_id": 8,
       "to_id": 9,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 98,
+      "meters": 872,
       "points": [
         [
           1064.0,
@@ -3502,8 +3502,8 @@
       "line_id": 1,
       "from_id": 9,
       "to_id": 10,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 133,
+      "meters": 1177,
       "points": [
         [
           1140.0,
@@ -3520,8 +3520,8 @@
       "line_id": 1,
       "from_id": 10,
       "to_id": 11,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 115,
+      "meters": 1019,
       "points": [
         [
           1260.0,
@@ -3538,8 +3538,8 @@
       "line_id": 1,
       "from_id": 11,
       "to_id": 12,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 120,
+      "meters": 1065,
       "points": [
         [
           1352.0,
@@ -3556,8 +3556,8 @@
       "line_id": 1,
       "from_id": 12,
       "to_id": 13,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 149,
+      "meters": 1316,
       "points": [
         [
           1454.0,
@@ -3574,8 +3574,8 @@
       "line_id": 1,
       "from_id": 13,
       "to_id": 14,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 161,
+      "meters": 1428,
       "points": [
         [
           1560.0,
@@ -3600,8 +3600,8 @@
       "line_id": 1,
       "from_id": 14,
       "to_id": 15,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 176,
+      "meters": 1563,
       "points": [
         [
           1828.0,
@@ -3638,8 +3638,8 @@
       "line_id": 1,
       "from_id": 15,
       "to_id": 16,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 211,
+      "meters": 1874,
       "points": [
         [
           2048.0,
@@ -3680,8 +3680,8 @@
       "line_id": 2,
       "from_id": 17,
       "to_id": 18,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 164,
+      "meters": 1966,
       "points": [
         [
           1380.0,
@@ -3698,8 +3698,8 @@
       "line_id": 2,
       "from_id": 18,
       "to_id": 19,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 108,
+      "meters": 1296,
       "points": [
         [
           1260.0,
@@ -3716,8 +3716,8 @@
       "line_id": 2,
       "from_id": 19,
       "to_id": 20,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 192,
+      "meters": 2305,
       "points": [
         [
           1132.0,
@@ -3734,8 +3734,8 @@
       "line_id": 2,
       "from_id": 20,
       "to_id": 21,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 168,
+      "meters": 2020,
       "points": [
         [
           1080.0,
@@ -3752,8 +3752,8 @@
       "line_id": 2,
       "from_id": 21,
       "to_id": 22,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 346,
+      "meters": 4154,
       "points": [
         [
           956.0,
@@ -3770,8 +3770,8 @@
       "line_id": 2,
       "from_id": 22,
       "to_id": 23,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 128,
+      "meters": 1541,
       "points": [
         [
           892.0,
@@ -3788,8 +3788,8 @@
       "line_id": 2,
       "from_id": 23,
       "to_id": 24,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 224,
+      "meters": 2686,
       "points": [
         [
           792.0,
@@ -3806,8 +3806,8 @@
       "line_id": 2,
       "from_id": 24,
       "to_id": 25,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 442,
+      "meters": 5305,
       "points": [
         [
           682.0,
@@ -3824,8 +3824,8 @@
       "line_id": 2,
       "from_id": 25,
       "to_id": 26,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 88,
+      "meters": 1058,
       "points": [
         [
           584.0,
@@ -3842,8 +3842,8 @@
       "line_id": 2,
       "from_id": 26,
       "to_id": 27,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 128,
+      "meters": 1541,
       "points": [
         [
           446.0,
@@ -3864,8 +3864,8 @@
       "line_id": 2,
       "from_id": 27,
       "to_id": 28,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 131,
+      "meters": 1571,
       "points": [
         [
           368.0,
@@ -3882,8 +3882,8 @@
       "line_id": 2,
       "from_id": 28,
       "to_id": 29,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 154,
+      "meters": 1849,
       "points": [
         [
           324.0,
@@ -3904,8 +3904,8 @@
       "line_id": 2,
       "from_id": 29,
       "to_id": 30,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 107,
+      "meters": 1287,
       "points": [
         [
           216.0,
@@ -3922,8 +3922,8 @@
       "line_id": 2,
       "from_id": 30,
       "to_id": 31,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 211,
+      "meters": 2535,
       "points": [
         [
           168.0,
@@ -3948,8 +3948,8 @@
       "line_id": 2,
       "from_id": 31,
       "to_id": 32,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 191,
+      "meters": 2290,
       "points": [
         [
           108.0,
@@ -3966,8 +3966,8 @@
       "line_id": 2,
       "from_id": 32,
       "to_id": 33,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 218,
+      "meters": 2613,
       "points": [
         [
           108.0,
@@ -3988,8 +3988,8 @@
       "line_id": 3,
       "from_id": 17,
       "to_id": 34,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 102,
+      "meters": 1036,
       "points": [
         [
           1380.0,
@@ -4014,8 +4014,8 @@
       "line_id": 3,
       "from_id": 34,
       "to_id": 35,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 235,
+      "meters": 2374,
       "points": [
         [
           1388.0,
@@ -4036,8 +4036,8 @@
       "line_id": 3,
       "from_id": 35,
       "to_id": 36,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 241,
+      "meters": 2433,
       "points": [
         [
           1396.0,
@@ -4054,8 +4054,8 @@
       "line_id": 3,
       "from_id": 36,
       "to_id": 37,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 118,
+      "meters": 1194,
       "points": [
         [
           1396.0,
@@ -4072,8 +4072,8 @@
       "line_id": 3,
       "from_id": 37,
       "to_id": 38,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 238,
+      "meters": 2411,
       "points": [
         [
           1396.0,
@@ -4090,8 +4090,8 @@
       "line_id": 3,
       "from_id": 38,
       "to_id": 39,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 89,
+      "meters": 904,
       "points": [
         [
           1418.0,
@@ -4108,8 +4108,8 @@
       "line_id": 3,
       "from_id": 39,
       "to_id": 40,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 195,
+      "meters": 1975,
       "points": [
         [
           1396.0,
@@ -4126,8 +4126,8 @@
       "line_id": 3,
       "from_id": 40,
       "to_id": 41,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 105,
+      "meters": 1061,
       "points": [
         [
           1368.0,
@@ -4144,8 +4144,8 @@
       "line_id": 3,
       "from_id": 41,
       "to_id": 42,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 86,
+      "meters": 872,
       "points": [
         [
           1372.0,
@@ -4166,8 +4166,8 @@
       "line_id": 3,
       "from_id": 42,
       "to_id": 43,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 105,
+      "meters": 1061,
       "points": [
         [
           1340.0,
@@ -4184,8 +4184,8 @@
       "line_id": 3,
       "from_id": 43,
       "to_id": 44,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 99,
+      "meters": 999,
       "points": [
         [
           1296.0,
@@ -4202,8 +4202,8 @@
       "line_id": 3,
       "from_id": 44,
       "to_id": 9,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 125,
+      "meters": 1267,
       "points": [
         [
           1252.0,
@@ -4224,8 +4224,8 @@
       "line_id": 3,
       "from_id": 9,
       "to_id": 45,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 78,
+      "meters": 785,
       "points": [
         [
           1140.0,
@@ -4242,8 +4242,8 @@
       "line_id": 3,
       "from_id": 45,
       "to_id": 46,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 87,
+      "meters": 875,
       "points": [
         [
           1112.0,
@@ -4260,8 +4260,8 @@
       "line_id": 3,
       "from_id": 46,
       "to_id": 47,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 108,
+      "meters": 1096,
       "points": [
         [
           1112.0,
@@ -4278,8 +4278,8 @@
       "line_id": 3,
       "from_id": 47,
       "to_id": 48,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 120,
+      "meters": 1214,
       "points": [
         [
           1088.0,
@@ -4300,8 +4300,8 @@
       "line_id": 3,
       "from_id": 48,
       "to_id": 49,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 127,
+      "meters": 1288,
       "points": [
         [
           1168.0,
@@ -4318,8 +4318,8 @@
       "line_id": 3,
       "from_id": 49,
       "to_id": 50,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 160,
+      "meters": 1617,
       "points": [
         [
           1224.0,
@@ -4336,8 +4336,8 @@
       "line_id": 3,
       "from_id": 50,
       "to_id": 51,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 101,
+      "meters": 1021,
       "points": [
         [
           1264.0,
@@ -4354,8 +4354,8 @@
       "line_id": 3,
       "from_id": 51,
       "to_id": 52,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 111,
+      "meters": 1123,
       "points": [
         [
           1342.0,
@@ -4372,8 +4372,8 @@
       "line_id": 3,
       "from_id": 52,
       "to_id": 53,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 143,
+      "meters": 1449,
       "points": [
         [
           1392.0,
@@ -4390,8 +4390,8 @@
       "line_id": 3,
       "from_id": 53,
       "to_id": 54,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 122,
+      "meters": 1238,
       "points": [
         [
           1444.0,
@@ -4408,8 +4408,8 @@
       "line_id": 3,
       "from_id": 54,
       "to_id": 55,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 163,
+      "meters": 1653,
       "points": [
         [
           1512.0,
@@ -4434,8 +4434,8 @@
       "line_id": 4,
       "from_id": 56,
       "to_id": 57,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 154,
+      "meters": 2034,
       "points": [
         [
           2876.0,
@@ -4452,8 +4452,8 @@
       "line_id": 4,
       "from_id": 57,
       "to_id": 58,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 140,
+      "meters": 1857,
       "points": [
         [
           2744.0,
@@ -4470,8 +4470,8 @@
       "line_id": 4,
       "from_id": 58,
       "to_id": 59,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 240,
+      "meters": 3183,
       "points": [
         [
           2616.0,
@@ -4488,8 +4488,8 @@
       "line_id": 4,
       "from_id": 59,
       "to_id": 60,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 183,
+      "meters": 2420,
       "points": [
         [
           2488.0,
@@ -4518,8 +4518,8 @@
       "line_id": 4,
       "from_id": 60,
       "to_id": 61,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 283,
+      "meters": 3744,
       "points": [
         [
           2280.0,
@@ -4536,8 +4536,8 @@
       "line_id": 4,
       "from_id": 61,
       "to_id": 62,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 465,
+      "meters": 6164,
       "points": [
         [
           2144.0,
@@ -4558,8 +4558,8 @@
       "line_id": 4,
       "from_id": 62,
       "to_id": 63,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 230,
+      "meters": 3051,
       "points": [
         [
           1954.0,
@@ -4576,8 +4576,8 @@
       "line_id": 4,
       "from_id": 63,
       "to_id": 64,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 169,
+      "meters": 2238,
       "points": [
         [
           1872.0,
@@ -4602,8 +4602,8 @@
       "line_id": 4,
       "from_id": 64,
       "to_id": 65,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 137,
+      "meters": 1815,
       "points": [
         [
           1832.0,
@@ -4620,8 +4620,8 @@
       "line_id": 4,
       "from_id": 65,
       "to_id": 66,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 200,
+      "meters": 2647,
       "points": [
         [
           1832.0,
@@ -4646,8 +4646,8 @@
       "line_id": 4,
       "from_id": 66,
       "to_id": 67,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 155,
+      "meters": 2057,
       "points": [
         [
           1872.0,
@@ -4672,8 +4672,8 @@
       "line_id": 4,
       "from_id": 67,
       "to_id": 68,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 89,
+      "meters": 1179,
       "points": [
         [
           1808.0,
@@ -4690,8 +4690,8 @@
       "line_id": 4,
       "from_id": 68,
       "to_id": 69,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 112,
+      "meters": 1480,
       "points": [
         [
           1828.0,
@@ -4708,8 +4708,8 @@
       "line_id": 4,
       "from_id": 69,
       "to_id": 14,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 97,
+      "meters": 1284,
       "points": [
         [
           1798.0,
@@ -4726,8 +4726,8 @@
       "line_id": 4,
       "from_id": 14,
       "to_id": 70,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 73,
+      "meters": 961,
       "points": [
         [
           1828.0,
@@ -4756,8 +4756,8 @@
       "line_id": 4,
       "from_id": 70,
       "to_id": 71,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 62,
+      "meters": 822,
       "points": [
         [
           2044.0,
@@ -4774,8 +4774,8 @@
       "line_id": 4,
       "from_id": 71,
       "to_id": 72,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 67,
+      "meters": 889,
       "points": [
         [
           2104.0,
@@ -4804,8 +4804,8 @@
       "line_id": 4,
       "from_id": 72,
       "to_id": 73,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 117,
+      "meters": 1554,
       "points": [
         [
           2146.0,
@@ -4826,8 +4826,8 @@
       "line_id": 4,
       "from_id": 73,
       "to_id": 74,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 178,
+      "meters": 2360,
       "points": [
         [
           2132.0,
@@ -4844,8 +4844,8 @@
       "line_id": 4,
       "from_id": 75,
       "to_id": 76,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 97,
+      "meters": 1282,
       "points": [
         [
           1420.0,
@@ -4866,8 +4866,8 @@
       "line_id": 4,
       "from_id": 76,
       "to_id": 77,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 268,
+      "meters": 3545,
       "points": [
         [
           1488.0,
@@ -4892,8 +4892,8 @@
       "line_id": 4,
       "from_id": 77,
       "to_id": 78,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 184,
+      "meters": 2434,
       "points": [
         [
           1568.0,
@@ -4910,8 +4910,8 @@
       "line_id": 4,
       "from_id": 78,
       "to_id": 79,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 407,
+      "meters": 5391,
       "points": [
         [
           1568.0,
@@ -4928,8 +4928,8 @@
       "line_id": 4,
       "from_id": 79,
       "to_id": 55,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 392,
+      "meters": 5188,
       "points": [
         [
           1568.0,
@@ -4950,8 +4950,8 @@
       "line_id": 4,
       "from_id": 55,
       "to_id": 80,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 160,
+      "meters": 2124,
       "points": [
         [
           1576.0,
@@ -4968,8 +4968,8 @@
       "line_id": 4,
       "from_id": 80,
       "to_id": 81,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 72,
+      "meters": 953,
       "points": [
         [
           1728.0,
@@ -4986,8 +4986,8 @@
       "line_id": 4,
       "from_id": 81,
       "to_id": 82,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 257,
+      "meters": 3399,
       "points": [
         [
           1772.0,
@@ -5008,8 +5008,8 @@
       "line_id": 4,
       "from_id": 82,
       "to_id": 83,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 103,
+      "meters": 1371,
       "points": [
         [
           1832.0,
@@ -5026,8 +5026,8 @@
       "line_id": 4,
       "from_id": 83,
       "to_id": 84,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 100,
+      "meters": 1329,
       "points": [
         [
           1836.0,
@@ -5044,8 +5044,8 @@
       "line_id": 4,
       "from_id": 84,
       "to_id": 85,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 144,
+      "meters": 1911,
       "points": [
         [
           1832.0,
@@ -5062,8 +5062,8 @@
       "line_id": 4,
       "from_id": 85,
       "to_id": 16,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 77,
+      "meters": 1021,
       "points": [
         [
           1854.0,
@@ -5080,8 +5080,8 @@
       "line_id": 4,
       "from_id": 16,
       "to_id": 86,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 84,
+      "meters": 1107,
       "points": [
         [
           1788.0,
@@ -5098,8 +5098,8 @@
       "line_id": 4,
       "from_id": 86,
       "to_id": 14,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 89,
+      "meters": 1179,
       "points": [
         [
           1828.0,
@@ -5116,8 +5116,8 @@
       "line_id": 5,
       "from_id": 87,
       "to_id": 88,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 133,
+      "meters": 1830,
       "points": [
         [
           2472.0,
@@ -5134,8 +5134,8 @@
       "line_id": 5,
       "from_id": 88,
       "to_id": 89,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 86,
+      "meters": 1186,
       "points": [
         [
           2518.0,
@@ -5152,8 +5152,8 @@
       "line_id": 5,
       "from_id": 89,
       "to_id": 90,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 157,
+      "meters": 2160,
       "points": [
         [
           2524.0,
@@ -5170,8 +5170,8 @@
       "line_id": 5,
       "from_id": 90,
       "to_id": 91,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 268,
+      "meters": 3682,
       "points": [
         [
           2496.0,
@@ -5188,8 +5188,8 @@
       "line_id": 5,
       "from_id": 91,
       "to_id": 92,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 104,
+      "meters": 1421,
       "points": [
         [
           2480.0,
@@ -5206,8 +5206,8 @@
       "line_id": 5,
       "from_id": 92,
       "to_id": 93,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 156,
+      "meters": 2141,
       "points": [
         [
           2502.0,
@@ -5224,8 +5224,8 @@
       "line_id": 5,
       "from_id": 93,
       "to_id": 94,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 167,
+      "meters": 2290,
       "points": [
         [
           2560.0,
@@ -5242,8 +5242,8 @@
       "line_id": 5,
       "from_id": 94,
       "to_id": 95,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 457,
+      "meters": 6270,
       "points": [
         [
           2708.0,
@@ -5260,8 +5260,8 @@
       "line_id": 5,
       "from_id": 95,
       "to_id": 56,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 164,
+      "meters": 2252,
       "points": [
         [
           2816.0,
@@ -5278,8 +5278,8 @@
       "line_id": 5,
       "from_id": 56,
       "to_id": 96,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 179,
+      "meters": 2452,
       "points": [
         [
           2876.0,
@@ -5296,8 +5296,8 @@
       "line_id": 5,
       "from_id": 96,
       "to_id": 97,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 287,
+      "meters": 3943,
       "points": [
         [
           2924.0,
@@ -5314,8 +5314,8 @@
       "line_id": 5,
       "from_id": 97,
       "to_id": 98,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 173,
+      "meters": 2377,
       "points": [
         [
           2964.0,
@@ -5332,8 +5332,8 @@
       "line_id": 5,
       "from_id": 98,
       "to_id": 99,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 296,
+      "meters": 4058,
       "points": [
         [
           3000.0,
@@ -5350,8 +5350,8 @@
       "line_id": 5,
       "from_id": 99,
       "to_id": 100,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 113,
+      "meters": 1544,
       "points": [
         [
           3064.0,
@@ -5368,8 +5368,8 @@
       "line_id": 5,
       "from_id": 100,
       "to_id": 101,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 220,
+      "meters": 3018,
       "points": [
         [
           3092.0,
@@ -5386,8 +5386,8 @@
       "line_id": 5,
       "from_id": 101,
       "to_id": 102,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 143,
+      "meters": 1960,
       "points": [
         [
           3136.0,
@@ -5404,8 +5404,8 @@
       "line_id": 5,
       "from_id": 102,
       "to_id": 103,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 118,
+      "meters": 1620,
       "points": [
         [
           3172.0,
@@ -5422,8 +5422,8 @@
       "line_id": 5,
       "from_id": 103,
       "to_id": 104,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 101,
+      "meters": 1380,
       "points": [
         [
           3228.0,
@@ -5440,8 +5440,8 @@
       "line_id": 5,
       "from_id": 104,
       "to_id": 105,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 151,
+      "meters": 2067,
       "points": [
         [
           3256.0,
@@ -5462,8 +5462,8 @@
       "line_id": 5,
       "from_id": 105,
       "to_id": 106,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 145,
+      "meters": 1989,
       "points": [
         [
           3316.0,
@@ -5484,8 +5484,8 @@
       "line_id": 5,
       "from_id": 106,
       "to_id": 107,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 173,
+      "meters": 2377,
       "points": [
         [
           3384.0,
@@ -5502,8 +5502,8 @@
       "line_id": 5,
       "from_id": 107,
       "to_id": 108,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 213,
+      "meters": 2923,
       "points": [
         [
           3444.0,
@@ -5520,8 +5520,8 @@
       "line_id": 6,
       "from_id": 109,
       "to_id": 110,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 165,
+      "meters": 1637,
       "points": [
         [
           688.0,
@@ -5538,8 +5538,8 @@
       "line_id": 6,
       "from_id": 110,
       "to_id": 111,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 163,
+      "meters": 1617,
       "points": [
         [
           736.0,
@@ -5556,8 +5556,8 @@
       "line_id": 6,
       "from_id": 111,
       "to_id": 112,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 140,
+      "meters": 1387,
       "points": [
         [
           842.0,
@@ -5582,8 +5582,8 @@
       "line_id": 6,
       "from_id": 112,
       "to_id": 113,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 72,
+      "meters": 718,
       "points": [
         [
           888.0,
@@ -5604,8 +5604,8 @@
       "line_id": 6,
       "from_id": 113,
       "to_id": 47,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 173,
+      "meters": 1717,
       "points": [
         [
           934.0,
@@ -5630,8 +5630,8 @@
       "line_id": 6,
       "from_id": 47,
       "to_id": 114,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 92,
+      "meters": 910,
       "points": [
         [
           1088.0,
@@ -5668,8 +5668,8 @@
       "line_id": 6,
       "from_id": 114,
       "to_id": 115,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 107,
+      "meters": 1064,
       "points": [
         [
           1288.0,
@@ -5694,8 +5694,8 @@
       "line_id": 6,
       "from_id": 115,
       "to_id": 116,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 106,
+      "meters": 1056,
       "points": [
         [
           1404.0,
@@ -5712,8 +5712,8 @@
       "line_id": 6,
       "from_id": 116,
       "to_id": 117,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 108,
+      "meters": 1075,
       "points": [
         [
           1476.0,
@@ -5738,8 +5738,8 @@
       "line_id": 6,
       "from_id": 117,
       "to_id": 13,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 116,
+      "meters": 1153,
       "points": [
         [
           1576.0,
@@ -5756,8 +5756,8 @@
       "line_id": 6,
       "from_id": 13,
       "to_id": 118,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 112,
+      "meters": 1111,
       "points": [
         [
           1560.0,
@@ -5782,8 +5782,8 @@
       "line_id": 6,
       "from_id": 118,
       "to_id": 69,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 72,
+      "meters": 714,
       "points": [
         [
           1628.0,
@@ -5800,8 +5800,8 @@
       "line_id": 6,
       "from_id": 69,
       "to_id": 119,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 117,
+      "meters": 1156,
       "points": [
         [
           1798.0,
@@ -5818,8 +5818,8 @@
       "line_id": 6,
       "from_id": 119,
       "to_id": 120,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 139,
+      "meters": 1374,
       "points": [
         [
           2044.0,
@@ -5836,8 +5836,8 @@
       "line_id": 6,
       "from_id": 120,
       "to_id": 121,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 190,
+      "meters": 1883,
       "points": [
         [
           2164.0,
@@ -5854,8 +5854,8 @@
       "line_id": 6,
       "from_id": 121,
       "to_id": 122,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 148,
+      "meters": 1466,
       "points": [
         [
           2270.0,
@@ -5872,8 +5872,8 @@
       "line_id": 6,
       "from_id": 122,
       "to_id": 89,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 139,
+      "meters": 1376,
       "points": [
         [
           2352.0,
@@ -5890,8 +5890,8 @@
       "line_id": 6,
       "from_id": 89,
       "to_id": 123,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 137,
+      "meters": 1360,
       "points": [
         [
           2524.0,
@@ -5908,8 +5908,8 @@
       "line_id": 6,
       "from_id": 123,
       "to_id": 124,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 161,
+      "meters": 1600,
       "points": [
         [
           2624.0,
@@ -5926,8 +5926,8 @@
       "line_id": 6,
       "from_id": 124,
       "to_id": 125,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 177,
+      "meters": 1758,
       "points": [
         [
           2692.0,
@@ -5944,8 +5944,8 @@
       "line_id": 6,
       "from_id": 125,
       "to_id": 126,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 155,
+      "meters": 1539,
       "points": [
         [
           2768.0,
@@ -5962,8 +5962,8 @@
       "line_id": 6,
       "from_id": 126,
       "to_id": 127,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 139,
+      "meters": 1376,
       "points": [
         [
           2872.0,
@@ -5980,8 +5980,8 @@
       "line_id": 6,
       "from_id": 127,
       "to_id": 128,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 110,
+      "meters": 1094,
       "points": [
         [
           2952.0,
@@ -5998,8 +5998,8 @@
       "line_id": 6,
       "from_id": 128,
       "to_id": 129,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 176,
+      "meters": 1748,
       "points": [
         [
           3044.0,
@@ -6016,8 +6016,8 @@
       "line_id": 6,
       "from_id": 129,
       "to_id": 130,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 264,
+      "meters": 2616,
       "points": [
         [
           3104.0,
@@ -6034,8 +6034,8 @@
       "line_id": 6,
       "from_id": 130,
       "to_id": 131,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 169,
+      "meters": 1679,
       "points": [
         [
           3156.0,
@@ -6052,8 +6052,8 @@
       "line_id": 6,
       "from_id": 131,
       "to_id": 132,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 135,
+      "meters": 1340,
       "points": [
         [
           3238.0,
@@ -6074,8 +6074,8 @@
       "line_id": 6,
       "from_id": 132,
       "to_id": 133,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 128,
+      "meters": 1268,
       "points": [
         [
           3264.0,
@@ -6092,8 +6092,8 @@
       "line_id": 6,
       "from_id": 133,
       "to_id": 134,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 130,
+      "meters": 1287,
       "points": [
         [
           3264.0,
@@ -6114,8 +6114,8 @@
       "line_id": 7,
       "from_id": 135,
       "to_id": 136,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 232,
+      "meters": 2101,
       "points": [
         [
           3172.0,
@@ -6148,8 +6148,8 @@
       "line_id": 7,
       "from_id": 136,
       "to_id": 137,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 154,
+      "meters": 1395,
       "points": [
         [
           2916.0,
@@ -6166,8 +6166,8 @@
       "line_id": 7,
       "from_id": 137,
       "to_id": 138,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 105,
+      "meters": 951,
       "points": [
         [
           2836.0,
@@ -6192,8 +6192,8 @@
       "line_id": 7,
       "from_id": 138,
       "to_id": 139,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 151,
+      "meters": 1363,
       "points": [
         [
           2716.0,
@@ -6210,8 +6210,8 @@
       "line_id": 7,
       "from_id": 139,
       "to_id": 140,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 240,
+      "meters": 2176,
       "points": [
         [
           2752.0,
@@ -6228,8 +6228,8 @@
       "line_id": 7,
       "from_id": 140,
       "to_id": 141,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 254,
+      "meters": 2298,
       "points": [
         [
           2676.0,
@@ -6246,8 +6246,8 @@
       "line_id": 7,
       "from_id": 141,
       "to_id": 142,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 168,
+      "meters": 1519,
       "points": [
         [
           2600.0,
@@ -6264,8 +6264,8 @@
       "line_id": 7,
       "from_id": 142,
       "to_id": 143,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 214,
+      "meters": 1942,
       "points": [
         [
           2512.0,
@@ -6282,8 +6282,8 @@
       "line_id": 7,
       "from_id": 143,
       "to_id": 144,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 163,
+      "meters": 1475,
       "points": [
         [
           2352.0,
@@ -6304,8 +6304,8 @@
       "line_id": 7,
       "from_id": 144,
       "to_id": 145,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 234,
+      "meters": 2121,
       "points": [
         [
           2268.0,
@@ -6322,8 +6322,8 @@
       "line_id": 7,
       "from_id": 145,
       "to_id": 74,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 109,
+      "meters": 989,
       "points": [
         [
           2192.0,
@@ -6348,8 +6348,8 @@
       "line_id": 7,
       "from_id": 74,
       "to_id": 85,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 243,
+      "meters": 2201,
       "points": [
         [
           2080.0,
@@ -6366,8 +6366,8 @@
       "line_id": 7,
       "from_id": 85,
       "to_id": 146,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 71,
+      "meters": 646,
       "points": [
         [
           1854.0,
@@ -6384,8 +6384,8 @@
       "line_id": 7,
       "from_id": 146,
       "to_id": 147,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 137,
+      "meters": 1240,
       "points": [
         [
           1772.0,
@@ -6406,8 +6406,8 @@
       "line_id": 7,
       "from_id": 147,
       "to_id": 148,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 94,
+      "meters": 847,
       "points": [
         [
           1654.0,
@@ -6428,8 +6428,8 @@
       "line_id": 7,
       "from_id": 148,
       "to_id": 149,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 109,
+      "meters": 990,
       "points": [
         [
           1576.0,
@@ -6446,8 +6446,8 @@
       "line_id": 7,
       "from_id": 149,
       "to_id": 116,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 97,
+      "meters": 879,
       "points": [
         [
           1552.0,
@@ -6464,8 +6464,8 @@
       "line_id": 7,
       "from_id": 116,
       "to_id": 12,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 145,
+      "meters": 1313,
       "points": [
         [
           1476.0,
@@ -6486,8 +6486,8 @@
       "line_id": 7,
       "from_id": 12,
       "to_id": 150,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 151,
+      "meters": 1369,
       "points": [
         [
           1454.0,
@@ -6504,8 +6504,8 @@
       "line_id": 7,
       "from_id": 150,
       "to_id": 151,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 129,
+      "meters": 1167,
       "points": [
         [
           1398.0,
@@ -6526,8 +6526,8 @@
       "line_id": 7,
       "from_id": 151,
       "to_id": 152,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 97,
+      "meters": 875,
       "points": [
         [
           1456.0,
@@ -6544,8 +6544,8 @@
       "line_id": 7,
       "from_id": 152,
       "to_id": 44,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 70,
+      "meters": 631,
       "points": [
         [
           1360.0,
@@ -6562,8 +6562,8 @@
       "line_id": 7,
       "from_id": 44,
       "to_id": 153,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 102,
+      "meters": 923,
       "points": [
         [
           1252.0,
@@ -6580,8 +6580,8 @@
       "line_id": 7,
       "from_id": 153,
       "to_id": 154,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 102,
+      "meters": 926,
       "points": [
         [
           1200.0,
@@ -6598,8 +6598,8 @@
       "line_id": 7,
       "from_id": 154,
       "to_id": 5,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 100,
+      "meters": 905,
       "points": [
         [
           1102.0,
@@ -6616,8 +6616,8 @@
       "line_id": 7,
       "from_id": 5,
       "to_id": 155,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 124,
+      "meters": 1121,
       "points": [
         [
           924.0,
@@ -6638,8 +6638,8 @@
       "line_id": 7,
       "from_id": 155,
       "to_id": 110,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 577,
+      "meters": 5225,
       "points": [
         [
           816.0,
@@ -6656,8 +6656,8 @@
       "line_id": 7,
       "from_id": 110,
       "to_id": 156,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 130,
+      "meters": 1181,
       "points": [
         [
           736.0,
@@ -6678,8 +6678,8 @@
       "line_id": 7,
       "from_id": 156,
       "to_id": 157,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 239,
+      "meters": 2160,
       "points": [
         [
           692.0,
@@ -6696,8 +6696,8 @@
       "line_id": 7,
       "from_id": 157,
       "to_id": 158,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 89,
+      "meters": 810,
       "points": [
         [
           692.0,
@@ -6714,8 +6714,8 @@
       "line_id": 7,
       "from_id": 158,
       "to_id": 159,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 89,
+      "meters": 806,
       "points": [
         [
           692.0,
@@ -6748,8 +6748,8 @@
       "line_id": 8,
       "from_id": 160,
       "to_id": 161,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 88,
+      "meters": 995,
       "points": [
         [
           2912.0,
@@ -6770,8 +6770,8 @@
       "line_id": 8,
       "from_id": 161,
       "to_id": 136,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 82,
+      "meters": 924,
       "points": [
         [
           2910.0,
@@ -6788,8 +6788,8 @@
       "line_id": 8,
       "from_id": 136,
       "to_id": 162,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 245,
+      "meters": 2771,
       "points": [
         [
           2916.0,
@@ -6806,8 +6806,8 @@
       "line_id": 8,
       "from_id": 162,
       "to_id": 163,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 161,
+      "meters": 1821,
       "points": [
         [
           2932.0,
@@ -6824,8 +6824,8 @@
       "line_id": 8,
       "from_id": 163,
       "to_id": 164,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 163,
+      "meters": 1843,
       "points": [
         [
           2932.0,
@@ -6842,8 +6842,8 @@
       "line_id": 8,
       "from_id": 164,
       "to_id": 127,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 255,
+      "meters": 2888,
       "points": [
         [
           2932.0,
@@ -6860,8 +6860,8 @@
       "line_id": 8,
       "from_id": 127,
       "to_id": 165,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 129,
+      "meters": 1457,
       "points": [
         [
           2952.0,
@@ -6878,8 +6878,8 @@
       "line_id": 8,
       "from_id": 165,
       "to_id": 166,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 148,
+      "meters": 1677,
       "points": [
         [
           2942.0,
@@ -6904,8 +6904,8 @@
       "line_id": 8,
       "from_id": 166,
       "to_id": 167,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 205,
+      "meters": 2312,
       "points": [
         [
           2820.0,
@@ -6926,8 +6926,8 @@
       "line_id": 8,
       "from_id": 167,
       "to_id": 93,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 290,
+      "meters": 3277,
       "points": [
         [
           2676.0,
@@ -6956,8 +6956,8 @@
       "line_id": 8,
       "from_id": 93,
       "to_id": 168,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 334,
+      "meters": 3780,
       "points": [
         [
           2560.0,
@@ -6986,8 +6986,8 @@
       "line_id": 8,
       "from_id": 168,
       "to_id": 169,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 207,
+      "meters": 2338,
       "points": [
         [
           2516.0,
@@ -7012,8 +7012,8 @@
       "line_id": 8,
       "from_id": 169,
       "to_id": 170,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 210,
+      "meters": 2370,
       "points": [
         [
           2376.0,
@@ -7030,8 +7030,8 @@
       "line_id": 8,
       "from_id": 170,
       "to_id": 62,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 187,
+      "meters": 2117,
       "points": [
         [
           2226.0,
@@ -7048,8 +7048,8 @@
       "line_id": 8,
       "from_id": 62,
       "to_id": 171,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 147,
+      "meters": 1663,
       "points": [
         [
           1954.0,
@@ -7066,8 +7066,8 @@
       "line_id": 8,
       "from_id": 171,
       "to_id": 172,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 190,
+      "meters": 2147,
       "points": [
         [
           1764.0,
@@ -7084,8 +7084,8 @@
       "line_id": 8,
       "from_id": 172,
       "to_id": 34,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 169,
+      "meters": 1908,
       "points": [
         [
           1608.0,
@@ -7106,8 +7106,8 @@
       "line_id": 8,
       "from_id": 34,
       "to_id": 17,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 279,
+      "meters": 3155,
       "points": [
         [
           1388.0,
@@ -7124,8 +7124,8 @@
       "line_id": 8,
       "from_id": 17,
       "to_id": 173,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 125,
+      "meters": 1410,
       "points": [
         [
           1380.0,
@@ -7146,8 +7146,8 @@
       "line_id": 8,
       "from_id": 173,
       "to_id": 174,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 136,
+      "meters": 1534,
       "points": [
         [
           1384.0,
@@ -7164,8 +7164,8 @@
       "line_id": 8,
       "from_id": 174,
       "to_id": 175,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 131,
+      "meters": 1486,
       "points": [
         [
           1336.0,
@@ -7182,8 +7182,8 @@
       "line_id": 8,
       "from_id": 175,
       "to_id": 176,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 143,
+      "meters": 1621,
       "points": [
         [
           1296.0,
@@ -7204,8 +7204,8 @@
       "line_id": 8,
       "from_id": 176,
       "to_id": 177,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 175,
+      "meters": 1982,
       "points": [
         [
           1260.0,
@@ -7222,8 +7222,8 @@
       "line_id": 8,
       "from_id": 177,
       "to_id": 178,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 117,
+      "meters": 1320,
       "points": [
         [
           1216.0,
@@ -7244,8 +7244,8 @@
       "line_id": 8,
       "from_id": 178,
       "to_id": 179,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 191,
+      "meters": 2165,
       "points": [
         [
           1140.0,
@@ -7274,8 +7274,8 @@
       "line_id": 8,
       "from_id": 179,
       "to_id": 180,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 217,
+      "meters": 2451,
       "points": [
         [
           1058.0,
@@ -7304,8 +7304,8 @@
       "line_id": 9,
       "from_id": 181,
       "to_id": 182,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 181,
+      "meters": 1660,
       "points": [
         [
           924.0,
@@ -7334,8 +7334,8 @@
       "line_id": 9,
       "from_id": 182,
       "to_id": 183,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 199,
+      "meters": 1830,
       "points": [
         [
           940.0,
@@ -7352,8 +7352,8 @@
       "line_id": 9,
       "from_id": 183,
       "to_id": 184,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 217,
+      "meters": 1998,
       "points": [
         [
           940.0,
@@ -7370,8 +7370,8 @@
       "line_id": 9,
       "from_id": 184,
       "to_id": 185,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 147,
+      "meters": 1352,
       "points": [
         [
           940.0,
@@ -7388,8 +7388,8 @@
       "line_id": 9,
       "from_id": 185,
       "to_id": 186,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 85,
+      "meters": 785,
       "points": [
         [
           940.0,
@@ -7406,8 +7406,8 @@
       "line_id": 9,
       "from_id": 186,
       "to_id": 187,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 124,
+      "meters": 1140,
       "points": [
         [
           920.0,
@@ -7424,8 +7424,8 @@
       "line_id": 9,
       "from_id": 187,
       "to_id": 188,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 92,
+      "meters": 845,
       "points": [
         [
           940.0,
@@ -7442,8 +7442,8 @@
       "line_id": 9,
       "from_id": 188,
       "to_id": 189,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 90,
+      "meters": 826,
       "points": [
         [
           940.0,
@@ -7460,8 +7460,8 @@
       "line_id": 9,
       "from_id": 189,
       "to_id": 113,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 202,
+      "meters": 1857,
       "points": [
         [
           940.0,
@@ -7478,8 +7478,8 @@
       "line_id": 9,
       "from_id": 113,
       "to_id": 190,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 105,
+      "meters": 961,
       "points": [
         [
           934.0,
@@ -7496,8 +7496,8 @@
       "line_id": 9,
       "from_id": 190,
       "to_id": 7,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 88,
+      "meters": 810,
       "points": [
         [
           960.0,
@@ -7514,7 +7514,7 @@
       "line_id": 9,
       "from_id": 7,
       "to_id": 191,
-      "seconds": 60,
+      "seconds": 109,
       "meters": 1000,
       "points": [
         [
@@ -7536,8 +7536,8 @@
       "line_id": 9,
       "from_id": 191,
       "to_id": 154,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 111,
+      "meters": 1024,
       "points": [
         [
           1028.0,
@@ -7554,8 +7554,8 @@
       "line_id": 9,
       "from_id": 154,
       "to_id": 192,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 96,
+      "meters": 884,
       "points": [
         [
           1102.0,
@@ -7572,8 +7572,8 @@
       "line_id": 9,
       "from_id": 192,
       "to_id": 193,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 94,
+      "meters": 864,
       "points": [
         [
           1092.0,
@@ -7590,8 +7590,8 @@
       "line_id": 9,
       "from_id": 193,
       "to_id": 194,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 90,
+      "meters": 830,
       "points": [
         [
           1148.0,
@@ -7608,8 +7608,8 @@
       "line_id": 9,
       "from_id": 194,
       "to_id": 195,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 114,
+      "meters": 1050,
       "points": [
         [
           1198.0,
@@ -7630,8 +7630,8 @@
       "line_id": 9,
       "from_id": 195,
       "to_id": 41,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 91,
+      "meters": 840,
       "points": [
         [
           1320.0,
@@ -7648,8 +7648,8 @@
       "line_id": 9,
       "from_id": 41,
       "to_id": 196,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 73,
+      "meters": 670,
       "points": [
         [
           1372.0,
@@ -7666,8 +7666,8 @@
       "line_id": 9,
       "from_id": 196,
       "to_id": 197,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 129,
+      "meters": 1190,
       "points": [
         [
           1472.0,
@@ -7684,8 +7684,8 @@
       "line_id": 9,
       "from_id": 197,
       "to_id": 198,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 184,
+      "meters": 1690,
       "points": [
         [
           1532.0,
@@ -7702,8 +7702,8 @@
       "line_id": 9,
       "from_id": 198,
       "to_id": 67,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 135,
+      "meters": 1240,
       "points": [
         [
           1744.0,
@@ -7720,8 +7720,8 @@
       "line_id": 9,
       "from_id": 67,
       "to_id": 199,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 161,
+      "meters": 1480,
       "points": [
         [
           1808.0,
@@ -7742,8 +7742,8 @@
       "line_id": 9,
       "from_id": 199,
       "to_id": 200,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 84,
+      "meters": 770,
       "points": [
         [
           1920.0,
@@ -7764,8 +7764,8 @@
       "line_id": 9,
       "from_id": 200,
       "to_id": 201,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 171,
+      "meters": 1570,
       "points": [
         [
           2016.0,
@@ -7782,8 +7782,8 @@
       "line_id": 9,
       "from_id": 201,
       "to_id": 202,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 108,
+      "meters": 990,
       "points": [
         [
           2156.0,
@@ -7800,8 +7800,8 @@
       "line_id": 9,
       "from_id": 202,
       "to_id": 90,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 199,
+      "meters": 1830,
       "points": [
         [
           2244.0,
@@ -7818,8 +7818,8 @@
       "line_id": 10,
       "from_id": 77,
       "to_id": 203,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 385,
+      "meters": 4242,
       "points": [
         [
           1568.0,
@@ -7848,8 +7848,8 @@
       "line_id": 10,
       "from_id": 203,
       "to_id": 204,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 128,
+      "meters": 1408,
       "points": [
         [
           1364.0,
@@ -7866,8 +7866,8 @@
       "line_id": 10,
       "from_id": 204,
       "to_id": 205,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 126,
+      "meters": 1393,
       "points": [
         [
           1308.0,
@@ -7884,8 +7884,8 @@
       "line_id": 10,
       "from_id": 205,
       "to_id": 206,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 129,
+      "meters": 1419,
       "points": [
         [
           1260.0,
@@ -7906,8 +7906,8 @@
       "line_id": 10,
       "from_id": 206,
       "to_id": 207,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 148,
+      "meters": 1636,
       "points": [
         [
           1140.0,
@@ -7924,8 +7924,8 @@
       "line_id": 10,
       "from_id": 207,
       "to_id": 208,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 168,
+      "meters": 1858,
       "points": [
         [
           1004.0,
@@ -7942,8 +7942,8 @@
       "line_id": 10,
       "from_id": 208,
       "to_id": 209,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 107,
+      "meters": 1180,
       "points": [
         [
           852.0,
@@ -7964,8 +7964,8 @@
       "line_id": 10,
       "from_id": 209,
       "to_id": 210,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 112,
+      "meters": 1238,
       "points": [
         [
           768.0,
@@ -7986,8 +7986,8 @@
       "line_id": 10,
       "from_id": 210,
       "to_id": 211,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 201,
+      "meters": 2218,
       "points": [
         [
           652.0,
@@ -8004,8 +8004,8 @@
       "line_id": 10,
       "from_id": 211,
       "to_id": 212,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 235,
+      "meters": 2595,
       "points": [
         [
           540.0,
@@ -8022,8 +8022,8 @@
       "line_id": 11,
       "from_id": 1,
       "to_id": 213,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 133,
+      "meters": 1409,
       "points": [
         [
           912.0,
@@ -8040,8 +8040,8 @@
       "line_id": 11,
       "from_id": 213,
       "to_id": 214,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 183,
+      "meters": 1937,
       "points": [
         [
           928.0,
@@ -8058,8 +8058,8 @@
       "line_id": 11,
       "from_id": 214,
       "to_id": 215,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 187,
+      "meters": 1983,
       "points": [
         [
           988.0,
@@ -8104,8 +8104,8 @@
       "line_id": 11,
       "from_id": 215,
       "to_id": 216,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 107,
+      "meters": 1133,
       "points": [
         [
           1280.0,
@@ -8134,8 +8134,8 @@
       "line_id": 11,
       "from_id": 216,
       "to_id": 39,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 53,
+      "meters": 564,
       "points": [
         [
           1392.0,
@@ -8152,8 +8152,8 @@
       "line_id": 11,
       "from_id": 39,
       "to_id": 217,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 135,
+      "meters": 1431,
       "points": [
         [
           1396.0,
@@ -8178,8 +8178,8 @@
       "line_id": 11,
       "from_id": 217,
       "to_id": 218,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 61,
+      "meters": 646,
       "points": [
         [
           1496.0,
@@ -8200,8 +8200,8 @@
       "line_id": 11,
       "from_id": 218,
       "to_id": 219,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 167,
+      "meters": 1774,
       "points": [
         [
           1548.0,
@@ -8218,8 +8218,8 @@
       "line_id": 11,
       "from_id": 219,
       "to_id": 150,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 133,
+      "meters": 1415,
       "points": [
         [
           1548.0,
@@ -8264,8 +8264,8 @@
       "line_id": 11,
       "from_id": 150,
       "to_id": 118,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 263,
+      "meters": 2796,
       "points": [
         [
           1398.0,
@@ -8322,8 +8322,8 @@
       "line_id": 11,
       "from_id": 118,
       "to_id": 220,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 79,
+      "meters": 833,
       "points": [
         [
           1628.0,
@@ -8348,8 +8348,8 @@
       "line_id": 12,
       "from_id": 221,
       "to_id": 222,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 245,
+      "meters": 2405,
       "points": [
         [
           2060.0,
@@ -8370,8 +8370,8 @@
       "line_id": 12,
       "from_id": 222,
       "to_id": 202,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 201,
+      "meters": 1978,
       "points": [
         [
           2180.0,
@@ -8404,8 +8404,8 @@
       "line_id": 12,
       "from_id": 202,
       "to_id": 121,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 186,
+      "meters": 1827,
       "points": [
         [
           2244.0,
@@ -8430,8 +8430,8 @@
       "line_id": 12,
       "from_id": 121,
       "to_id": 223,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 125,
+      "meters": 1234,
       "points": [
         [
           2270.0,
@@ -8464,8 +8464,8 @@
       "line_id": 12,
       "from_id": 223,
       "to_id": 224,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 126,
+      "meters": 1242,
       "points": [
         [
           2164.0,
@@ -8490,8 +8490,8 @@
       "line_id": 12,
       "from_id": 224,
       "to_id": 72,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 181,
+      "meters": 1783,
       "points": [
         [
           2212.0,
@@ -8508,8 +8508,8 @@
       "line_id": 12,
       "from_id": 72,
       "to_id": 225,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 76,
+      "meters": 749,
       "points": [
         [
           2146.0,
@@ -8534,8 +8534,8 @@
       "line_id": 12,
       "from_id": 225,
       "to_id": 16,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 197,
+      "meters": 1936,
       "points": [
         [
           2052.0,
@@ -8568,8 +8568,8 @@
       "line_id": 12,
       "from_id": 16,
       "to_id": 147,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 139,
+      "meters": 1365,
       "points": [
         [
           1788.0,
@@ -8594,8 +8594,8 @@
       "line_id": 12,
       "from_id": 147,
       "to_id": 226,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 205,
+      "meters": 2012,
       "points": [
         [
           1654.0,
@@ -8612,8 +8612,8 @@
       "line_id": 12,
       "from_id": 226,
       "to_id": 227,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 207,
+      "meters": 2040,
       "points": [
         [
           1584.0,
@@ -8638,8 +8638,8 @@
       "line_id": 12,
       "from_id": 227,
       "to_id": 228,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 76,
+      "meters": 745,
       "points": [
         [
           1480.0,
@@ -8656,8 +8656,8 @@
       "line_id": 12,
       "from_id": 228,
       "to_id": 229,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 80,
+      "meters": 786,
       "points": [
         [
           1368.0,
@@ -8682,8 +8682,8 @@
       "line_id": 12,
       "from_id": 229,
       "to_id": 230,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 238,
+      "meters": 2342,
       "points": [
         [
           1256.0,
@@ -8712,8 +8712,8 @@
       "line_id": 12,
       "from_id": 230,
       "to_id": 190,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 158,
+      "meters": 1556,
       "points": [
         [
           1020.0,
@@ -8738,8 +8738,8 @@
       "line_id": 12,
       "from_id": 190,
       "to_id": 111,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 184,
+      "meters": 1813,
       "points": [
         [
           960.0,
@@ -8760,8 +8760,8 @@
       "line_id": 12,
       "from_id": 111,
       "to_id": 155,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 149,
+      "meters": 1469,
       "points": [
         [
           842.0,
@@ -8786,8 +8786,8 @@
       "line_id": 12,
       "from_id": 155,
       "to_id": 231,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 219,
+      "meters": 2156,
       "points": [
         [
           816.0,
@@ -8804,8 +8804,8 @@
       "line_id": 12,
       "from_id": 231,
       "to_id": 4,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 142,
+      "meters": 1392,
       "points": [
         [
           828.0,
@@ -8846,8 +8846,8 @@
       "line_id": 12,
       "from_id": 4,
       "to_id": 232,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 132,
+      "meters": 1300,
       "points": [
         [
           908.0,
@@ -8872,8 +8872,8 @@
       "line_id": 12,
       "from_id": 232,
       "to_id": 233,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 79,
+      "meters": 780,
       "points": [
         [
           956.0,
@@ -8890,8 +8890,8 @@
       "line_id": 12,
       "from_id": 233,
       "to_id": 234,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 136,
+      "meters": 1340,
       "points": [
         [
           988.0,
@@ -8928,8 +8928,8 @@
       "line_id": 12,
       "from_id": 234,
       "to_id": 235,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 177,
+      "meters": 1743,
       "points": [
         [
           1104.0,
@@ -8946,8 +8946,8 @@
       "line_id": 12,
       "from_id": 235,
       "to_id": 236,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 94,
+      "meters": 927,
       "points": [
         [
           1164.0,
@@ -8964,8 +8964,8 @@
       "line_id": 12,
       "from_id": 236,
       "to_id": 40,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 100,
+      "meters": 983,
       "points": [
         [
           1234.0,
@@ -8982,8 +8982,8 @@
       "line_id": 12,
       "from_id": 40,
       "to_id": 217,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 179,
+      "meters": 1765,
       "points": [
         [
           1368.0,
@@ -9012,8 +9012,8 @@
       "line_id": 12,
       "from_id": 217,
       "to_id": 237,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 89,
+      "meters": 880,
       "points": [
         [
           1496.0,
@@ -9030,8 +9030,8 @@
       "line_id": 12,
       "from_id": 237,
       "to_id": 238,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 92,
+      "meters": 900,
       "points": [
         [
           1632.0,
@@ -9060,8 +9060,8 @@
       "line_id": 12,
       "from_id": 238,
       "to_id": 66,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 113,
+      "meters": 1110,
       "points": [
         [
           1756.0,
@@ -9078,8 +9078,8 @@
       "line_id": 12,
       "from_id": 66,
       "to_id": 221,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 178,
+      "meters": 1752,
       "points": [
         [
           1872.0,
@@ -9100,8 +9100,8 @@
       "line_id": 13,
       "from_id": 159,
       "to_id": 239,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 72,
+      "meters": 859,
       "points": [
         [
           584.0,
@@ -9130,8 +9130,8 @@
       "line_id": 13,
       "from_id": 239,
       "to_id": 240,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 198,
+      "meters": 2355,
       "points": [
         [
           676.0,
@@ -9152,8 +9152,8 @@
       "line_id": 13,
       "from_id": 240,
       "to_id": 186,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 131,
+      "meters": 1565,
       "points": [
         [
           816.0,
@@ -9170,8 +9170,8 @@
       "line_id": 13,
       "from_id": 186,
       "to_id": 241,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 182,
+      "meters": 2163,
       "points": [
         [
           920.0,
@@ -9192,8 +9192,8 @@
       "line_id": 13,
       "from_id": 241,
       "to_id": 242,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 79,
+      "meters": 942,
       "points": [
         [
           1076.0,
@@ -9214,8 +9214,8 @@
       "line_id": 13,
       "from_id": 242,
       "to_id": 243,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 89,
+      "meters": 1063,
       "points": [
         [
           1184.0,
@@ -9236,8 +9236,8 @@
       "line_id": 13,
       "from_id": 243,
       "to_id": 51,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 103,
+      "meters": 1226,
       "points": [
         [
           1224.0,
@@ -9254,8 +9254,8 @@
       "line_id": 13,
       "from_id": 51,
       "to_id": 244,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 141,
+      "meters": 1683,
       "points": [
         [
           1342.0,
@@ -9280,8 +9280,8 @@
       "line_id": 13,
       "from_id": 245,
       "to_id": 246,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 251,
+      "meters": 2352,
       "points": [
         [
           1608.0,
@@ -9302,8 +9302,8 @@
       "line_id": 13,
       "from_id": 246,
       "to_id": 199,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 130,
+      "meters": 1221,
       "points": [
         [
           1880.0,
@@ -9320,8 +9320,8 @@
       "line_id": 13,
       "from_id": 199,
       "to_id": 247,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 157,
+      "meters": 1474,
       "points": [
         [
           1920.0,
@@ -9346,8 +9346,8 @@
       "line_id": 13,
       "from_id": 247,
       "to_id": 222,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 237,
+      "meters": 2215,
       "points": [
         [
           2060.0,
@@ -9364,8 +9364,8 @@
       "line_id": 13,
       "from_id": 222,
       "to_id": 248,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 165,
+      "meters": 1546,
       "points": [
         [
           2180.0,
@@ -9386,8 +9386,8 @@
       "line_id": 13,
       "from_id": 248,
       "to_id": 91,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 214,
+      "meters": 2005,
       "points": [
         [
           2380.0,
@@ -9404,8 +9404,8 @@
       "line_id": 13,
       "from_id": 91,
       "to_id": 92,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 165,
+      "meters": 1542,
       "points": [
         [
           2480.0,
@@ -9422,8 +9422,8 @@
       "line_id": 13,
       "from_id": 92,
       "to_id": 93,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 233,
+      "meters": 2185,
       "points": [
         [
           2502.0,
@@ -9440,8 +9440,8 @@
       "line_id": 14,
       "from_id": 223,
       "to_id": 249,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 149,
+      "meters": 2080,
       "points": [
         [
           2164.0,
@@ -9474,8 +9474,8 @@
       "line_id": 14,
       "from_id": 249,
       "to_id": 88,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 102,
+      "meters": 1427,
       "points": [
         [
           2444.0,
@@ -9492,8 +9492,8 @@
       "line_id": 14,
       "from_id": 88,
       "to_id": 250,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 196,
+      "meters": 2737,
       "points": [
         [
           2518.0,
@@ -9526,8 +9526,8 @@
       "line_id": 14,
       "from_id": 250,
       "to_id": 125,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 169,
+      "meters": 2360,
       "points": [
         [
           2696.0,
@@ -9544,8 +9544,8 @@
       "line_id": 14,
       "from_id": 125,
       "to_id": 165,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 194,
+      "meters": 2716,
       "points": [
         [
           2768.0,
@@ -9570,8 +9570,8 @@
       "line_id": 14,
       "from_id": 165,
       "to_id": 251,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 144,
+      "meters": 2012,
       "points": [
         [
           2942.0,
@@ -9596,8 +9596,8 @@
       "line_id": 14,
       "from_id": 251,
       "to_id": 252,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 198,
+      "meters": 2770,
       "points": [
         [
           3012.0,
@@ -9618,8 +9618,8 @@
       "line_id": 14,
       "from_id": 252,
       "to_id": 131,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 156,
+      "meters": 2178,
       "points": [
         [
           3088.0,
@@ -9640,8 +9640,8 @@
       "line_id": 14,
       "from_id": 131,
       "to_id": 253,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 198,
+      "meters": 2766,
       "points": [
         [
           3238.0,
@@ -9658,8 +9658,8 @@
       "line_id": 14,
       "from_id": 253,
       "to_id": 254,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 267,
+      "meters": 3728,
       "points": [
         [
           3360.0,
@@ -9676,8 +9676,8 @@
       "line_id": 14,
       "from_id": 254,
       "to_id": 255,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 247,
+      "meters": 3457,
       "points": [
         [
           3456.0,
@@ -9694,8 +9694,8 @@
       "line_id": 14,
       "from_id": 255,
       "to_id": 256,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 109,
+      "meters": 1518,
       "points": [
         [
           3532.0,
@@ -9712,8 +9712,8 @@
       "line_id": 14,
       "from_id": 256,
       "to_id": 257,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 242,
+      "meters": 3384,
       "points": [
         [
           3636.0,
@@ -9734,8 +9734,8 @@
       "line_id": 14,
       "from_id": 257,
       "to_id": 258,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 99,
+      "meters": 1387,
       "points": [
         [
           3792.0,
@@ -9752,8 +9752,8 @@
       "line_id": 15,
       "from_id": 259,
       "to_id": 260,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 91,
+      "meters": 1420,
       "points": [
         [
           1108.0,
@@ -9782,8 +9782,8 @@
       "line_id": 15,
       "from_id": 260,
       "to_id": 243,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 77,
+      "meters": 1200,
       "points": [
         [
           1188.0,
@@ -9800,8 +9800,8 @@
       "line_id": 15,
       "from_id": 243,
       "to_id": 261,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 56,
+      "meters": 870,
       "points": [
         [
           1224.0,
@@ -9818,8 +9818,8 @@
       "line_id": 15,
       "from_id": 261,
       "to_id": 262,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 84,
+      "meters": 1316,
       "points": [
         [
           1300.0,
@@ -9836,8 +9836,8 @@
       "line_id": 15,
       "from_id": 262,
       "to_id": 263,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 78,
+      "meters": 1220,
       "points": [
         [
           1340.0,
@@ -9854,8 +9854,8 @@
       "line_id": 15,
       "from_id": 263,
       "to_id": 264,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 69,
+      "meters": 1088,
       "points": [
         [
           1400.0,
@@ -9872,8 +9872,8 @@
       "line_id": 15,
       "from_id": 264,
       "to_id": 55,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 106,
+      "meters": 1653,
       "points": [
         [
           1452.0,
@@ -9894,8 +9894,8 @@
       "line_id": 15,
       "from_id": 55,
       "to_id": 265,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 274,
+      "meters": 4296,
       "points": [
         [
           1576.0,
@@ -9912,8 +9912,8 @@
       "line_id": 15,
       "from_id": 265,
       "to_id": 266,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 197,
+      "meters": 3079,
       "points": [
         [
           1804.0,
@@ -9930,8 +9930,8 @@
       "line_id": 15,
       "from_id": 266,
       "to_id": 267,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 227,
+      "meters": 3550,
       "points": [
         [
           1924.0,
@@ -9952,8 +9952,8 @@
       "line_id": 15,
       "from_id": 267,
       "to_id": 268,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 384,
+      "meters": 6009,
       "points": [
         [
           2152.0,
@@ -9974,8 +9974,8 @@
       "line_id": 15,
       "from_id": 268,
       "to_id": 269,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 278,
+      "meters": 4351,
       "points": [
         [
           2280.0,
@@ -9992,8 +9992,8 @@
       "line_id": 15,
       "from_id": 269,
       "to_id": 270,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 363,
+      "meters": 5690,
       "points": [
         [
           2368.0,
@@ -10010,8 +10010,8 @@
       "line_id": 15,
       "from_id": 270,
       "to_id": 271,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 174,
+      "meters": 2730,
       "points": [
         [
           2456.0,
@@ -10028,8 +10028,8 @@
       "line_id": 15,
       "from_id": 271,
       "to_id": 272,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 329,
+      "meters": 5150,
       "points": [
         [
           2540.0,
@@ -10058,8 +10058,8 @@
       "line_id": 15,
       "from_id": 272,
       "to_id": 273,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 250,
+      "meters": 3916,
       "points": [
         [
           2672.0,
@@ -10076,8 +10076,8 @@
       "line_id": 15,
       "from_id": 273,
       "to_id": 274,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 345,
+      "meters": 5398,
       "points": [
         [
           2732.0,
@@ -10094,8 +10094,8 @@
       "line_id": 15,
       "from_id": 274,
       "to_id": 275,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 320,
+      "meters": 5006,
       "points": [
         [
           2792.0,
@@ -10112,8 +10112,8 @@
       "line_id": 15,
       "from_id": 275,
       "to_id": 276,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 261,
+      "meters": 4095,
       "points": [
         [
           2828.0,
@@ -10130,8 +10130,8 @@
       "line_id": 16,
       "from_id": 271,
       "to_id": 277,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 280,
+      "meters": 3530,
       "points": [
         [
           2540.0,
@@ -10168,8 +10168,8 @@
       "line_id": 16,
       "from_id": 277,
       "to_id": 278,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 203,
+      "meters": 2556,
       "points": [
         [
           2848.0,
@@ -10186,8 +10186,8 @@
       "line_id": 16,
       "from_id": 278,
       "to_id": 279,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 166,
+      "meters": 2096,
       "points": [
         [
           2888.0,
@@ -10204,8 +10204,8 @@
       "line_id": 16,
       "from_id": 279,
       "to_id": 280,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 176,
+      "meters": 2222,
       "points": [
         [
           2940.0,
@@ -10222,8 +10222,8 @@
       "line_id": 16,
       "from_id": 280,
       "to_id": 281,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 229,
+      "meters": 2893,
       "points": [
         [
           2988.0,
@@ -10244,8 +10244,8 @@
       "line_id": 16,
       "from_id": 281,
       "to_id": 282,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 100,
+      "meters": 1257,
       "points": [
         [
           3048.0,
@@ -10262,8 +10262,8 @@
       "line_id": 16,
       "from_id": 282,
       "to_id": 283,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 175,
+      "meters": 2203,
       "points": [
         [
           3104.0,
@@ -10280,8 +10280,8 @@
       "line_id": 16,
       "from_id": 283,
       "to_id": 284,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 187,
+      "meters": 2361,
       "points": [
         [
           3140.0,
@@ -10298,8 +10298,8 @@
       "line_id": 16,
       "from_id": 284,
       "to_id": 285,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 158,
+      "meters": 1995,
       "points": [
         [
           3196.0,
@@ -10336,8 +10336,8 @@
       "line_id": 17,
       "from_id": 286,
       "to_id": 200,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 140,
+      "meters": 3799,
       "points": [
         [
           1984.0,
@@ -10362,8 +10362,8 @@
       "line_id": 17,
       "from_id": 200,
       "to_id": 221,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 85,
+      "meters": 2302,
       "points": [
         [
           2016.0,
@@ -10380,8 +10380,8 @@
       "line_id": 17,
       "from_id": 221,
       "to_id": 287,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 179,
+      "meters": 4874,
       "points": [
         [
           2060.0,
@@ -10406,8 +10406,8 @@
       "line_id": 17,
       "from_id": 287,
       "to_id": 170,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 141,
+      "meters": 3838,
       "points": [
         [
           2108.0,
@@ -10424,8 +10424,8 @@
       "line_id": 17,
       "from_id": 170,
       "to_id": 60,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 336,
+      "meters": 9140,
       "points": [
         [
           2226.0,
@@ -10442,8 +10442,8 @@
       "line_id": 17,
       "from_id": 60,
       "to_id": 288,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 951,
+      "meters": 25876,
       "points": [
         [
           2280.0,
@@ -10468,8 +10468,8 @@
       "line_id": 17,
       "from_id": 288,
       "to_id": 289,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 289,
+      "meters": 7854,
       "points": [
         [
           2704.0,
@@ -10490,8 +10490,8 @@
       "line_id": 18,
       "from_id": 223,
       "to_id": 290,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 327,
+      "meters": 4730,
       "points": [
         [
           2164.0,
@@ -10516,8 +10516,8 @@
       "line_id": 18,
       "from_id": 290,
       "to_id": 87,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 145,
+      "meters": 2101,
       "points": [
         [
           2440.0,
@@ -10534,8 +10534,8 @@
       "line_id": 18,
       "from_id": 87,
       "to_id": 291,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 84,
+      "meters": 1213,
       "points": [
         [
           2472.0,
@@ -10556,8 +10556,8 @@
       "line_id": 18,
       "from_id": 291,
       "to_id": 292,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 147,
+      "meters": 2120,
       "points": [
         [
           2572.0,
@@ -10574,8 +10574,8 @@
       "line_id": 18,
       "from_id": 292,
       "to_id": 293,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 232,
+      "meters": 3350,
       "points": [
         [
           2572.0,
@@ -10604,8 +10604,8 @@
       "line_id": 18,
       "from_id": 293,
       "to_id": 294,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 132,
+      "meters": 1903,
       "points": [
         [
           2780.0,
@@ -10622,8 +10622,8 @@
       "line_id": 18,
       "from_id": 294,
       "to_id": 137,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 174,
+      "meters": 2509,
       "points": [
         [
           2828.0,
@@ -10640,8 +10640,8 @@
       "line_id": 18,
       "from_id": 137,
       "to_id": 161,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 153,
+      "meters": 2210,
       "points": [
         [
           2836.0,
@@ -10658,8 +10658,8 @@
       "line_id": 18,
       "from_id": 161,
       "to_id": 295,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 53,
+      "meters": 770,
       "points": [
         [
           2910.0,
@@ -10676,8 +10676,8 @@
       "line_id": 18,
       "from_id": 295,
       "to_id": 296,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 420,
+      "meters": 6070,
       "points": [
         [
           3008.0,
@@ -10694,8 +10694,8 @@
       "line_id": 18,
       "from_id": 296,
       "to_id": 297,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 424,
+      "meters": 6127,
       "points": [
         [
           3140.0,
@@ -10712,8 +10712,8 @@
       "line_id": 18,
       "from_id": 297,
       "to_id": 285,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 153,
+      "meters": 2206,
       "points": [
         [
           3216.0,
@@ -10730,8 +10730,8 @@
       "line_id": 18,
       "from_id": 285,
       "to_id": 298,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 147,
+      "meters": 2123,
       "points": [
         [
           3256.0,
@@ -10756,8 +10756,8 @@
       "line_id": 18,
       "from_id": 298,
       "to_id": 299,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 226,
+      "meters": 3258,
       "points": [
         [
           3478.0,
@@ -10774,8 +10774,8 @@
       "line_id": 18,
       "from_id": 299,
       "to_id": 300,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 197,
+      "meters": 2850,
       "points": [
         [
           3490.0,
@@ -10792,8 +10792,8 @@
       "line_id": 18,
       "from_id": 300,
       "to_id": 301,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 224,
+      "meters": 3230,
       "points": [
         [
           3532.0,
@@ -10810,8 +10810,8 @@
       "line_id": 18,
       "from_id": 301,
       "to_id": 302,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 311,
+      "meters": 4490,
       "points": [
         [
           3704.0,
@@ -10828,8 +10828,8 @@
       "line_id": 18,
       "from_id": 302,
       "to_id": 303,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 345,
+      "meters": 4977,
       "points": [
         [
           3708.0,
@@ -10846,8 +10846,8 @@
       "line_id": 18,
       "from_id": 303,
       "to_id": 304,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 162,
+      "meters": 2344,
       "points": [
         [
           3772.0,
@@ -10876,8 +10876,8 @@
       "line_id": 19,
       "from_id": 4,
       "to_id": 1,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 203,
+      "meters": 3719,
       "points": [
         [
           908.0,
@@ -10910,8 +10910,8 @@
       "line_id": 19,
       "from_id": 1,
       "to_id": 305,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 122,
+      "meters": 2242,
       "points": [
         [
           912.0,
@@ -10928,8 +10928,8 @@
       "line_id": 19,
       "from_id": 305,
       "to_id": 306,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 112,
+      "meters": 2046,
       "points": [
         [
           1012.0,
@@ -10954,8 +10954,8 @@
       "line_id": 19,
       "from_id": 306,
       "to_id": 307,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 175,
+      "meters": 3213,
       "points": [
         [
           1084.0,
@@ -10972,8 +10972,8 @@
       "line_id": 19,
       "from_id": 307,
       "to_id": 17,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 172,
+      "meters": 3155,
       "points": [
         [
           1164.0,
@@ -10998,8 +10998,8 @@
       "line_id": 19,
       "from_id": 17,
       "to_id": 308,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 394,
+      "meters": 7217,
       "points": [
         [
           1380.0,
@@ -11016,8 +11016,8 @@
       "line_id": 19,
       "from_id": 308,
       "to_id": 60,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 377,
+      "meters": 6919,
       "points": [
         [
           1924.0,
@@ -11034,8 +11034,8 @@
       "line_id": 20,
       "from_id": 65,
       "to_id": 38,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 264,
+      "meters": 2564,
       "points": [
         [
           1832.0,
@@ -11064,8 +11064,8 @@
       "line_id": 20,
       "from_id": 38,
       "to_id": 309,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 127,
+      "meters": 1238,
       "points": [
         [
           1418.0,
@@ -11090,8 +11090,8 @@
       "line_id": 20,
       "from_id": 309,
       "to_id": 236,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 168,
+      "meters": 1629,
       "points": [
         [
           1248.0,
@@ -11108,8 +11108,8 @@
       "line_id": 20,
       "from_id": 236,
       "to_id": 194,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 198,
+      "meters": 1927,
       "points": [
         [
           1234.0,
@@ -11134,8 +11134,8 @@
       "line_id": 20,
       "from_id": 194,
       "to_id": 233,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 180,
+      "meters": 1746,
       "points": [
         [
           1198.0,
@@ -11160,8 +11160,8 @@
       "line_id": 20,
       "from_id": 233,
       "to_id": 310,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 149,
+      "meters": 1449,
       "points": [
         [
           988.0,
@@ -11182,8 +11182,8 @@
       "line_id": 20,
       "from_id": 310,
       "to_id": 1,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 109,
+      "meters": 1059,
       "points": [
         [
           1008.0,
@@ -11212,8 +11212,8 @@
       "line_id": 20,
       "from_id": 1,
       "to_id": 311,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 210,
+      "meters": 2040,
       "points": [
         [
           912.0,
@@ -11230,8 +11230,8 @@
       "line_id": 20,
       "from_id": 311,
       "to_id": 312,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 220,
+      "meters": 2137,
       "points": [
         [
           824.0,
@@ -11248,8 +11248,8 @@
       "line_id": 20,
       "from_id": 312,
       "to_id": 313,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 359,
+      "meters": 3488,
       "points": [
         [
           764.0,
@@ -11274,8 +11274,8 @@
       "line_id": 20,
       "from_id": 313,
       "to_id": 314,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 146,
+      "meters": 1423,
       "points": [
         [
           704.0,
@@ -11292,8 +11292,8 @@
       "line_id": 20,
       "from_id": 314,
       "to_id": 315,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 141,
+      "meters": 1369,
       "points": [
         [
           704.0,
@@ -11310,8 +11310,8 @@
       "line_id": 20,
       "from_id": 315,
       "to_id": 316,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 101,
+      "meters": 985,
       "points": [
         [
           704.0,
@@ -11328,8 +11328,8 @@
       "line_id": 20,
       "from_id": 316,
       "to_id": 317,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 140,
+      "meters": 1359,
       "points": [
         [
           704.0,
@@ -11350,8 +11350,8 @@
       "line_id": 20,
       "from_id": 317,
       "to_id": 318,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 101,
+      "meters": 985,
       "points": [
         [
           676.0,
@@ -11368,8 +11368,8 @@
       "line_id": 20,
       "from_id": 318,
       "to_id": 319,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 110,
+      "meters": 1066,
       "points": [
         [
           612.0,
@@ -11386,8 +11386,8 @@
       "line_id": 20,
       "from_id": 319,
       "to_id": 320,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 115,
+      "meters": 1114,
       "points": [
         [
           504.0,
@@ -11408,8 +11408,8 @@
       "line_id": 20,
       "from_id": 320,
       "to_id": 321,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 118,
+      "meters": 1152,
       "points": [
         [
           472.0,
@@ -11426,8 +11426,8 @@
       "line_id": 20,
       "from_id": 321,
       "to_id": 322,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 134,
+      "meters": 1301,
       "points": [
         [
           472.0,
@@ -11444,8 +11444,8 @@
       "line_id": 20,
       "from_id": 322,
       "to_id": 26,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 156,
+      "meters": 1512,
       "points": [
         [
           472.0,
@@ -11462,8 +11462,8 @@
       "line_id": 20,
       "from_id": 26,
       "to_id": 323,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 107,
+      "meters": 1037,
       "points": [
         [
           446.0,
@@ -11480,8 +11480,8 @@
       "line_id": 20,
       "from_id": 323,
       "to_id": 324,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 290,
+      "meters": 2819,
       "points": [
         [
           472.0,
@@ -11506,8 +11506,8 @@
       "line_id": 20,
       "from_id": 324,
       "to_id": 325,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 147,
+      "meters": 1433,
       "points": [
         [
           568.0,
@@ -11524,8 +11524,8 @@
       "line_id": 20,
       "from_id": 325,
       "to_id": 326,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 143,
+      "meters": 1388,
       "points": [
         [
           684.0,
@@ -11542,8 +11542,8 @@
       "line_id": 21,
       "from_id": 327,
       "to_id": 328,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 99,
+      "meters": 1207,
       "points": [
         [
           1720.0,
@@ -11560,8 +11560,8 @@
       "line_id": 21,
       "from_id": 328,
       "to_id": 329,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 177,
+      "meters": 2164,
       "points": [
         [
           1616.0,
@@ -11578,8 +11578,8 @@
       "line_id": 21,
       "from_id": 329,
       "to_id": 330,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 143,
+      "meters": 1751,
       "points": [
         [
           1608.0,
@@ -11596,8 +11596,8 @@
       "line_id": 21,
       "from_id": 330,
       "to_id": 331,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 109,
+      "meters": 1333,
       "points": [
         [
           1476.0,
@@ -11614,8 +11614,8 @@
       "line_id": 21,
       "from_id": 331,
       "to_id": 332,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 110,
+      "meters": 1350,
       "points": [
         [
           1436.0,
@@ -11632,8 +11632,8 @@
       "line_id": 21,
       "from_id": 332,
       "to_id": 333,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 145,
+      "meters": 1768,
       "points": [
         [
           1224.0,
@@ -11650,8 +11650,8 @@
       "line_id": 21,
       "from_id": 333,
       "to_id": 334,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 137,
+      "meters": 1680,
       "points": [
         [
           1220.0,
@@ -11668,8 +11668,8 @@
       "line_id": 21,
       "from_id": 334,
       "to_id": 335,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 123,
+      "meters": 1501,
       "points": [
         [
           1092.0,
@@ -11694,8 +11694,8 @@
       "line_id": 21,
       "from_id": 335,
       "to_id": 336,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 178,
+      "meters": 2179,
       "points": [
         [
           1044.0,
@@ -11712,8 +11712,8 @@
       "line_id": 21,
       "from_id": 336,
       "to_id": 337,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 282,
+      "meters": 3442,
       "points": [
         [
           1044.0,
@@ -11730,8 +11730,8 @@
       "line_id": 21,
       "from_id": 337,
       "to_id": 179,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 222,
+      "meters": 2718,
       "points": [
         [
           1042.0,
@@ -11752,8 +11752,8 @@
       "line_id": 21,
       "from_id": 179,
       "to_id": 338,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 187,
+      "meters": 2280,
       "points": [
         [
           1058.0,
@@ -11774,8 +11774,8 @@
       "line_id": 21,
       "from_id": 338,
       "to_id": 339,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 159,
+      "meters": 1944,
       "points": [
         [
           1032.0,
@@ -11792,8 +11792,8 @@
       "line_id": 21,
       "from_id": 339,
       "to_id": 340,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 127,
+      "meters": 1551,
       "points": [
         [
           956.0,
@@ -11810,8 +11810,8 @@
       "line_id": 21,
       "from_id": 340,
       "to_id": 341,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 188,
+      "meters": 2303,
       "points": [
         [
           860.0,
@@ -11836,8 +11836,8 @@
       "line_id": 21,
       "from_id": 341,
       "to_id": 342,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 198,
+      "meters": 2419,
       "points": [
         [
           712.0,
@@ -11854,8 +11854,8 @@
       "line_id": 21,
       "from_id": 342,
       "to_id": 325,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 95,
+      "meters": 1163,
       "points": [
         [
           700.0,
@@ -11876,8 +11876,8 @@
       "line_id": 21,
       "from_id": 325,
       "to_id": 24,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 258,
+      "meters": 3151,
       "points": [
         [
           684.0,
@@ -11894,8 +11894,8 @@
       "line_id": 21,
       "from_id": 24,
       "to_id": 343,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 91,
+      "meters": 1115,
       "points": [
         [
           682.0,
@@ -11912,8 +11912,8 @@
       "line_id": 21,
       "from_id": 343,
       "to_id": 344,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 141,
+      "meters": 1729,
       "points": [
         [
           660.0,
@@ -11930,8 +11930,8 @@
       "line_id": 21,
       "from_id": 344,
       "to_id": 345,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 88,
+      "meters": 1080,
       "points": [
         [
           662.0,
@@ -11948,8 +11948,8 @@
       "line_id": 21,
       "from_id": 345,
       "to_id": 317,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 151,
+      "meters": 1840,
       "points": [
         [
           662.0,
@@ -11966,8 +11966,8 @@
       "line_id": 21,
       "from_id": 317,
       "to_id": 346,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 76,
+      "meters": 929,
       "points": [
         [
           676.0,
@@ -11988,8 +11988,8 @@
       "line_id": 21,
       "from_id": 346,
       "to_id": 347,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 151,
+      "meters": 1842,
       "points": [
         [
           612.0,
@@ -12014,8 +12014,8 @@
       "line_id": 21,
       "from_id": 347,
       "to_id": 348,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 95,
+      "meters": 1167,
       "points": [
         [
           500.0,
@@ -12032,8 +12032,8 @@
       "line_id": 21,
       "from_id": 349,
       "to_id": 350,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 157,
+      "meters": 1924,
       "points": [
         [
           284.0,
@@ -12062,8 +12062,8 @@
       "line_id": 21,
       "from_id": 350,
       "to_id": 351,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 148,
+      "meters": 1813,
       "points": [
         [
           372.0,
@@ -12080,8 +12080,8 @@
       "line_id": 21,
       "from_id": 351,
       "to_id": 352,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 209,
+      "meters": 2551,
       "points": [
         [
           372.0,
@@ -12106,8 +12106,8 @@
       "line_id": 21,
       "from_id": 352,
       "to_id": 353,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 112,
+      "meters": 1370,
       "points": [
         [
           284.0,
@@ -12124,8 +12124,8 @@
       "line_id": 21,
       "from_id": 353,
       "to_id": 354,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 179,
+      "meters": 2187,
       "points": [
         [
           286.0,
@@ -12142,8 +12142,8 @@
       "line_id": 21,
       "from_id": 354,
       "to_id": 355,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 82,
+      "meters": 1006,
       "points": [
         [
           286.0,
@@ -12160,8 +12160,8 @@
       "line_id": 21,
       "from_id": 355,
       "to_id": 356,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 236,
+      "meters": 2890,
       "points": [
         [
           286.0,
@@ -12178,8 +12178,8 @@
       "line_id": 21,
       "from_id": 356,
       "to_id": 357,
-      "seconds": 60,
-      "meters": 1000,
+      "seconds": 212,
+      "meters": 2587,
       "points": [
         [
           286.0,

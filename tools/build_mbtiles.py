@@ -44,8 +44,7 @@ meta = {
     "bounds": "-180,-85.05112878,180,85.05112878",
     "center": "0,0,0",
     "gzmp_schema": "2",
-    "description": "Synthetic schematic coordinates; provisional 1000 m / 60 s per edge; "
-    + d["status"],
+    "description": "Synthetic schematic coordinates; " + d["status"],
     "json": json.dumps(
         {
             "vector_layers": [

@@ -153,8 +153,20 @@ static void test_routes_frames(MapDb *db) {
         tui_plan(&s, 140, 48);
         CHECK(s.ready);
         CHECK(s.route.total_stations > 1);
-        CHECK(s.route.total_meters == (s.route.total_stations - 1) * 1000);
-        CHECK(s.route.total_seconds == (s.route.total_stations - 1) * 60);
+        /* Totals must aggregate the atlas weights; the values themselves are data. */
+        int meters = 0, seconds = 0;
+        for (size_t k = 0; k < s.route.edges_ids.size; k++) {
+            Edge *e = edge_find_by_id(&db->metro.edges, s.route.edges_ids.items[k]);
+            CHECK(e != NULL);
+            if (e) {
+                meters += e->cost_meters;
+                seconds += e->cost_time_second;
+            }
+        }
+        CHECK(s.route.edges_ids.size == (size_t)s.route.total_stations - 1);
+        CHECK(s.route.total_meters == meters);
+        CHECK(s.route.total_seconds == seconds);
+        CHECK(meters > 0 && seconds > 0);
     }
     s.from = to;
     s.to = from;
