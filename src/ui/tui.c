@@ -115,6 +115,7 @@ void tui_search(TuiState *s) {
 void tui_plan(TuiState *s, int w, int h) {
     trains_plan(&s->trains, NULL);
     s->ready = 0;
+    s->unreachable = 0;
     s->scroll = 0;
     route_dispose(&s->route);
     route_init(&s->route);
@@ -122,7 +123,8 @@ void tui_plan(TuiState *s, int w, int h) {
         return;
     if (router_find_route(&s->graph, &s->map->metro, s->from, s->to, (RouteMetric)s->metric,
                           &s->route)) {
-        snprintf(s->status, sizeof(s->status), "当前图集内两站不可达");
+        /* Reported in the sidebar; the status line stays free for other notices. */
+        s->unreachable = 1;
         return;
     }
     s->ready = 1;
@@ -199,6 +201,10 @@ static void sidebar(TuiState *s, MapFrame *f, int x, int width, int height) {
             snprintf(text, sizeof(text), "%s · %s", name(s, s->route.stations.items[i]), line_name);
             frame_text(f, x + 2, row++, inside, text, color, 0);
         }
+    } else if (s->unreachable) {
+        /* Color pair 2 is the alert red registered by the pdcurses backend. */
+        row++;
+        frame_text(f, x + 2, row++, inside, "! 当前图集内两站不可达", 2, 0);
     } else if (s->focus == 0) {
         frame_text(f, x + 2, 11, inside, "Tab 或 / 开始搜索", 0, 0);
         frame_text(f, x + 2, 13, inside, "确认起终点后自动规划", 0, 0);
@@ -233,6 +239,9 @@ void tui_frame(TuiState *s, MapFrame *f) {
         sidebar(s, f, mw + 1, w - mw - 1, mh);
     } else if (compact)
         sidebar(s, f, 0, w, mh);
+    else if (s->unreachable)
+        /* The narrow map layout draws no sidebar: keep the alert visible. */
+        frame_text(f, 1, h - 4, mw - 2, "! 当前图集内两站不可达", 2, 0);
     for (int x = 0; x < w; x++)
         frame_glyph(f, x, h - 3, 0x2500, 0, 0);
     frame_text(f, 0, h - 2, w,

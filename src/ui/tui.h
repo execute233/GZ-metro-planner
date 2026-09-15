@@ -9,7 +9,7 @@ typedef struct {
     Graph graph;
     Route route;
     Viewport view;
-    int from, to, focus, metric, candidate, scroll, ready;
+    int from, to, focus, metric, candidate, scroll, ready, unreachable;
     int matches[MAP_LIMIT], match_count;
     char query[128], status[256];
     Maintenance edit;

@@ -152,6 +152,7 @@ static void test_routes_frames(MapDb *db) {
         s.metric = metric;
         tui_plan(&s, 140, 48);
         CHECK(s.ready);
+        CHECK(!s.unreachable);
         CHECK(s.route.total_stations > 1);
         /* Totals must aggregate the atlas weights; the values themselves are data. */
         int meters = 0, seconds = 0;
@@ -180,6 +181,7 @@ static void test_routes_frames(MapDb *db) {
     s.to = from;
     tui_plan(&s, 140, 48);
     CHECK(!s.ready);
+    CHECK(s.unreachable);
     s.from = from;
     s.to = to;
     tui_plan(&s, 140, 48);

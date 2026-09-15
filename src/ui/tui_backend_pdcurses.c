@@ -17,6 +17,8 @@ static void colors(const MapDb *db) {
     start_color();
     use_default_colors();
     init_pair(1, COLOR_CYAN, -1);
+    /* Pair 2 is the alert red; line colors occupy 4 and up. */
+    init_pair(2, COLOR_RED, -1);
     dim_pairs = can_change_color() && COLORS >= 288 && COLOR_PAIRS >= 260;
     for (size_t i = 0; i < db->metro.lines.rows.size; i++) {
         int id = db->metro.lines.rows.items[i].id;
