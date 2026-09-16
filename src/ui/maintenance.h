@@ -4,6 +4,7 @@
 
 typedef struct {
     int active, action, step, confirm;
+    int selected; /* Zero-based menu selection. */
     size_t interval;
     Station station;
     Line line;
@@ -12,6 +13,7 @@ typedef struct {
 } Maintenance;
 
 void maintenance_close(Maintenance *edit);
+void maintenance_move(Maintenance *edit, int direction);
 const char *maintenance_prompt(const Maintenance *edit);
 /* Validate one complete form field. Return 1 when the user confirms saving,
  * 0 while editing, -1 for invalid input. No model or file is changed. */

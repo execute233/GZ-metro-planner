@@ -65,8 +65,17 @@ static void maintenance_frame(TuiState *s, MapFrame *frame) {
     int width = frame->width - 4;
     char text[256];
     frame_text(frame, 2, 0, width, "广州地铁 · 地图维护", 1, 0);
-    frame_text(frame, 2, 2, width, "1 添加站点  2 删除站点", 0, 0);
-    frame_text(frame, 2, 3, width, "3 添加线路  4 删除线路及区间", 0, 0);
+    const char *actions[] = {"添加站点", "删除站点", "添加线路", "删除线路及区间"};
+    if (!edit->action) {
+        for (int i = 0; i < 4; i++) {
+            snprintf(text, sizeof(text), "%s %s", i == edit->selected ? ">" : " ", actions[i]);
+            frame_text(frame, 2, 2 + i, width, text, i == edit->selected, 0);
+        }
+        frame_text(frame, 2, 7, width, maintenance_prompt(edit), 0, 0);
+        frame_text(frame, 2, frame->height - 1, width, "↑/↓ 选择操作  Enter 确认  Esc 返回地图", 0, 0);
+        return;
+    }
+    frame_text(frame, 2, 2, width, actions[edit->action - 1], 1, 0);
     frame_text(frame, 2, 5, width, maintenance_prompt(edit), 1, 0);
     snprintf(text, sizeof(text), "> %s_", edit->input);
     frame_text(frame, 2, 6, width, text, 0, 0);

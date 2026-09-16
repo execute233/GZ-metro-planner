@@ -177,6 +177,9 @@ int tui_run(const char *path) {
             } else if (key == '\n' || key == '\r' || key == KEY_ENTER) {
                 if (tui_maintenance_submit(&s, path, w, h) == 1)
                     colors(db);
+            } else if (!s.edit.action) {
+                if (key == KEY_UP || key == KEY_DOWN)
+                    maintenance_move(&s.edit, key == KEY_UP ? -1 : 1);
             } else if (key == KEY_BACKSPACE || key == 127 || key == 8) {
                 size_t n = strlen(s.edit.input);
                 if (n) {
@@ -193,8 +196,8 @@ int tui_run(const char *path) {
         if (s.browser.active) {
             if (key == 27)
                 line_browser_key(&s.browser, &db->metro, LINE_BACK, h);
-            else if (key == '\n' || key == '\r' || key == KEY_ENTER)
-                line_browser_key(&s.browser, &db->metro, LINE_ENTER, h);
+            else if (key == '\t' || key == KEY_BTAB)
+                line_browser_key(&s.browser, &db->metro, LINE_TAB, h);
             else if (key == KEY_UP || key == KEY_DOWN || key == KEY_PPAGE || key == KEY_NPAGE)
                 line_browser_key(&s.browser, &db->metro,
                                  key == KEY_UP ? LINE_UP : key == KEY_DOWN ? LINE_DOWN :

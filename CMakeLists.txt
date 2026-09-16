@@ -8,6 +8,7 @@ include(cmake/MapDependencies.cmake)
 include(cmake/PDCurses.cmake)
 add_library(gzmp_map STATIC
     src/algo/line_paths.c src/ui/line_browser.c
+    src/render/line_diagram.c
     src/render/trains.c
     src/io/mvt.c src/io/map_db.c src/io/metro_io.c src/io/tile_writer.c src/render/map_render.c src/ui/tui.c src/ui/maintenance.c)
 target_link_libraries(gzmp_map PUBLIC gzmp_sqlite gzmp_zlib)

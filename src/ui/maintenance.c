@@ -12,6 +12,15 @@ void maintenance_close(Maintenance *edit) {
     memset(edit, 0, sizeof(*edit));
 }
 
+void maintenance_move(Maintenance *edit, int direction) {
+    if (edit->action)
+        return;
+    if (direction < 0 && edit->selected > 0)
+        edit->selected--;
+    else if (direction > 0 && edit->selected < 3)
+        edit->selected++;
+}
+
 static int fail(Maintenance *edit, const char *message) {
     snprintf(edit->message, sizeof(edit->message), "%s", message);
     return -1;
@@ -48,7 +57,7 @@ const char *maintenance_prompt(const Maintenance *edit) {
     if (edit->confirm)
         return "输入 y 保存，n 返回维护菜单";
     if (!edit->action)
-        return "输入操作编号 1–4";
+        return "↑/↓ 选择操作，Enter 确认";
     if (edit->action == 2)
         return "要删除的站点全名";
     if (edit->action == 4)
@@ -156,9 +165,7 @@ int maintenance_submit(Maintenance *edit, const Metro *metro) {
     }
     int result = 0;
     if (!edit->action) {
-        if (strlen(edit->input) != 1 || edit->input[0] < '1' || edit->input[0] > '4')
-            return fail(edit, "请选择 1 添加站点 / 2 删除站点 / 3 添加线路 / 4 删除线路");
-        edit->action = edit->input[0] - '0';
+        edit->action = edit->selected + 1;
     } else if (edit->action == 1)
         result = station_field(edit, metro);
     else if (edit->action == 3)

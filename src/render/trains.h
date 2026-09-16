@@ -3,7 +3,7 @@
 #include "map_render.h"
 
 /* Both network and journey playback use this single speed setting. */
-#define TRAIN_SPEED_MULTIPLIER 3.0
+#define TRAIN_SPEED_MULTIPLIER 30.0
 #define TRAIN_FRAME_MS 100
 #define TRAIN_CARRIAGE_SCALE .35
 

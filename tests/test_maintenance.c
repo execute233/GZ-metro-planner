@@ -50,7 +50,9 @@ static int submit(TuiState *state, const char *text) {
 static void start(TuiState *state, const char *action) {
     maintenance_close(&state->edit);
     state->edit.active = 1;
-    CHECK(submit(state, action) == 0);
+    for (int i = 1; i < action[0] - '0'; i++)
+        maintenance_move(&state->edit, 1);
+    CHECK(submit(state, "") == 0);
 }
 
 static void check_tiles(MapDb *db) {
@@ -174,7 +176,8 @@ static void test_rollback(TuiState *state) {
     CHECK(submit(state, "测试新站") == 0);
     CHECK(submit(state, "n") == 0);
     CHECK(station_find_by_name(&state->map->metro.stations, "测试新站") != NULL);
-    CHECK(submit(state, "2") == 0);
+    maintenance_move(&state->edit, 1);
+    CHECK(submit(state, "") == 0);
     CHECK(submit(state, "测试新站") == 0);
     CHECK(submit(state, "y") == 1);
     CHECK(!station_find_by_name(&state->map->metro.stations, "测试新站"));
@@ -239,6 +242,32 @@ static void test_empty_rebuild(const char *source) {
     dispose(&model);
 }
 
+static void test_menu(TuiState *state) {
+    MapFrame frame = {0};
+    maintenance_close(&state->edit);
+    state->edit.active = 1;
+    CHECK(!frame_resize(&frame, 50, 16));
+    maintenance_move(&state->edit, -1);
+    CHECK(state->edit.selected == 0);
+    for (int i = 0; i < 4; i++) {
+        CHECK(state->edit.selected == i);
+        tui_frame(state, &frame);
+        for (int row = 0; row < 4; row++)
+            CHECK(frame.cells[(2 + row) * frame.width + 2].glyph == (row == i ? '>' : ' '));
+        maintenance_move(&state->edit, 1);
+    }
+    CHECK(state->edit.selected == 3);
+    maintenance_move(&state->edit, -1);
+    CHECK(state->edit.selected == 2);
+    CHECK(submit(state, "") == 0);
+    CHECK(state->edit.action == 3 && state->edit.step == 0 && !state->edit.confirm);
+    maintenance_move(&state->edit, -1);
+    CHECK(state->edit.selected == 2 && state->edit.action == 3);
+    maintenance_close(&state->edit);
+    CHECK(state->edit.selected == 0);
+    frame_dispose(&frame);
+}
+
 static void test_forms(TuiState *state) {
     MapFrame frame = {0};
     const int sizes[][2] = {{140, 48}, {90, 30}, {50, 16}};
@@ -267,6 +296,7 @@ int main(int argc, char **argv) {
     }
     TuiState state;
     CHECK(!tui_init(&state, db, 120, 40));
+    test_menu(&state);
     test_forms(&state);
     test_station(&state);
     test_line(&state);
