@@ -1,4 +1,5 @@
 #include "maintenance_form.h"
+#include "station_search.h"
 #include <errno.h>
 #include <math.h>
 #include <stdio.h>
@@ -144,6 +145,15 @@ static int validate_fields(MaintenanceForm *f, const Metro *metro) {
         MaintenanceField *v = &f->fields[i];
         const char *s = v->value;
         v->error[0] = 0;
+        if (v->kind == FORM_STATION_REF && v->station_id) {
+            const Station *selected = station_find_by_id(&metro->stations, v->station_id);
+            if (!selected) {
+                mark(f, i, "已选站点不存在，请重新搜索选择");
+                errors++;
+                continue;
+            }
+            snprintf(v->value, sizeof(v->value), "%s", selected->name);
+        }
         double a, b;
         if (v->required && !*s) mark(f, i, "此项不能为空");
         else if (strlen(s) >= v->limit) mark(f, i, "内容过长，请缩短后重试");
@@ -313,6 +323,38 @@ static size_t following(const char *s, size_t cursor) {
 
 int maintenance_form_key(MaintenanceForm *f, MaintenanceFormKey key,
                          const Metro *metro, Maintenance *draft) {
+    if (f->picking) {
+        if (key == FORM_BACK) { f->picking = 0; return 0; }
+        if (key == FORM_UP && f->candidate > 0) f->candidate--;
+        if (key == FORM_DOWN && f->candidate + 1 < f->match_count) f->candidate++;
+        if (key == FORM_ENTER && f->match_count) {
+            int i = focused_field(f);
+            const Station *s = station_find_by_id(&metro->stations, f->matches[f->candidate]);
+            if (s && i >= 0) {
+                snprintf(f->fields[i].value, sizeof(f->fields[i].value), "%s", s->name);
+                f->fields[i].station_id = s->id;
+                f->fields[i].error[0] = 0;
+                f->message[0] = 0;
+                f->picking = 0;
+                cursor_end(f);
+            }
+        }
+        char *s = f->search;
+        if (key == FORM_LEFT) f->search_cursor = previous(s, f->search_cursor);
+        if (key == FORM_RIGHT) f->search_cursor = following(s, f->search_cursor);
+        if (key == FORM_HOME) f->search_cursor = 0;
+        if (key == FORM_END) f->search_cursor = strlen(s);
+        size_t start = f->search_cursor, end = start;
+        if (key == FORM_BACKSPACE) start = previous(s, start);
+        if (key == FORM_DELETE) end = following(s, end);
+        if (start != end) {
+            memmove(s + start, s + end, strlen(s + end) + 1);
+            f->search_cursor = start;
+            f->candidate = 0;
+            f->match_count = station_search(&metro->stations, s, f->matches, MAP_LIMIT);
+        }
+        return 0;
+    }
     if (key == FORM_BACK) {
         maintenance_close(draft);
         if (f->loaded) { begin(f); return 0; }
@@ -327,6 +369,16 @@ int maintenance_form_key(MaintenanceForm *f, MaintenanceFormKey key,
         return 0;
     }
     int i = focused_field(f);
+    if (key == FORM_ENTER && i >= 0 && f->fields[i].kind == FORM_STATION_REF) {
+        f->picking = 1;
+        f->candidate = 0;
+        f->search[0] = 0;
+        f->search_cursor = 0;
+        f->match_count = station_search(&metro->stations, "", f->matches, MAP_LIMIT);
+        for (int j = 0; j < f->match_count; j++)
+            if (f->matches[j] == f->fields[i].station_id) f->candidate = j;
+        return 0;
+    }
     if (key == FORM_UP || key == FORM_DOWN || (key == FORM_ENTER && i >= 0)) {
         int delta = key == FORM_UP ? -1 : 1;
         if (f->focus + delta >= 0 && f->focus + delta <= last_row(f)) f->focus += delta;
@@ -337,7 +389,7 @@ int maintenance_form_key(MaintenanceForm *f, MaintenanceFormKey key,
         if (f->action == 3 && f->focus < buttons) resize_line(f, (f->focus - 3) / 2);
         else if (f->action == 3 && f->focus == buttons) resize_line(f, -1);
         else return confirm(f, metro, draft);
-    } else if (i >= 0) {
+    } else if (i >= 0 && f->fields[i].kind != FORM_STATION_REF) {
         char *s = f->fields[i].value;
         if (key == FORM_LEFT) f->cursor = previous(s, f->cursor);
         if (key == FORM_RIGHT) f->cursor = following(s, f->cursor);
@@ -354,9 +406,13 @@ int maintenance_form_key(MaintenanceForm *f, MaintenanceFormKey key,
     return 0;
 }
 
-void maintenance_form_type(MaintenanceForm *f, unsigned cp) {
+void maintenance_form_type(MaintenanceForm *f, unsigned cp, const Metro *metro) {
     int i = focused_field(f);
     if (!f->action || i < 0 || cp < 32 || cp == 127 || cp > 0x10ffff || (cp >= 0xd800 && cp <= 0xdfff)) return;
+    if (!f->picking && f->fields[i].kind == FORM_STATION_REF) {
+        snprintf(f->message, sizeof(f->message), "请按 Enter 打开站点搜索");
+        return;
+    }
     char bytes[4]; size_t n;
     if (cp < 0x80) { bytes[0] = (char)cp; n = 1; }
     else if (cp < 0x800) {
@@ -368,15 +424,20 @@ void maintenance_form_type(MaintenanceForm *f, unsigned cp) {
         bytes[0] = (char)(0xf0 | (cp >> 18)); bytes[1] = (char)(0x80 | ((cp >> 12) & 63));
         bytes[2] = (char)(0x80 | ((cp >> 6) & 63)); bytes[3] = (char)(0x80 | (cp & 63)); n = 4;
     }
-    char *s = f->fields[i].value;
+    char *s = f->picking ? f->search : f->fields[i].value;
+    size_t *cursor = f->picking ? &f->search_cursor : &f->cursor;
     size_t len = strlen(s);
     if (len + n >= sizeof(f->fields[i].value)) {
         snprintf(f->message, sizeof(f->message), "输入已达长度上限");
         return;
     }
-    memmove(s + f->cursor + n, s + f->cursor, len - f->cursor + 1);
-    memcpy(s + f->cursor, bytes, n);
-    f->cursor += n;
+    memmove(s + *cursor + n, s + *cursor, len - *cursor + 1);
+    memcpy(s + *cursor, bytes, n);
+    *cursor += n;
+    if (f->picking) {
+        f->candidate = 0;
+        f->match_count = station_search(&metro->stations, s, f->matches, MAP_LIMIT);
+    }
 }
 
 static void draw_field(MaintenanceForm *f, MapFrame *frame, int i, int y) {
@@ -384,10 +445,11 @@ static void draw_field(MaintenanceForm *f, MapFrame *frame, int i, int y) {
     int focused = field_row(f, i) == f->focus;
     int color = *v->error ? 2 : focused ? 1 : 0;
     char text[300];
-    snprintf(text, sizeof(text), "%s %s", focused ? ">" : " ", v->label);
+    snprintf(text, sizeof(text), "%s %s%s", focused ? ">" : " ", v->label,
+             v->kind == FORM_STATION_REF ? " [Enter 搜索]" : "");
     frame_text(frame, 2, y, frame->width - 4, text, color, 0);
     size_t start = 0;
-    if (focused) {
+    if (focused && v->kind != FORM_STATION_REF) {
         size_t p = f->cursor;
         int columns = 0;
         while (p) {
@@ -404,7 +466,65 @@ static void draw_field(MaintenanceForm *f, MapFrame *frame, int i, int y) {
     frame_text(frame, 4, y + 1, frame->width - 6, *text ? text : "[空]", color, 0);
 }
 
-void maintenance_form_frame(MaintenanceForm *f, MapFrame *frame) {
+static void search_frame(MaintenanceForm *f, MapFrame *frame, const Metro *metro) {
+    int width = frame->width - 4;
+    char text[300];
+    frame_text(frame, 2, 0, width, "搜索站点 · 中文 / 拼音 / 首字母", 1, 0);
+    snprintf(text, sizeof(text), "搜索：%.*s|%s", (int)f->search_cursor, f->search, f->search + f->search_cursor);
+    frame_text(frame, 2, 2, width, text, 1, 0);
+    int visible = (frame->height - 8) / 2;
+    if (visible < 1) visible = 1;
+    int start = f->candidate >= visible ? f->candidate - visible + 1 : 0;
+    for (int i = start; i < f->match_count && i < start + visible; i++) {
+        const Station *s = station_find_by_id(&metro->stations, f->matches[i]);
+        if (!s) continue;
+        int y = 4 + 2 * (i - start);
+        snprintf(text, sizeof(text), "%s %s", i == f->candidate ? ">" : " ", s->name);
+        frame_text(frame, 2, y, width, text, i == f->candidate, 0);
+        frame_text(frame, 4, y + 1, width - 2, "线路：", 0, 1);
+        int x = 10, right = frame->width - 2;
+        int used = 0;
+        for (size_t j = 0; j < metro->lines.rows.size && x < right; j++) {
+            const Line *line = &metro->lines.rows.items[j];
+            for (size_t k = 0; k < line->station_ids.size; k++) {
+                if (line->station_ids.items[k] != s->id) continue;
+                if (used) {
+                    frame_text(frame, x, y + 1, right - x, " / ", 0, 1);
+                    x += 3;
+                }
+                const char *name = line->name;
+                uint32_t cp;
+                while (utf8_next(&name, &cp)) {
+                    int columns = unicode_width(cp);
+                    if (x + columns > right) { x = right; break; }
+                    frame_glyph(frame, x, y + 1, cp, 4 + line->id, 0);
+                    x += columns;
+                }
+                used = 1;
+                break;
+            }
+        }
+        if (!used) frame_text(frame, 10, y + 1, right - 10, "暂无", 0, 1);
+    }
+    if (!f->match_count) frame_text(frame, 2, 4, width, "没有匹配的站点，请修改搜索词", 0, 0);
+    snprintf(text, sizeof(text), "%d/%d 个结果", f->match_count ? f->candidate + 1 : 0, f->match_count);
+    if (f->action == 2 && f->match_count) {
+        int id = f->matches[f->candidate];
+        for (size_t i = 0; i < metro->edges.rows.size; i++) {
+            const Edge *e = &metro->edges.rows.items[i];
+            if (e->from_station_id == id || e->to_station_id == id) {
+                strcat(text, "  仍被区间引用，暂不能删除");
+                break;
+            }
+        }
+    }
+    frame_text(frame, 2, frame->height - 3, width, text, 0, 0);
+    frame_text(frame, 2, frame->height - 2, width, "输入筛选  ↑↓ 选择  Enter 回填站点", 0, 0);
+    frame_text(frame, 2, frame->height - 1, width, "Esc 放弃本次选择，返回表单", 0, 0);
+}
+
+void maintenance_form_frame(MaintenanceForm *f, MapFrame *frame, const Metro *metro) {
+    if (f->picking) { search_frame(f, frame, metro); return; }
     int width = frame->width - 4;
     frame_text(frame, 2, 0, width, f->action ? actions[f->action - 1] : "广州地铁 · 地图维护", 1, 0);
     if (!f->action) {

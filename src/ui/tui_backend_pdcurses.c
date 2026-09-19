@@ -189,7 +189,7 @@ int tui_run(const char *path) {
                 if (tui_maintenance_form_key(&s, form_key, path, w, h) == 1)
                     colors(db);
             } else if (kind != KEY_CODE_YES) {
-                maintenance_form_type(&s.form, (unsigned)key);
+                maintenance_form_type(&s.form, (unsigned)key, &db->metro);
             }
             continue;
         }

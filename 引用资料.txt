@@ -1,6 +1,6 @@
 论文/文章引用
 https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0185349
-https://arxiv.org/abs/2401.18059
+https://www.microsoft.com/en-us/research/publication/round-based-public-transit-routing/
 项目参考
 https://github.com/adot-7/metroshell
 第三方库参考

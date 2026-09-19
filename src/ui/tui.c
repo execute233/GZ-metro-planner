@@ -1,4 +1,5 @@
 #include "tui.h"
+#include "station_search.h"
 #include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -77,17 +78,7 @@ int tui_maintenance_form_key(TuiState *s, MaintenanceFormKey key, const char *pa
 }
 
 void tui_search(TuiState *s) {
-    char query[128];
-    size_t n = strlen(s->query);
-    for (size_t i = 0; i <= n; i++)
-        query[i] = (char)tolower((unsigned char)s->query[i]);
-    s->match_count = 0;
-    for (size_t i = 0; i < s->map->metro.stations.rows.size; i++) {
-        Station *st = &s->map->metro.stations.rows.items[i];
-        if (!*query || strstr(st->name, query) || strstr(st->pinyin_name, query) ||
-            strstr(s->map->stations[st->id].initials, query))
-            s->matches[s->match_count++] = st->id;
-    }
+    s->match_count = station_search(&s->map->metro.stations, s->query, s->matches, MAP_LIMIT);
     if (s->candidate >= s->match_count)
         s->candidate = s->match_count ? s->match_count - 1 : 0;
 }
@@ -142,8 +133,9 @@ static void sidebar(TuiState *s, MapFrame *f, int x, int width, int height) {
             frame_text(f, x + 2, row++, inside, "无匹配站点", 0, 0);
         if (s->match_count) {
             int id = s->matches[s->candidate];
-            char lines[256] = "线路：";
-            for (size_t k = 0; k < s->map->metro.lines.rows.size; k++) {
+            frame_text(f, x + 2, row, inside, "线路：", 0, 1);
+            int column = x + 8, right = x + 2 + inside;
+            for (size_t k = 0; k < s->map->metro.lines.rows.size && column < right; k++) {
                 Line *ln = &s->map->metro.lines.rows.items[k];
                 int member = 0;
                 for (size_t j = 0; j < s->map->metro.edges.rows.size; j++) {
@@ -152,12 +144,19 @@ static void sidebar(TuiState *s, MapFrame *f, int x, int width, int height) {
                         (e->from_station_id == id || e->to_station_id == id))
                         member = 1;
                 }
-                if (member && strlen(lines) + strlen(ln->name) + 2 < sizeof(lines)) {
-                    strcat(lines, ln->name);
-                    strcat(lines, " ");
+                if (member) {
+                    const char *label = ln->name;
+                    uint32_t cp;
+                    while (utf8_next(&label, &cp)) {
+                        int columns = unicode_width(cp);
+                        if (column + columns > right) { column = right; break; }
+                        frame_glyph(f, column, row, cp, 4 + ln->id, 0);
+                        column += columns;
+                    }
+                    column++;
                 }
             }
-            frame_text(f, x + 2, row++, inside, lines, 0, 1);
+            row++;
         }
         frame_text(f, x + 2, row++, inside, "↑↓ 选择  Enter 确认  Esc 返回", 0, 1);
     }
@@ -197,7 +196,7 @@ void tui_frame(TuiState *s, MapFrame *f) {
         return;
     }
     if (s->form.active) {
-        maintenance_form_frame(&s->form, f);
+        maintenance_form_frame(&s->form, f, &s->map->metro);
         return;
     }
     if (s->browser.active) {
