@@ -3,6 +3,7 @@
 #include "../algo/graph.h"
 #include "../render/map_render.h"
 #include "maintenance.h"
+#include "maintenance_form.h"
 #include "line_browser.h"
 #include "../render/trains.h"
 typedef struct {
@@ -14,6 +15,7 @@ typedef struct {
     int matches[MAP_LIMIT], match_count;
     char query[128], status[256];
     Maintenance edit;
+    MaintenanceForm form;
     LineBrowser browser;
     Trains trains;
 } TuiState;
@@ -24,6 +26,7 @@ void tui_plan(TuiState *s, int width, int height);
 void tui_frame(TuiState *s, MapFrame *frame);
 /* Submit a maintenance field; 1 means data was saved and the map refreshed. */
 int tui_maintenance_submit(TuiState *s, const char *path, int width, int height);
+int tui_maintenance_form_key(TuiState *s, MaintenanceFormKey key, const char *path, int width, int height);
 int tui_run(const char *path);
 int tui_snapshot(const char *path, const char *output, int width, int height, const char *from,
                  const char *to);

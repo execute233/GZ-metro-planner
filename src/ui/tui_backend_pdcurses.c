@@ -142,7 +142,7 @@ int tui_run(const char *path) {
         getmaxyx(stdscr, h, w);
         ULONGLONG now = GetTickCount64();
         if (now - last_animation >= TRAIN_FRAME_MS) {
-            int stopped = s.edit.active || s.browser.active || w < 50 || h < 16;
+            int stopped = s.form.active || s.browser.active || w < 50 || h < 16;
             trains_advance(&s.trains, (now - last_animation) / 1000.0, stopped);
             if (!stopped && !s.trains.paused)
                 dirty = 1;
@@ -171,25 +171,25 @@ int tui_run(const char *path) {
             break;
         if (w < 50 || h < 16)
             continue;
-        if (s.edit.active) {
-            if (key == 27) {
-                maintenance_close(&s.edit);
-            } else if (key == '\n' || key == '\r' || key == KEY_ENTER) {
-                if (tui_maintenance_submit(&s, path, w, h) == 1)
+        if (s.form.active) {
+            MaintenanceFormKey form_key;
+            int handled = 1;
+            if (key == 27) form_key = FORM_BACK;
+            else if (key == KEY_UP || key == KEY_BTAB) form_key = FORM_UP;
+            else if (key == KEY_DOWN || key == '\t') form_key = FORM_DOWN;
+            else if (key == KEY_LEFT) form_key = FORM_LEFT;
+            else if (key == KEY_RIGHT) form_key = FORM_RIGHT;
+            else if (key == KEY_HOME) form_key = FORM_HOME;
+            else if (key == KEY_END) form_key = FORM_END;
+            else if (key == KEY_BACKSPACE || key == 127 || key == 8) form_key = FORM_BACKSPACE;
+            else if (key == KEY_DC) form_key = FORM_DELETE;
+            else if (key == '\n' || key == '\r' || key == KEY_ENTER) form_key = FORM_ENTER;
+            else handled = 0;
+            if (handled) {
+                if (tui_maintenance_form_key(&s, form_key, path, w, h) == 1)
                     colors(db);
-            } else if (!s.edit.action) {
-                if (key == KEY_UP || key == KEY_DOWN)
-                    maintenance_move(&s.edit, key == KEY_UP ? -1 : 1);
-            } else if (key == KEY_BACKSPACE || key == 127 || key == 8) {
-                size_t n = strlen(s.edit.input);
-                if (n) {
-                    n--;
-                    while (n && ((unsigned char)s.edit.input[n] & 0xc0) == 0x80)
-                        n--;
-                    s.edit.input[n] = 0;
-                }
             } else if (kind != KEY_CODE_YES) {
-                append_utf8(s.edit.input, sizeof(s.edit.input), (unsigned)key);
+                maintenance_form_type(&s.form, (unsigned)key);
             }
             continue;
         }
@@ -277,7 +277,7 @@ int tui_run(const char *path) {
             continue;
         }
         if (key == 'm' || key == 'M') {
-            s.edit.active = 1;
+            maintenance_form_open(&s.form, 0);
             continue;
         }
         if (key == 'l' || key == 'L') {

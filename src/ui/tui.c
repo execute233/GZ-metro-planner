@@ -25,6 +25,7 @@ int tui_init(TuiState *s, MapDb *m, int w, int h) {
     return 0;
 }
 void tui_dispose(TuiState *s) {
+    maintenance_form_close(&s->form);
     line_browser_close(&s->browser);
     trains_dispose(&s->trains);
     maintenance_close(&s->edit);
@@ -60,53 +61,21 @@ int tui_maintenance_submit(TuiState *s, const char *path, int width, int height)
     return 1;
 }
 
-static void maintenance_frame(TuiState *s, MapFrame *frame) {
-    Maintenance *edit = &s->edit;
-    int width = frame->width - 4;
-    char text[256];
-    frame_text(frame, 2, 0, width, "广州地铁 · 地图维护", 1, 0);
-    const char *actions[] = {"添加站点", "删除站点", "添加线路", "删除线路及区间"};
-    if (!edit->action) {
-        for (int i = 0; i < 4; i++) {
-            snprintf(text, sizeof(text), "%s %s", i == edit->selected ? ">" : " ", actions[i]);
-            frame_text(frame, 2, 2 + i, width, text, i == edit->selected, 0);
-        }
-        frame_text(frame, 2, 7, width, maintenance_prompt(edit), 0, 0);
-        frame_text(frame, 2, frame->height - 1, width, "↑/↓ 选择操作  Enter 确认  Esc 返回地图", 0, 0);
-        return;
+int tui_maintenance_form_key(TuiState *s, MaintenanceFormKey key, const char *path, int width, int height) {
+    if (!maintenance_form_key(&s->form, key, &s->map->metro, &s->edit))
+        return 0;
+    int selected = s->form.selected;
+    strcpy(s->edit.input, "y");
+    int result = tui_maintenance_submit(s, path, width, height);
+    if (result == 1 || !s->edit.active) {
+        maintenance_form_open(&s->form, selected);
+        snprintf(s->form.message, sizeof(s->form.message), "%s", s->status);
+    } else {
+        snprintf(s->form.message, sizeof(s->form.message), "%s", s->edit.message);
     }
-    frame_text(frame, 2, 2, width, actions[edit->action - 1], 1, 0);
-    frame_text(frame, 2, 5, width, maintenance_prompt(edit), 1, 0);
-    snprintf(text, sizeof(text), "> %s_", edit->input);
-    frame_text(frame, 2, 6, width, text, 0, 0);
-    if (edit->action == 1 || edit->action == 2) {
-        snprintf(text, sizeof(text), "站点：%s", edit->station.name);
-        frame_text(frame, 2, 8, width, text, 0, 0);
-        if (edit->confirm) {
-            snprintf(text, sizeof(text), "坐标：%.1f,%.1f", edit->station.x, edit->station.y);
-            frame_text(frame, 2, 9, width, text, 0, 1);
-        } else {
-            snprintf(text, sizeof(text), "当前地图中心：%.0f,%.0f", s->view.x, s->view.y);
-            frame_text(frame, 2, 9, width, text, 0, 1);
-        }
-    } else if (edit->action == 3 || edit->action == 4) {
-        snprintf(text, sizeof(text), "线路：%s", edit->line.name);
-        frame_text(frame, 2, 8, width, text, 0, 0);
-        if (edit->action == 3 && edit->step == 3 && !edit->confirm) {
-            snprintf(text, sizeof(text), "%s → %s", name(s, edit->line.station_ids.items[edit->interval]),
-                     name(s, edit->line.station_ids.items[edit->interval + 1]));
-        } else if (edit->action == 3) {
-            snprintf(text, sizeof(text), "%zu 个站点，%zu 个区间；颜色 #%06X",
-                     edit->line.station_ids.size, edit->edges.rows.size, edit->line.rgb);
-        } else {
-            snprintf(text, sizeof(text), "保存后删除这条线路的全部区间");
-        }
-        frame_text(frame, 2, 9, width, text, 0, 1);
-    }
-    frame_text(frame, 2, 11, width, "新增区间以两站间直线绘制", 0, 1);
-    frame_text(frame, 2, frame->height - 3, width, edit->message, 1, 0);
-    frame_text(frame, 2, frame->height - 1, width, "Enter 下一步/确认  Esc 取消并返回地图", 0, 0);
+    return result;
 }
+
 void tui_search(TuiState *s) {
     char query[128];
     size_t n = strlen(s->query);
@@ -227,8 +196,8 @@ void tui_frame(TuiState *s, MapFrame *f) {
         frame_text(f, 0, 0, w, "窗口至少需要 50×16；Q 退出", 0, 0);
         return;
     }
-    if (s->edit.active) {
-        maintenance_frame(s, f);
+    if (s->form.active) {
+        maintenance_form_frame(&s->form, f);
         return;
     }
     if (s->browser.active) {

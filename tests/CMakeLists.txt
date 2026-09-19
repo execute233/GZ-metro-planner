@@ -38,6 +38,13 @@ add_executable(test_maintenance test_maintenance.c
 target_link_libraries(test_maintenance PRIVATE gzmp_map)
 add_test(NAME maintenance COMMAND test_maintenance "${PROJECT_SOURCE_DIR}/metro.mbtiles")
 
+add_executable(test_maintenance_form test_maintenance_form.c
+    ../src/adt/station.c ../src/adt/line.c ../src/adt/edge.c
+    ../src/algo/graph.c ../src/algo/router.c)
+target_link_libraries(test_maintenance_form PRIVATE gzmp_map)
+target_compile_options(test_maintenance_form PRIVATE -Wall -Wextra -Wpedantic)
+add_test(NAME maintenance_form COMMAND test_maintenance_form "${PROJECT_SOURCE_DIR}/metro.mbtiles")
+
 add_test(NAME packaged_app COMMAND "${CMAKE_COMMAND}"
     "-DAPP=$<TARGET_FILE:GZ_metro_planner>"
     "-DSOURCE_ATLAS=${PROJECT_SOURCE_DIR}/metro.mbtiles"
